@@ -1,0 +1,42 @@
+ [
+  
+  {
+  "id_ingrediente":1,
+  "nombre" : "Sandía",
+  "matchingbueno" : [
+                     
+                     {
+                     "id_ingrediente": 2,
+                     "nombre" : "tomate",
+                     "comentario" : "Este es el comentario sobre el matching de los elementos tomate y sandía"
+                     },
+                     
+                     {
+                     "id_ingrediente": 25,
+                     "nombre" : "cabra",
+                     "comentario" : "Este es el comentario sobre el matching de los elementos queso de cabra y sandía"
+                     },
+                     
+                     ],
+  
+ 
+  "matchingmalo" : [
+                     
+                     {
+                     "id_ingrediente": 2,
+                     "nombre" : "tomate",
+                     "comentario" : "Este es el comentario sobre el no de los elementos tomate y sandía"
+                     },
+                     
+                     {
+                     "id_ingrediente": 25,
+                     "nombre" : "cabra",
+                     "comentario" : "Este es el comentario sobre el matching de los elementos queso de cabra y sandía"
+                     },
+                     
+                     ]
+  
+  
+  },
+  
+  ]

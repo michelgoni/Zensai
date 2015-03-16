@@ -1,0 +1,96 @@
+[
+ {
+    "id_sabor": 1,
+    "sabor" : "Afrutado",
+    "ingredientes" : [
+                      {
+                        "id_ingrediente": 1,
+                        "nombre" : "Sandía"
+                      },
+                      {
+                      "id_ingrediente": 2,
+                      "nombre" : "Tomate"
+                      },
+                      {
+                      "id_ingrediente": 3,
+                      "nombre" : "Uva"
+                      },
+                      {
+                      "id_ingrediente": 4,
+                      "nombre" : "Cereza"
+                      }
+                      
+                    ]
+ },
+ {
+ "id_sabor": 1,
+ "sabor" : "Afrutado",
+ "ingredientes" : [
+                   {
+                   "id_ingrediente": 1,
+                   "nombre" : "Sandía"
+                   },
+                   {
+                   "id_ingrediente": 2,
+                   "nombre" : "Tomate"
+                   },
+                   {
+                   "id_ingrediente": 3,
+                   "nombre" : "Uva"
+                   },
+                   {
+                   "id_ingrediente": 4,
+                   "nombre" : "Cereza"
+                   }
+                   
+                   ]
+ },
+ {
+ "id_sabor": 1,
+ "sabor" : "Afrutado",
+ "ingredientes" : [
+                   {
+                   "id_ingrediente": 1,
+                   "nombre" : "Sandía"
+                   },
+                   {
+                   "id_ingrediente": 2,
+                   "nombre" : "Tomate"
+                   },
+                   {
+                   "id_ingrediente": 3,
+                   "nombre" : "Uva"
+                   },
+                   {
+                   "id_ingrediente": 4,
+                   "nombre" : "Cereza"
+                   }
+                   
+                   ]
+ },
+ {
+ "id_sabor": 1,
+ "sabor" : "Afrutado",
+ "ingredientes" : [
+                   {
+                   "id_ingrediente": 1,
+                   "nombre" : "Sandía"
+                   },
+                   {
+                   "id_ingrediente": 2,
+                   "nombre" : "Tomate"
+                   },
+                   {
+                   "id_ingrediente": 3,
+                   "nombre" : "Uva"
+                   },
+                   {
+                   "id_ingrediente": 4,
+                   "nombre" : "Cereza"
+                   }
+                   
+                   ]
+ }
+
+]
+
