@@ -23,74 +23,201 @@
                     ]
  },
  {
- "id_sabor": 1,
- "sabor" : "Afrutado",
+ "id_sabor": 2,
+ "sabor" : "Tostados",
  "ingredientes" : [
                    {
                    "id_ingrediente": 1,
-                   "nombre" : "Sandía"
+                   "nombre" : "Café"
                    },
                    {
                    "id_ingrediente": 2,
-                   "nombre" : "Tomate"
+                   "nombre" : "Chocolate"
                    },
                    {
                    "id_ingrediente": 3,
-                   "nombre" : "Uva"
+                   "nombre" : "Cacahuete"
+                   }
+                   ]
+ },
+ {
+ "id_sabor": 3,
+ "sabor" : "Tierra",
+ "ingredientes" : [
+                   {
+                   "id_ingrediente": 1,
+                   "nombre" : "Patata"
+                   },
+                   {
+                   "id_ingrediente": 2,
+                   "nombre" : "Trufa"
+                   },
+                   {
+                   "id_ingrediente": 3,
+                   "nombre" : "Seta"
                    },
                    {
                    "id_ingrediente": 4,
-                   "nombre" : "Cereza"
+                   "nombre" : "Berenjena"
                    }
                    
                    ]
  },
+ 
  {
- "id_sabor": 1,
- "sabor" : "Afrutado",
+ "id_sabor": 4,
+ "sabor" : "Mar",
  "ingredientes" : [
                    {
                    "id_ingrediente": 1,
-                   "nombre" : "Sandía"
+                   "nombre" : "Marisco"
                    },
                    {
                    "id_ingrediente": 2,
-                   "nombre" : "Tomate"
+                   "nombre" : "Pescado blanco"
                    },
                    {
                    "id_ingrediente": 3,
-                   "nombre" : "Uva"
+                   "nombre" : "Pescado graso"
+                   }
+                   ]
+ },
+ 
+ {
+ "id_sabor": 5,
+ "sabor" : "Hierba & Verdura",
+ "ingredientes" : [
+                   {
+                   "id_ingrediente": 1,
+                   "nombre" : "Guisante"
+                   },
+                   {
+                   "id_ingrediente": 2,
+                   "nombre" : "Cilantro"
+                   },
+                   {
+                   "id_ingrediente": 3,
+                   "nombre" : "Pimiento"
                    },
                    {
                    "id_ingrediente": 4,
-                   "nombre" : "Cereza"
+                   "nombre" : "Guindilla"
                    }
                    
                    ]
  },
+ 
  {
- "id_sabor": 1,
- "sabor" : "Afrutado",
+ "id_sabor": 6,
+ "sabor" : "Salado",
  "ingredientes" : [
                    {
                    "id_ingrediente": 1,
-                   "nombre" : "Sandía"
+                   "nombre" : "Anchoa"
                    },
                    {
                    "id_ingrediente": 2,
-                   "nombre" : "Tomate"
+                   "nombre" : "Jamón"
                    },
                    {
                    "id_ingrediente": 3,
-                   "nombre" : "Uva"
+                   "nombre" : "Aceituna"
+                   }
+                   ]
+ },
+ 
+ {
+ "id_sabor": 7,
+ "sabor" : "Cítrico",
+ "ingredientes" : [
+                   {
+                   "id_ingrediente": 1,
+                   "nombre" : "Naranja"
+                   },
+                   {
+                   "id_ingrediente": 2,
+                   "nombre" : "Jengibre"
+                   },
+                   {
+                   "id_ingrediente": 3,
+                   "nombre" : "Lima"
                    },
                    {
                    "id_ingrediente": 4,
-                   "nombre" : "Cereza"
+                   "nombre" : "Limón"
                    }
                    
+                   ]
+ },
+ 
+ {
+ "id_sabor": 8,
+ "sabor" : "Carne",
+ "ingredientes" : [
+                   {
+                   "id_ingrediente": 1,
+                   "nombre" : "Ternera"
+                   },
+                   {
+                   "id_ingrediente": 2,
+                   "nombre" : "Pollo"
+                   },
+                   {
+                   "id_ingrediente": 3,
+                   "nombre" : "Cordero"
+                   },
+                   {
+                   "id_ingrediente": 4,
+                   "nombre" : "Cerdo"
+                   }
+                   
+                   ]
+ },
+ 
+ {
+ "id_sabor": 9,
+ "sabor" : "Queso",
+ "ingredientes" : [
+                   {
+                   "id_ingrediente": 1,
+                   "nombre" : "Azul"
+                   },
+                   {
+                   "id_ingrediente": 2,
+                   "nombre" : "Cabra"
+                   },
+                   {
+                   "id_ingrediente": 3,
+                   "nombre" : "Curado"
+                   },
+                   {
+                   "id_ingrediente": 4,
+                   "nombre" : "Fresco"
+                   }
+                   
+                   ]
+ },
+ 
+ {
+ "id_sabor": 10,
+ "sabor" : "Especias",
+ "ingredientes" : [
+                   {
+                   "id_ingrediente": 1,
+                   "nombre" : "Clavo"
+                   },
+                   {
+                   "id_ingrediente": 2,
+                   "nombre" : "Albahaca"
+                   },
+                   {
+                   "id_ingrediente": 3,
+                   "nombre" : "Canela"
+                   }
                    ]
  }
+ 
+ 
 
 ]
 

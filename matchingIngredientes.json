@@ -1,42 +1,89 @@
  [
-  
   {
-  "id_ingrediente":1,
-  "nombre" : "Sandía",
-  "matchingbueno" : [
-                     
-                     {
-                     "id_ingrediente": 2,
-                     "nombre" : "tomate",
-                     "comentario" : "Este es el comentario sobre el matching de los elementos tomate y sandía"
-                     },
-                     
-                     {
-                     "id_ingrediente": 25,
-                     "nombre" : "cabra",
-                     "comentario" : "Este es el comentario sobre el matching de los elementos queso de cabra y sandía"
-                     },
-                     
-                     ],
-  
- 
-  "matchingmalo" : [
-                     
-                     {
-                     "id_ingrediente": 2,
-                     "nombre" : "tomate",
-                     "comentario" : "Este es el comentario sobre el no de los elementos tomate y sandía"
-                     },
-                     
-                     {
-                     "id_ingrediente": 25,
-                     "nombre" : "cabra",
-                     "comentario" : "Este es el comentario sobre el matching de los elementos queso de cabra y sandía"
-                     },
-                     
-                     ]
-  
-  
+  "id_ingrediente": 1,
+  "nombre": "Sandía",
+  "matchingbueno": [
+                    {
+                    "id_ingrediente": 1,
+                    "nombre": "Tomate",
+                    "comentario": "Este es el comentario sobre el matching de los elementos tomate y sandía"
+                    },
+                    {
+                    "id_ingrediente": 1,
+                    "nombre": "Marisco",
+                    "comentario": "Este es el comentario sobre el matching de los elementos queso de cabra y sandía"
+                    }
+                    ],
+  "matchingmalo": [
+                   {
+                   "id_ingrediente": 2,
+                   "nombre": "Tomate",
+                   "comentario": "Este es el comentario sobre el no de los elementos tomate y sandía"
+                   }
+                   ]
   },
-  
+  {
+  "id_ingrediente": 3,
+  "nombre": "Cacahuete",
+  "matchingbueno": [
+                    {
+                    "id_ingrediente": 4,
+                    "nombre": "Guindilla",
+                    "comentario": "Este es el comentario sobre el matching de los elementos cacahuete  y guindilla."
+                    },
+                    {
+                    "id_ingrediente": 2,
+                    "nombre": "Chocolate",
+                    "comentario": "Este es el comentario sobre el matching de los elementos queso de cabra y sandía"
+                    }
+                    ],
+  "matchingmalo": [
+                   {
+                   "id_ingrediente": 2,
+                   "nombre": "Jamón",
+                   "comentario": "Este es el comentario sobre el no de los elementos tomate y sandía"
+                   }
+                   ]
+  },
+  {
+  "id_ingrediente": 3,
+  "nombre": "Chocolate",
+  "matchingbueno": [
+                    {
+                    "id_ingrediente": 4,
+                    "nombre": "Guindilla",
+                    "comentario": "Este es el comentario sobre el matching de los elementos cacahuete  y guindilla."
+                    },
+                    {
+                    "id_ingrediente": 2,
+                    "nombre": "Cilantro",
+                    "comentario": "Este es el comentario sobre el matching de los elementos queso de cabra y sandía"
+                    }
+                    ],
+  "matchingmalo": [
+                   {
+                   "id_ingrediente": 2,
+                   "nombre": "trufa",
+                   "comentario": "Este es el comentario sobre el no de los elementos tomate y sandía"
+                   }
+                   ]
+  },
+  {
+  "id_ingrediente": 4,
+  "nombre": "Berenjena",
+  "matchingbueno": [
+                    {
+                    "id_ingrediente": 2,
+                    "nombre": "Jengribre",
+                    "comentario": "Este es el comentario sobre el matching de los elementos cacahuete  y guindilla."
+                    }
+                    ],
+  "matchingmalo": [
+                   {
+                   "id_ingrediente": 2,
+                   "nombre": "trufa",
+                   "comentario": "Este es el comentario sobre el no de los elementos tomate y sandía"
+                   }
+                   ]
+  }
   ]
