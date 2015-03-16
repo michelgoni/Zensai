@@ -31,7 +31,7 @@
 }
 
 #pragma mark -Node1
--(void) createNode1:(CGPoint)point {
+-(void) createNode1 {
     
     SKNode *shapeParentNode = [self childNodeWithName:@"Node1"];
     
@@ -40,8 +40,8 @@
     hexagono.name = @"terroso";
     
     UIBezierPath* polygonPath = UIBezierPath.bezierPath;
-    [polygonPath moveToPoint: CGPointMake(point.x + 45.94, point.y + 2.25)];
-    //[polygonPath moveToPoint: CGPointMake( 45.94, 2.25)];
+    //[polygonPath moveToPoint: CGPointMake(point.x + 45.94, point.y + 2.25)];
+    [polygonPath moveToPoint: CGPointMake( 45.94, 2.25)];
     [polygonPath addLineToPoint: CGPointMake(87.78, 23.09)];
     [polygonPath addLineToPoint: CGPointMake(87.78, 64.78)];
     [polygonPath addLineToPoint: CGPointMake(45.94, 85.62)];
