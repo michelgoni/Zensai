@@ -9,6 +9,7 @@
 #import "AppDataStack.h"
 #import "Sabor.h"
 #import "Ingrediente.h"
+#import "Matching.h"
 
 @interface AppDataStack ()
 
@@ -31,10 +32,13 @@
         return;
     }
     
-    NSArray *sabores = [NSArray array];
-    // * Leer json de sabores
-    // * recorrer array
-    //
+    
+    //Extraemos array de sabores
+    NSError* err = nil;
+    NSString* dataPath = [[NSBundle mainBundle] pathForResource:@"flavours" ofType:@"json"];
+    NSArray* sabores = [NSJSONSerialization JSONObjectWithData:[NSData dataWithContentsOfFile:dataPath]
+                                                     options:kNilOptions
+                                                       error:&err];
     
     [sabores enumerateObjectsUsingBlock:^(NSDictionary *obj, NSUInteger idx, BOOL *stop) {
         Sabor *sabor = [Sabor insertInManagedObjectContext:self.context];
@@ -52,10 +56,18 @@
         
     }];
 
+    //Extraemos array de matchings
     
-    NSArray *matchings = nil; //leer json de matchings
+    NSString* dataPathMatching = [[NSBundle mainBundle] pathForResource:@"matchings" ofType:@"json"];
+    NSArray *matchings = [NSJSONSerialization JSONObjectWithData:[NSData dataWithContentsOfFile:dataPathMatching]
+                                                         options:kNilOptions
+                                                           error:&err];
+    [matchings enumerateObjectsUsingBlock:^(id obj, NSUInteger idx, BOOL *stop) {
+        //
+        
+    }];
     
-    // [matching addIngredientsObject:[Ingrediente ingredienteById:id_ingrediente inContext:self.context]]
+    // [matchings addIngredientsObject:[Ingrediente ingredienteById:id_ingrediente inContext:self.context]]
     [self save];
 }
 
