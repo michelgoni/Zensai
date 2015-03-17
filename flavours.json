@@ -1,6 +1,6 @@
 [
  {
-    "id_sabor": 1,
+    "id_sabor": "afrutado",
     "sabor" : "Afrutado",
     "ingredientes" : [
                       {

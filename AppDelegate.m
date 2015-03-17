@@ -7,6 +7,7 @@
 //
 
 #import "AppDelegate.h"
+#import "AppDataStack.h"
 
 @interface AppDelegate ()
 
@@ -17,6 +18,10 @@
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
     // Override point for customization after application launch.
+    AppDataStack *dataStack = [[AppDataStack alloc] init];
+    
+    [dataStack importDataIfNeeded];
+    
     return YES;
 }
 

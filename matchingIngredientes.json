@@ -1,11 +1,9 @@
  [
   {
-  "id_ingrediente": 1,
-  "nombre": "Sandía",
+  "id_ingrediente": "sandia",
   "matchingbueno": [
                     {
-                    "id_ingrediente": 1,
-                    "nombre": "Tomate",
+                    "id_ingrediente": "tomate",
                     "comentario": "Este es el comentario sobre el matching de los elementos tomate y sandía"
                     },
                     {
@@ -63,7 +61,7 @@
   "matchingmalo": [
                    {
                    "id_ingrediente": 2,
-                   "nombre": "trufa",
+                   "nombre": "Trufa",
                    "comentario": "Este es el comentario sobre el no de los elementos tomate y sandía"
                    }
                    ]
@@ -74,14 +72,14 @@
   "matchingbueno": [
                     {
                     "id_ingrediente": 2,
-                    "nombre": "Jengribre",
+                    "nombre": "Jengibre",
                     "comentario": "Este es el comentario sobre el matching de los elementos cacahuete  y guindilla."
                     }
                     ],
   "matchingmalo": [
                    {
                    "id_ingrediente": 2,
-                   "nombre": "trufa",
+                   "nombre": "Trufa",
                    "comentario": "Este es el comentario sobre el no de los elementos tomate y sandía"
                    }
                    ]
