@@ -4,60 +4,60 @@
     "sabor" : "Afrutado",
     "ingredientes" : [
                       {
-                        "id_ingrediente": 1,
+                        "id_ingrediente": "sandia",
                         "nombre" : "Sandía"
                       },
                       {
-                      "id_ingrediente": 2,
+                      "id_ingrediente": "tomate",
                       "nombre" : "Tomate"
                       },
                       {
-                      "id_ingrediente": 3,
+                      "id_ingrediente": "uva",
                       "nombre" : "Uva"
                       },
                       {
-                      "id_ingrediente": 4,
+                      "id_ingrediente": "cereza",
                       "nombre" : "Cereza"
                       }
                       
                     ]
  },
  {
- "id_sabor": 2,
- "sabor" : "Tostados",
+ "id_sabor": "tostado",
+ "sabor" : "Tostado",
  "ingredientes" : [
                    {
-                   "id_ingrediente": 1,
+                   "id_ingrediente": "cafe",
                    "nombre" : "Café"
                    },
                    {
-                   "id_ingrediente": 2,
+                   "id_ingrediente": "chocolate",
                    "nombre" : "Chocolate"
                    },
                    {
-                   "id_ingrediente": 3,
+                   "id_ingrediente": "cacahuete",
                    "nombre" : "Cacahuete"
                    }
                    ]
  },
  {
- "id_sabor": 3,
+ "id_sabor": "tierra",
  "sabor" : "Tierra",
  "ingredientes" : [
                    {
-                   "id_ingrediente": 1,
+                   "id_ingrediente": "patata",
                    "nombre" : "Patata"
                    },
                    {
-                   "id_ingrediente": 2,
+                   "id_ingrediente": "trufa",
                    "nombre" : "Trufa"
                    },
                    {
-                   "id_ingrediente": 3,
+                   "id_ingrediente": "seta",
                    "nombre" : "Seta"
                    },
                    {
-                   "id_ingrediente": 4,
+                   "id_ingrediente": "berenjena",
                    "nombre" : "Berenjena"
                    }
                    
@@ -65,42 +65,42 @@
  },
  
  {
- "id_sabor": 4,
+ "id_sabor": "mar",
  "sabor" : "Mar",
  "ingredientes" : [
                    {
-                   "id_ingrediente": 1,
+                   "id_ingrediente": "marisco",
                    "nombre" : "Marisco"
                    },
                    {
-                   "id_ingrediente": 2,
+                   "id_ingrediente": "pescadoblanco",
                    "nombre" : "Pescado blanco"
                    },
                    {
-                   "id_ingrediente": 3,
+                   "id_ingrediente": "pescadograso",
                    "nombre" : "Pescado graso"
                    }
                    ]
  },
  
  {
- "id_sabor": 5,
+ "id_sabor": "hierba",
  "sabor" : "Hierba & Verdura",
  "ingredientes" : [
                    {
-                   "id_ingrediente": 1,
+                   "id_ingrediente": "guisante",
                    "nombre" : "Guisante"
                    },
                    {
-                   "id_ingrediente": 2,
+                   "id_ingrediente": "cilantro",
                    "nombre" : "Cilantro"
                    },
                    {
-                   "id_ingrediente": 3,
+                   "id_ingrediente": "pimiento",
                    "nombre" : "Pimiento"
                    },
                    {
-                   "id_ingrediente": 4,
+                   "id_ingrediente": "guindilla",
                    "nombre" : "Guindilla"
                    }
                    
@@ -108,42 +108,42 @@
  },
  
  {
- "id_sabor": 6,
+ "id_sabor": "salado",
  "sabor" : "Salado",
  "ingredientes" : [
                    {
-                   "id_ingrediente": 1,
+                   "id_ingrediente": "anchoa",
                    "nombre" : "Anchoa"
                    },
                    {
-                   "id_ingrediente": 2,
+                   "id_ingrediente": "jamon",
                    "nombre" : "Jamón"
                    },
                    {
-                   "id_ingrediente": 3,
+                   "id_ingrediente": "aceituna",
                    "nombre" : "Aceituna"
                    }
                    ]
  },
  
  {
- "id_sabor": 7,
+ "id_sabor": "citrico",
  "sabor" : "Cítrico",
  "ingredientes" : [
                    {
-                   "id_ingrediente": 1,
+                   "id_ingrediente": "naranja",
                    "nombre" : "Naranja"
                    },
                    {
-                   "id_ingrediente": 2,
+                   "id_ingrediente": "jengibre",
                    "nombre" : "Jengibre"
                    },
                    {
-                   "id_ingrediente": 3,
+                   "id_ingrediente": "lima",
                    "nombre" : "Lima"
                    },
                    {
-                   "id_ingrediente": 4,
+                   "id_ingrediente": "limon",
                    "nombre" : "Limón"
                    }
                    
@@ -151,23 +151,23 @@
  },
  
  {
- "id_sabor": 8,
+ "id_sabor": "carne",
  "sabor" : "Carne",
  "ingredientes" : [
                    {
-                   "id_ingrediente": 1,
+                   "id_ingrediente": "ternera",
                    "nombre" : "Ternera"
                    },
                    {
-                   "id_ingrediente": 2,
+                   "id_ingrediente": "pollo",
                    "nombre" : "Pollo"
                    },
                    {
-                   "id_ingrediente": 3,
+                   "id_ingrediente": "cordero",
                    "nombre" : "Cordero"
                    },
                    {
-                   "id_ingrediente": 4,
+                   "id_ingrediente": "cerdo",
                    "nombre" : "Cerdo"
                    }
                    
@@ -175,23 +175,23 @@
  },
  
  {
- "id_sabor": 9,
+ "id_sabor": "queso",
  "sabor" : "Queso",
  "ingredientes" : [
                    {
-                   "id_ingrediente": 1,
+                   "id_ingrediente": "azul",
                    "nombre" : "Azul"
                    },
                    {
-                   "id_ingrediente": 2,
+                   "id_ingrediente": "cabra",
                    "nombre" : "Cabra"
                    },
                    {
-                   "id_ingrediente": 3,
+                   "id_ingrediente": "curado",
                    "nombre" : "Curado"
                    },
                    {
-                   "id_ingrediente": 4,
+                   "id_ingrediente": "fresco",
                    "nombre" : "Fresco"
                    }
                    
@@ -199,19 +199,19 @@
  },
  
  {
- "id_sabor": 10,
- "sabor" : "Especias",
+ "id_sabor": "especia",
+ "sabor" : "Especia",
  "ingredientes" : [
                    {
-                   "id_ingrediente": 1,
+                   "id_ingrediente": "clavo",
                    "nombre" : "Clavo"
                    },
                    {
-                   "id_ingrediente": 2,
+                   "id_ingrediente": "albahaca",
                    "nombre" : "Albahaca"
                    },
                    {
-                   "id_ingrediente": 3,
+                   "id_ingrediente": "canela",
                    "nombre" : "Canela"
                    }
                    ]

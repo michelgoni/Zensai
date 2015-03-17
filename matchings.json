@@ -1,0 +1,74 @@
+ [
+  {
+  "id_ingrediente": "sandia",
+  "matchingbueno": [
+                    {
+                    "id_ingrediente": "tomate",
+                    "comentario": "Este es el comentario sobre el matching de los elementos tomate y sandía"
+                    },
+                    {
+                    "id_ingrediente": "marisco",
+                    "comentario": "Este es el comentario sobre el matching de los elementos marisco y sandía"
+                    }
+                    ],
+  "matchingmalo": [
+                   {
+                   "id_ingrediente": "tomate",
+                   "comentario": "Este es el comentario sobre el no de los elementos tomate y sandía"
+                   }
+                   ]
+  },
+  {
+  "id_ingrediente": "cacahuete",
+  "matchingbueno": [
+                    {
+                    "id_ingrediente": "guindilla",
+                    "comentario": "Este es el comentario sobre el matching de los elementos cacahuete  y guindilla."
+                    },
+                    {
+                    "id_ingrediente": "chocolate",
+                    "comentario": "Este es el comentario sobre el matching de los elementos chocolate y cacahuete"
+                    }
+                    ],
+  "matchingmalo": [
+                   {
+                   "id_ingrediente": "jamon",
+                   "comentario": "Este es el comentario sobre el no de los elementos jamón y cacahuete"
+                   }
+                   ]
+  },
+  {
+  "id_ingrediente": "chocolate",
+  "matchingbueno": [
+                    {
+                    "id_ingrediente": "guindilla",
+                    "comentario": "Este es el comentario sobre el matching de los elementos cacahuete  y guindilla."
+                    },
+                    {
+                    "id_ingrediente": "guindilla",
+                    "comentario": "Este es el comentario sobre el matching de los elementos qchocolate y gundilla"
+                    }
+                    ],
+  "matchingmalo": [
+                   {
+                   "id_ingrediente": "trufa",
+                   "comentario": "Este es el comentario sobre el no de los elementos trufa y chocolate"
+                   }
+                   ]
+  },
+  {
+  "id_ingrediente": "berenjena",
+  "matchingbueno": [
+                    {
+                    "id_ingrediente": "jengibre",
+                    "comentario": "Este es el comentario sobre el matching de los elementos berenjena y jengibre."
+                    }
+                    ],
+  "matchingmalo": [
+                   {
+                   "id_ingrediente": "trufa",
+                   "comentario": "Este es el comentario sobre el no de los elementos trufa y berenjena"
+                   }
+                   ]
+  }
+  ]
