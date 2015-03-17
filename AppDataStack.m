@@ -64,9 +64,24 @@
                                                            error:&err];
     
     [matchings enumerateObjectsUsingBlock:^(NSDictionary *matchingsDict, NSUInteger idx, BOOL *stop) {
-        //
-        Matching *matching = [Matching insertInManagedObjectContext:self.context];
-        matching.comment = [[[matchingsDict valueForKey:@"matchingbueno"]valueForKey:@"comentario"]firstObject];
+        
+        NSArray *buenos = matchingsDict[@"matchingbueno"];
+        [buenos enumerateObjectsUsingBlock:^(NSDictionary *matchingsDict, NSUInteger idx, BOOL *stop) {
+        
+            Matching *matching = [Matching insertInManagedObjectContext:self.context];
+            matching.comment = matchingsDict[@"comentario"];
+            matching.good = @1;
+            
+        }];
+        
+        NSArray *malos = matchingsDict[@"matchingmalo"];
+        [malos enumerateObjectsUsingBlock:^(NSDictionary *matchingsDict, NSUInteger idx, BOOL *stop) {
+            
+            Matching *matching = [Matching insertInManagedObjectContext:self.context];
+            matching.comment = matchingsDict[@"comentario"];
+            matching.good = @0;
+            
+        }];
 
         
         
