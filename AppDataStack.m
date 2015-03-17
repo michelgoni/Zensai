@@ -62,12 +62,17 @@
     NSArray *matchings = [NSJSONSerialization JSONObjectWithData:[NSData dataWithContentsOfFile:dataPathMatching]
                                                          options:kNilOptions
                                                            error:&err];
-    [matchings enumerateObjectsUsingBlock:^(id obj, NSUInteger idx, BOOL *stop) {
+    
+    [matchings enumerateObjectsUsingBlock:^(NSDictionary *matchingsDict, NSUInteger idx, BOOL *stop) {
         //
+        Matching *matching = [Matching insertInManagedObjectContext:self.context];
+        matching.comment = [[[matchingsDict valueForKey:@"matchingbueno"]valueForKey:@"comentario"]firstObject];
+
+        
         
     }];
     
-    // [matchings addIngredientsObject:[Ingrediente ingredienteById:id_ingrediente inContext:self.context]]
+
     [self save];
 }
 
