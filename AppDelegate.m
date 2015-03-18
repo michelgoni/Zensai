@@ -8,8 +8,11 @@
 
 #import "AppDelegate.h"
 #import "AppDataStack.h"
+#import "GameScene.h"
 
 @interface AppDelegate ()
+
+
 
 @end
 
@@ -21,6 +24,13 @@
     AppDataStack *dataStack = [[AppDataStack alloc] init];
     
     [dataStack importDataIfNeeded];
+    
+
+    
+//    NSFetchRequest *ingredients = [NSFetchRequest fetchRequestWithEntityName:@"Ingrediente"];
+//                          
+//    
+//   GameScene *gameScene = [[GameScene alloc] initWithFlavours:flavours andIngredients:ingredients];
     
     return YES;
 }

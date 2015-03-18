@@ -10,4 +10,6 @@
 
 @interface GameScene : SKScene
 
+-(instancetype) initWithFlavours: (NSArray *) flavours andIngredients: (NSArray *) ingredients;
+
 @end

@@ -16,10 +16,11 @@
         <attribute name="name" attributeType="String" indexed="YES" syncable="YES"/>
         <relationship name="ingredientes" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="Ingrediente" inverseName="sabor" inverseEntity="Ingrediente" syncable="YES"/>
     </entity>
+    <fetchRequest name="ingredienteById" entity="Ingrediente"/>
     <fetchRequest name="saborById" entity="Sabor" predicateString="identifier == $id"/>
     <elements>
-        <element name="Sabor" positionX="-63" positionY="-18" width="128" height="88"/>
         <element name="Ingrediente" positionX="-54" positionY="-9" width="128" height="103"/>
         <element name="Matching" positionX="-36" positionY="9" width="128" height="88"/>
+        <element name="Sabor" positionX="-63" positionY="-18" width="128" height="88"/>
     </elements>
 </model>

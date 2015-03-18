@@ -1,5 +1,7 @@
 #import "_Ingrediente.h"
 
 @interface Ingrediente : _Ingrediente {}
-// Custom logic goes here.
+
++ (Ingrediente *)ingredienteById:(NSString *)identifier inContext:(NSManagedObjectContext *)context;
+
 @end

@@ -26,9 +26,12 @@
 #pragma mark CoreData support
 
 - (void)importDataIfNeeded {
+    
     Sabor *anySabor = [Sabor saborById:@"salado" inContext:self.context];
     
+    
     if (anySabor) {
+        
         return;
     }
     
@@ -44,6 +47,7 @@
         Sabor *sabor = [Sabor insertInManagedObjectContext:self.context];
         sabor.identifier = obj[@"id_sabor"];
         sabor.name = obj[@"sabor"];
+        
 
         NSArray *ingredients = obj[@"ingredientes"];
         
@@ -70,7 +74,11 @@
         
             Matching *matching = [Matching insertInManagedObjectContext:self.context];
             matching.comment = matchingsDict[@"comentario"];
-            matching.good = @1;
+            matching.good = @YES;
+            
+            [matching addIngredientsObject:[Ingrediente ingredienteById:@"id_ingrediente" inContext:self.context]];
+            
+            
             
         }];
         
@@ -79,7 +87,9 @@
             
             Matching *matching = [Matching insertInManagedObjectContext:self.context];
             matching.comment = matchingsDict[@"comentario"];
-            matching.good = @0;
+            matching.good = @NO;
+            [matching addIngredientsObject:[Ingrediente ingredienteById:@"id_ingrediente" inContext:self.context]];
+
             
         }];
 

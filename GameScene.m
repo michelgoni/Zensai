@@ -8,10 +8,16 @@
 
 #import "GameScene.h"
 #import <UIKit/UIKit.h>
+#import "AppDataStack.h"
+#import "Matching.h"
 
 @interface GameScene()
 
 
+@property (strong, nonatomic) NSManagedObjectContext *context;
+@property (strong, nonatomic) NSFetchedResultsController *fetchedResultsController;
+@property (strong, nonatomic) NSArray *flavours;
+@property (strong, nonatomic) NSArray *ingredients;
 
 
 @end
@@ -22,19 +28,42 @@
     
   
     [self createNode1];
+    [self loadSabores];
 
     //[self moveHexagon];
     
 
-
 }
+
+-(void) loadSabores
+{
+    //Fetch
+    NSFetchRequest *fetchrequest = [NSFetchRequest fetchRequestWithEntityName:@"Sabor"];
+    NSError *error;
+    self.flavours = [self.context executeFetchRequest:fetchrequest error:&error];
+    
+    
+}
+
+-(instancetype) initWithFlavours: (NSArray *) flavours andIngredients: (NSArray *) ingredients{
+    
+    self = [super init];
+    if (self) {
+        
+        _flavours = flavours;
+        _ingredients = ingredients;
+        
+    }
+    return  self;
+    
+}
+
+
 
 #pragma mark -Node1
 -(void) createNode1 {
     
     SKNode *shapeParentNode = [self childNodeWithName:@"Node1"];
-    
-    
     SKShapeNode *hexagono = [SKShapeNode node];
     hexagono.name = @"terroso";
     
@@ -109,13 +138,12 @@
     //Labels
     SKLabelNode *myLabel = [SKLabelNode labelNodeWithFontNamed:@"Optima"];
     myLabel.alpha = 1.0;
-    myLabel.text = @"Terroso";
+    myLabel.text = @"Tierra";// Iteramos por el array y llenamos los datos
     myLabel.name = @"TerrosoLabel";
     myLabel.fontSize = 19;
     myLabel.fontColor = [SKColor colorWithRed:1 green:0.688 blue:0 alpha:1];
     myLabel.position = CGPointMake (hexagono.position.x +45 , hexagono.position.y +45);
     myLabel.zPosition = 10;
-    
     
     [shapeParentNode addChild:myLabel];
     
@@ -154,6 +182,7 @@
     trufaLabel.zPosition = 10;
     
     [shapeParentNode addChild:trufaLabel];
+    
     
 }
 
