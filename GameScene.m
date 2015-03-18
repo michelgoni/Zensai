@@ -14,6 +14,7 @@
 #import "Sabor.h"
 #import "Ingrediente.h"
 
+
 @interface GameScene()
 
 @property (strong, nonatomic) NSManagedObjectContext *context;
@@ -31,7 +32,7 @@
     [self createNode1];
     
 
-    //[self moveHexagon];
+    [self moveHexagon];
     
 
 }
@@ -56,9 +57,10 @@
 
 #pragma mark -Node1
 -(void) createNode1 {
- 
-    //Arrays de
-    NSArray *colores =      @[[SKColor colorWithRed: 0.891 green: 0.552 blue: 0.138 alpha: 1],
+    
+    
+    int i = 0;
+    NSArray *colores =      @[[SKColor colorWithRed:192/255.0f green:57/255.0f blue:43/255.0f alpha:1.0f],
                               [SKColor colorWithRed: 0.5 green: 0.2 blue: 0.13 alpha: 1],
                               [SKColor colorWithRed: 0.844 green: 0.157 blue: 0.157 alpha: 1],
                               [SKColor colorWithRed: 0.844 green: 0.157 blue: 0.157 alpha: 1],
@@ -68,16 +70,18 @@
                               [SKColor colorWithRed: 0.844 green: 0.157 blue: 0.157 alpha: 1],
                               [SKColor colorWithRed: 0.844 green: 0.157 blue: 0.157 alpha: 1],
                               [SKColor colorWithRed: 1 green: 0.3 blue: 0.157 alpha: 1]];
-   int i = 0;
+    
+    
+   
     for (Sabor *sabor in self.flavours) {
+        
+        
         NSLog(@"-----------Flavour name: %@", sabor.name);
         
         
         // Crear uno a uno el hexágono
         SKNode *shapeParentNode = [self childNodeWithName:[NSString stringWithFormat:@"Node%d", i]];
         SKShapeNode *hexagono = [SKShapeNode node];
-        
-        
         
         
         UIBezierPath* polygonPath = UIBezierPath.bezierPath;
@@ -91,7 +95,7 @@
         
         hexagono.path = polygonPath.CGPath;
         hexagono.lineWidth = 1;
-        hexagono.strokeColor = colores [i];
+        hexagono.strokeColor = colores[i];
 
         
         
@@ -105,7 +109,7 @@
         SKShapeNode *line2 = [SKShapeNode node];
         UIBezierPath* bezier2Path = UIBezierPath.bezierPath;
         [bezier2Path moveToPoint: CGPointMake( 51.5, 21.5)];
-        [bezier2Path addCurveToPoint: CGPointMake( 51.5,  2.5) controlPoint1: CGPointMake( 51.5, 2.5) controlPoint2: CGPointMake( 51.5,  2.5)];
+        [bezier2Path addCurveToPoint: CGPointMake(50.5, -9.5) controlPoint1: CGPointMake(50.5, -9.5) controlPoint2: CGPointMake(50.5, -9.5)];
         
         SKShapeNode *line3 = [SKShapeNode node];
         UIBezierPath* bezier3Path = UIBezierPath.bezierPath;
@@ -119,12 +123,12 @@
         
         line2.path = bezier2Path.CGPath;
         line2.lineWidth = 1;
-        line2.strokeColor = colores [i];
+       line2.strokeColor = colores [i];
         line2.hidden = YES;
         
         line3.path = bezier3Path.CGPath;
         line3.lineWidth = 1;
-        line3.strokeColor = colores [i];
+       line3.strokeColor = colores [i];
         line3.hidden = YES;
         
         
@@ -158,7 +162,7 @@
            
             CGFloat y = 0;
             if (j == 1) {
-                y = -18;
+                y = -27;
             }
             labelIngrediente.position = CGPointMake ((j*37) + hexagono.position.x +10 , y + hexagono.position.y +5);
             labelIngrediente.zPosition = 10;
@@ -180,16 +184,18 @@
 
 -(void) moveHexagon {
     
-    SKNode *shapeParentNode = [self childNodeWithName:@"Node1"];
-    SKAction *move = [SKAction moveBy:CGVectorMake(arc4random()%10, arc4random()%15) duration:3];
-    SKAction *reseversedMove = [move reversedAction];
-    SKAction *moveSeq = [SKAction sequence:@[ move, reseversedMove]];
-    SKAction* groupAction = [SKAction group:@[moveSeq]];
-    SKAction* repeatSize = [SKAction repeatActionForever:groupAction];
-    repeatSize.timingMode = SKActionTimingEaseIn;
+    for (int i = 0; i< 9; i++) {
+        SKNode *shapeParentNode = [self childNodeWithName:[NSString stringWithFormat:@"Node%d", i]];
+        SKAction *move = [SKAction moveBy:CGVectorMake(arc4random()%10, arc4random()%15) duration:3];
+        SKAction *reseversedMove = [move reversedAction];
+        SKAction *moveSeq = [SKAction sequence:@[ move, reseversedMove]];
+        SKAction* groupAction = [SKAction group:@[moveSeq]];
+        SKAction* repeatSize = [SKAction repeatActionForever:groupAction];
+        repeatSize.timingMode = SKActionTimingEaseIn;
+        
+        [shapeParentNode runAction:repeatSize];
+    }
 
-    [shapeParentNode runAction:repeatSize];
-    
 }
 
 
@@ -206,7 +212,7 @@
         SKNode *node = [self.scene nodeAtPoint:p];
         
         
-        NSLog(@"touched on something called %@",node.name);
+       // NSLog(@"touched on something called %@",node.name);
         
         
         if ([node.name isEqualToString:@"Node1"]){
