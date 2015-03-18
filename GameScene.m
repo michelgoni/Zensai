@@ -56,68 +56,69 @@
 //    CGFloat width = 95.75f;
 //    CGFloat corner = 23.94f;
 //    
-//    int i = 1;
+   int i = 1;
     for (Sabor *sabor in self.flavours) {
         NSLog(@"-----------Flavour name: %@", sabor.name);
         
         
-//        // Crear uno a uno el hexágono
-//        SKNode *shapeParentNode = [self childNodeWithName:[NSString stringWithFormat:@"Node%d", i]];
-//        SKShapeNode *hexagono = [SKShapeNode node];
-//        hexagono.name = sabor.name;
+        // Crear uno a uno el hexágono
+        SKNode *shapeParentNode = [self childNodeWithName:[NSString stringWithFormat:@"Node%d", i]];
+        SKShapeNode *hexagono = [SKShapeNode node];
+        hexagono.name = sabor.name;
 //        CGPoint positionNode = shapeParentNode.position;
-//        
-//        UIBezierPath* polygonPath = UIBezierPath.bezierPath;
-//        [polygonPath moveToPoint: CGPointMake(positionNode.x + 0, positionNode.y + (height / 2))]; // punto 1
-//        [polygonPath addLineToPoint: CGPointMake(positionNode.x + (width / 2), positionNode.y + ((height / 2) - corner))]; // punto 2
-//        [polygonPath addLineToPoint: CGPointMake(93.09, 45.44)]; // punto 3
-//        [polygonPath addLineToPoint: CGPointMake(51.62, 21.5)]; // punto 4
-//        [polygonPath addLineToPoint: CGPointMake(10.16, 45.44)]; // punto 5
-//        [polygonPath addLineToPoint: CGPointMake(10.16, 93.31)]; // punto 6
-//        [polygonPath closePath];
-//        
-//        hexagono.path = polygonPath.CGPath;
-//        hexagono.lineWidth = 1;
-//        hexagono.strokeColor = [SKColor colorWithRed:1 green:0.688 blue:0 alpha:1];
-//        
-//        
-//        SKShapeNode *line1 = [SKShapeNode node];
-//        UIBezierPath* bezierPath = UIBezierPath.bezierPath;
-//        [bezierPath moveToPoint: CGPointMake(i + 10.5, i + 20.5)];
-//        [bezierPath addLineToPoint: CGPointMake(i + 10.5, i + 45.5)];
-//        [bezierPath addLineToPoint: CGPointMake(i + 10.5, i + 45.5)];
-//        [bezierPath addLineToPoint: CGPointMake(i + 10.5, i + 45.5)];
-//        
-//        SKShapeNode *line2 = [SKShapeNode node];
-//        UIBezierPath* bezier2Path = UIBezierPath.bezierPath;
-//        [bezier2Path moveToPoint: CGPointMake(i + 51.5, i + 21.5)];
-//        [bezier2Path addCurveToPoint: CGPointMake(i + 51.5, i + 2.5) controlPoint1: CGPointMake(i + 51.5, i + 2.5) controlPoint2: CGPointMake(i + 51.5, i + 2.5)];
-//        line2.strokeColor = [SKColor colorWithRed:1 green:0.688 blue:0 alpha:1];
-//        
-//        SKShapeNode *line3 = [SKShapeNode node];
-//        UIBezierPath* bezier3Path = UIBezierPath.bezierPath;
-//        [bezier3Path moveToPoint: CGPointMake(i + 93.5, i + 45.5)];
-//        [bezier3Path addCurveToPoint: CGPointMake(i + 93.5, i + 20.5) controlPoint1: CGPointMake(i + 93.5, i + 20.5) controlPoint2: CGPointMake(i + 93.5, i + 20.5)];
-//        
-//        line1.path = bezierPath.CGPath;
-//        line1.lineWidth = 1;
-//        line1.strokeColor = [SKColor colorWithRed:1 green:0.688 blue:0 alpha:1];
-//        
-//        line2.path = bezier2Path.CGPath;
-//        line2.lineWidth = 1;
-//        line2.strokeColor = [SKColor colorWithRed:1 green:0.688 blue:0 alpha:1];
-//        
-//        line3.path = bezier3Path.CGPath;
-//        line3.lineWidth = 1;
-//        line3.strokeColor = [SKColor colorWithRed:1 green:0.688 blue:0 alpha:1];
-//        
-//        
-//        [shapeParentNode addChild:hexagono];
-//        [shapeParentNode addChild:line1];
-//        [shapeParentNode addChild:line2];
-//        [shapeParentNode addChild:line3];
-//        
-//        
+        
+        UIBezierPath* polygonPath = UIBezierPath.bezierPath;
+        [polygonPath moveToPoint: CGPointMake(51.62, 117.25)];
+        [polygonPath addLineToPoint: CGPointMake(93.09, 93.31)];
+        [polygonPath addLineToPoint: CGPointMake(93.09, 45.44)];
+        [polygonPath addLineToPoint: CGPointMake(51.62, 21.5)];
+        [polygonPath addLineToPoint: CGPointMake(10.16, 45.44)];
+        [polygonPath addLineToPoint: CGPointMake(10.16, 93.31)];
+        [polygonPath closePath];
+        
+        hexagono.path = polygonPath.CGPath;
+        hexagono.lineWidth = 1;
+        hexagono.strokeColor = [SKColor colorWithRed:1 green:0.688 blue:0 alpha:1];
+        
+        
+        SKShapeNode *line1 = [SKShapeNode node];
+        UIBezierPath* bezierPath = UIBezierPath.bezierPath;
+        [bezierPath moveToPoint: CGPointMake( 10.5,  20.5)];
+        [bezierPath addLineToPoint: CGPointMake(10.5,  45.5)];
+        [bezierPath addLineToPoint: CGPointMake( 10.5,  45.5)];
+        [bezierPath addLineToPoint: CGPointMake( 10.5,  45.5)];
+        
+        SKShapeNode *line2 = [SKShapeNode node];
+        UIBezierPath* bezier2Path = UIBezierPath.bezierPath;
+        [bezier2Path moveToPoint: CGPointMake( 51.5, 21.5)];
+        [bezier2Path addCurveToPoint: CGPointMake( 51.5,  2.5) controlPoint1: CGPointMake( 51.5, 2.5) controlPoint2: CGPointMake( 51.5,  2.5)];
+        line2.strokeColor = [SKColor colorWithRed:1 green:0.688 blue:0 alpha:1];
+        
+        SKShapeNode *line3 = [SKShapeNode node];
+        UIBezierPath* bezier3Path = UIBezierPath.bezierPath;
+        [bezier3Path moveToPoint: CGPointMake( 93.5,  45.5)];
+        [bezier3Path addCurveToPoint: CGPointMake( 93.5, 20.5) controlPoint1: CGPointMake(93.5, 20.5) controlPoint2: CGPointMake(93.5,  20.5)];
+        
+        line1.path = bezierPath.CGPath;
+        line1.lineWidth = 1;
+        line1.strokeColor = [SKColor colorWithRed:1 green:0.688 blue:0 alpha:1];
+        
+        line2.path = bezier2Path.CGPath;
+        line2.lineWidth = 1;
+        line2.strokeColor = [SKColor colorWithRed:1 green:0.688 blue:0 alpha:1];
+        
+        line3.path = bezier3Path.CGPath;
+        line3.lineWidth = 1;
+        line3.strokeColor = [SKColor colorWithRed:1 green:0.688 blue:0 alpha:1];
+        
+        
+        [shapeParentNode addChild:hexagono];
+        [shapeParentNode addChild:line1];
+        [shapeParentNode addChild:line2];
+        [shapeParentNode addChild:line3];
+        i++;
+        
+//
 //        
 //        //Labels
 //        SKLabelNode *myLabel = [SKLabelNode labelNodeWithFontNamed:@"Optima"];
