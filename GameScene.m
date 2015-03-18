@@ -74,7 +74,7 @@
         // Crear uno a uno el hexágono
         SKNode *shapeParentNode = [self childNodeWithName:[NSString stringWithFormat:@"Node%d", i]];
         SKShapeNode *hexagono = [SKShapeNode node];
-        hexagono.name = sabor.name;
+        
         
         
         
@@ -90,8 +90,7 @@
         hexagono.path = polygonPath.CGPath;
         hexagono.lineWidth = 1;
         hexagono.strokeColor = colores [i];
-        //hexagono.strokeColor = clores[i];
-        //[UIColor colorWithRed:1 green:0.688 blue:0 alpha:1];
+
         
         
         SKShapeNode *line1 = [SKShapeNode node];
@@ -105,7 +104,6 @@
         UIBezierPath* bezier2Path = UIBezierPath.bezierPath;
         [bezier2Path moveToPoint: CGPointMake( 51.5, 21.5)];
         [bezier2Path addCurveToPoint: CGPointMake( 51.5,  2.5) controlPoint1: CGPointMake( 51.5, 2.5) controlPoint2: CGPointMake( 51.5,  2.5)];
-        line2.strokeColor = [SKColor colorWithRed:1 green:0.688 blue:0 alpha:1];
         
         SKShapeNode *line3 = [SKShapeNode node];
         UIBezierPath* bezier3Path = UIBezierPath.bezierPath;
@@ -114,15 +112,15 @@
         
         line1.path = bezierPath.CGPath;
         line1.lineWidth = 1;
-        line1.strokeColor = [SKColor colorWithRed:1 green:0.688 blue:0 alpha:1];
+        line1.strokeColor = colores [i];
         
         line2.path = bezier2Path.CGPath;
         line2.lineWidth = 1;
-        line2.strokeColor = [SKColor colorWithRed:1 green:0.688 blue:0 alpha:1];
+        line2.strokeColor = colores [i];
         
         line3.path = bezier3Path.CGPath;
         line3.lineWidth = 1;
-        line3.strokeColor = [SKColor colorWithRed:1 green:0.688 blue:0 alpha:1];
+        line3.strokeColor = colores [i];
         
         
         [shapeParentNode addChild:hexagono];
@@ -130,90 +128,60 @@
         [shapeParentNode addChild:line2];
         [shapeParentNode addChild:line3];
         i++;
+        //Labels hexagon
+        SKLabelNode *myLabel = [SKLabelNode labelNodeWithFontNamed:@"Optima"];
+        myLabel.alpha = 1.0;
+        myLabel.text = sabor.name;
+        myLabel.fontSize = 19;
+        myLabel.fontColor = [SKColor colorWithRed:1 green:0.688 blue:0 alpha:1];
+        myLabel.position = CGPointMake (hexagono.position.x +45 , hexagono.position.y +45);
+        myLabel.zPosition = 10;
         
-//
-//        
-//        //Labels
-//        SKLabelNode *myLabel = [SKLabelNode labelNodeWithFontNamed:@"Optima"];
-//        myLabel.alpha = 1.0;
-//        myLabel.text = sabor.name;// Iteramos por el array y llenamos los datos
-//        myLabel.name = @"TerrosoLabel";
-//        myLabel.fontSize = 19;
-//        myLabel.fontColor = [SKColor colorWithRed:1 green:0.688 blue:0 alpha:1];
-//        myLabel.position = CGPointMake (hexagono.position.x +45 , hexagono.position.y +45);
-//        myLabel.zPosition = 10;
-//        
-//        [shapeParentNode addChild:myLabel];
+        [shapeParentNode addChild:myLabel];
         
         
         for (Ingrediente *ingrediente in sabor.ingredientes) {
             NSLog(@"--------------ingrediente name: %@", ingrediente.name);
-//            // Métodos para las labels del hexágono
-//            //Ingredientes labels
-//            SKLabelNode *patataLabel = [SKLabelNode labelNodeWithFontNamed:@"Optima"];
-//            patataLabel.alpha = 1.0;
-//            patataLabel.text = @"Patata";
-//            patataLabel.name = @"PatataLabel";
-//            patataLabel.fontSize = 15;
-//            patataLabel.fontColor = [SKColor colorWithRed:1 green:0.688 blue:0 alpha:1];
-//            patataLabel.position = CGPointMake (hexagono.position.x +10 , hexagono.position.y +5);
-//            patataLabel.zPosition = 10;
-//            
-//            [shapeParentNode addChild:patataLabel];
-//            
-//            //    //Ingredientes labels
-//            SKLabelNode *setaLabel = [SKLabelNode labelNodeWithFontNamed:@"Optima"];
-//            setaLabel.alpha = 1.0;
-//            setaLabel.text = @"Seta";
-//            setaLabel.name = @"SetaLabel";
-//            setaLabel.fontSize = 15;
-//            setaLabel.fontColor = [SKColor colorWithRed:1 green:0.688 blue:0 alpha:1];
-//            setaLabel.position = CGPointMake (hexagono.position.x +50 , hexagono.position.y -8);
-//            setaLabel.zPosition = 10;
-//            
-//            [shapeParentNode addChild:setaLabel];
-//            
-//            //    //Ingredientes labels
-//            SKLabelNode *trufaLabel = [SKLabelNode labelNodeWithFontNamed:@"Optima"];
-//            trufaLabel.alpha = 1.0;
-//            trufaLabel.text = @"Trufa";
-//            trufaLabel.name = @"trufaLabel";
-//            trufaLabel.fontSize = 15;
-//            trufaLabel.fontColor = [SKColor colorWithRed:1 green:0.688 blue:0 alpha:1];
-//            trufaLabel.position = CGPointMake (hexagono.position.x +90 , hexagono.position.y +5);
-//            trufaLabel.zPosition = 10;
-//            
-//            [shapeParentNode addChild:trufaLabel];
-//        }
-//        i++;
-//        
+
+            //Ingredientes labels
+            SKLabelNode *patataLabel = [SKLabelNode labelNodeWithFontNamed:@"Optima"];
+            patataLabel.alpha = 1.0;
+            patataLabel.text = @"Patata";
+            patataLabel.fontSize = 15;
+            patataLabel.fontColor = [SKColor colorWithRed:1 green:0.688 blue:0 alpha:1];
+            patataLabel.position = CGPointMake (hexagono.position.x +10 , hexagono.position.y +5);
+            patataLabel.zPosition = 10;
+            
+            [shapeParentNode addChild:patataLabel];
+            
+              //Ingredientes labels
+            SKLabelNode *setaLabel = [SKLabelNode labelNodeWithFontNamed:@"Optima"];
+            setaLabel.alpha = 1.0;
+            setaLabel.text = @"Seta";
+            setaLabel.fontSize = 15;
+            setaLabel.fontColor = [SKColor colorWithRed:1 green:0.688 blue:0 alpha:1];
+            setaLabel.position = CGPointMake (hexagono.position.x +50 , hexagono.position.y -8);
+            setaLabel.zPosition = 10;
+            
+            [shapeParentNode addChild:setaLabel];
+            
+               //Ingredientes labels
+            SKLabelNode *trufaLabel = [SKLabelNode labelNodeWithFontNamed:@"Optima"];
+            trufaLabel.alpha = 1.0;
+            trufaLabel.text = @"Trufa";
+            trufaLabel.fontSize = 15;
+            trufaLabel.fontColor = [SKColor colorWithRed:1 green:0.688 blue:0 alpha:1];
+            trufaLabel.position = CGPointMake (hexagono.position.x +90 , hexagono.position.y +5);
+            trufaLabel.zPosition = 10;
+            
+            [shapeParentNode addChild:trufaLabel];
+        }
+        
+        
     }
     
-    
-
-    
-    
-    //Polígono
-//    UIBezierPath* polygonPath = UIBezierPath.bezierPath;
-//    [polygonPath moveToPoint: CGPointMake( 45.94, 2.25)];
-//    [polygonPath addLineToPoint: CGPointMake(87.78, 23.09)];
-//    [polygonPath addLineToPoint: CGPointMake(87.78, 64.78)];
-//    [polygonPath addLineToPoint: CGPointMake(45.94, 85.62)];
-//    [polygonPath addLineToPoint: CGPointMake(4.1, 64.78)];
-//    [polygonPath addLineToPoint: CGPointMake(4.1, 23.09)];
-//    [polygonPath closePath];
-//    
-//    
-//    hexagono.path = polygonPath.CGPath;
-//    hexagono.lineWidth = 1;
-//    hexagono.strokeColor = [SKColor colorWithRed:1 green:0.688 blue:0 alpha:1];
-    
-    
-
-    
-    
-        }
 }
+
 
 
 
