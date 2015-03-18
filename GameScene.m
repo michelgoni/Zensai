@@ -42,9 +42,11 @@
     //Fetch
     NSFetchRequest *flavoursRequest = [NSFetchRequest fetchRequestWithEntityName:@"Sabor"];
     NSError *error;
+    flavoursRequest.sortDescriptors = @[[NSSortDescriptor sortDescriptorWithKey:@"name" ascending:YES]];
     self.flavours = [self.context executeFetchRequest:flavoursRequest error:&error];
     
     NSFetchRequest *ingredientsRequest = [NSFetchRequest fetchRequestWithEntityName:@"Ingrediente"];
+    ingredientsRequest.sortDescriptors = @[[NSSortDescriptor sortDescriptorWithKey:@"name" ascending:YES]];
     self.ingredients = [self.context executeFetchRequest:ingredientsRequest error:&error];
 }
 
@@ -113,14 +115,17 @@
         line1.path = bezierPath.CGPath;
         line1.lineWidth = 1;
         line1.strokeColor = colores [i];
+        line1.hidden = YES;
         
         line2.path = bezier2Path.CGPath;
         line2.lineWidth = 1;
         line2.strokeColor = colores [i];
+        line2.hidden = YES;
         
         line3.path = bezier3Path.CGPath;
         line3.lineWidth = 1;
         line3.strokeColor = colores [i];
+        line3.hidden = YES;
         
         
         [shapeParentNode addChild:hexagono];
@@ -137,54 +142,37 @@
         myLabel.position = CGPointMake (hexagono.position.x +45 , hexagono.position.y +45);
         myLabel.zPosition = 10;
         
+        
         [shapeParentNode addChild:myLabel];
-        
-        
+        int j = 0;
         for (Ingrediente *ingrediente in sabor.ingredientes) {
             NSLog(@"--------------ingrediente name: %@", ingrediente.name);
 
             //Ingredientes labels
-            SKLabelNode *patataLabel = [SKLabelNode labelNodeWithFontNamed:@"Optima"];
-            patataLabel.alpha = 1.0;
-            patataLabel.text = @"Patata";
-            patataLabel.fontSize = 15;
-            patataLabel.fontColor = [SKColor colorWithRed:1 green:0.688 blue:0 alpha:1];
-            patataLabel.position = CGPointMake (hexagono.position.x +10 , hexagono.position.y +5);
-            patataLabel.zPosition = 10;
+            SKLabelNode *labelIngrediente = [SKLabelNode labelNodeWithFontNamed:@"Optima"];
+            labelIngrediente.alpha = 1.0;
+            labelIngrediente.text = ingrediente.name;
+            labelIngrediente.fontSize = 14;
+            labelIngrediente.fontColor = [SKColor colorWithRed:1 green:0.688 blue:0 alpha:1];
+            labelIngrediente.hidden = YES;
+           
+            CGFloat y = 0;
+            if (j == 1) {
+                y = -18;
+            }
+            labelIngrediente.position = CGPointMake ((j*37) + hexagono.position.x +10 , y + hexagono.position.y +5);
+            labelIngrediente.zPosition = 10;
             
-            [shapeParentNode addChild:patataLabel];
+            [shapeParentNode addChild:labelIngrediente];
             
-              //Ingredientes labels
-            SKLabelNode *setaLabel = [SKLabelNode labelNodeWithFontNamed:@"Optima"];
-            setaLabel.alpha = 1.0;
-            setaLabel.text = @"Seta";
-            setaLabel.fontSize = 15;
-            setaLabel.fontColor = [SKColor colorWithRed:1 green:0.688 blue:0 alpha:1];
-            setaLabel.position = CGPointMake (hexagono.position.x +50 , hexagono.position.y -8);
-            setaLabel.zPosition = 10;
-            
-            [shapeParentNode addChild:setaLabel];
-            
-               //Ingredientes labels
-            SKLabelNode *trufaLabel = [SKLabelNode labelNodeWithFontNamed:@"Optima"];
-            trufaLabel.alpha = 1.0;
-            trufaLabel.text = @"Trufa";
-            trufaLabel.fontSize = 15;
-            trufaLabel.fontColor = [SKColor colorWithRed:1 green:0.688 blue:0 alpha:1];
-            trufaLabel.position = CGPointMake (hexagono.position.x +90 , hexagono.position.y +5);
-            trufaLabel.zPosition = 10;
-            
-            [shapeParentNode addChild:trufaLabel];
+            j++;
+
         }
         
         
     }
     
 }
-
-
-
-
 
 #pragma  mark-Animaciones
 
@@ -225,10 +213,7 @@
             
             NSLog(@"Nodo 1 tocado");
             
-            // OJO PORQUE SI EL NODO ES TRANSPARENTE (NO HAY CONTENIDO) NO DETECTA LAS ZONAS DONDE NO HAY NADA!
-            // EN EL DISPOSITIVO NO SE NOTA TANTO PORQUE EL DEDO ES GORDO Y CUANDO PULSAS EL HEXAGONO
-            // PISAS TODO, PERO EN EL SIMULADOR CON EL MOUSE ES FÁCIL QUE NO TE DETECTE NADA
-            // PRUEBA Y AJUSTA, PERO ESTO FUNCIONA OK...
+
         }
         
         
