@@ -10,6 +10,8 @@
 
 @interface GameScene : SKScene
 
--(instancetype) initWithFlavours: (NSArray *) flavours andIngredients: (NSArray *) ingredients;
+@property (copy, nonatomic) NSArray *flavours;
+@property (copy, nonatomic) NSArray *ingredients;
+
 
 @end

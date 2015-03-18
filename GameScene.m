@@ -10,14 +10,13 @@
 #import <UIKit/UIKit.h>
 #import "AppDataStack.h"
 #import "Matching.h"
+#import "AppDataStack.h"
+#import "Sabor.h"
+#import "Ingrediente.h"
 
 @interface GameScene()
 
-
 @property (strong, nonatomic) NSManagedObjectContext *context;
-@property (strong, nonatomic) NSFetchedResultsController *fetchedResultsController;
-@property (strong, nonatomic) NSArray *flavours;
-@property (strong, nonatomic) NSArray *ingredients;
 
 
 @end
@@ -26,46 +25,158 @@
 
 -(void)didMoveToView:(SKView *)view {
     
-  
-    [self createNode1];
     [self loadSabores];
+    [self createNode1];
 
     //[self moveHexagon];
     
 
 }
 
+
 -(void) loadSabores
 {
     //Fetch
-    NSFetchRequest *fetchrequest = [NSFetchRequest fetchRequestWithEntityName:@"Sabor"];
+    NSFetchRequest *flavoursRequest = [NSFetchRequest fetchRequestWithEntityName:@"Sabor"];
     NSError *error;
-    self.flavours = [self.context executeFetchRequest:fetchrequest error:&error];
+    self.flavours = [self.context executeFetchRequest:flavoursRequest error:&error];
     
-    
+    NSFetchRequest *ingredientsRequest = [NSFetchRequest fetchRequestWithEntityName:@"Ingrediente"];
+    self.ingredients = [self.context executeFetchRequest:ingredientsRequest error:&error];
 }
 
--(instancetype) initWithFlavours: (NSArray *) flavours andIngredients: (NSArray *) ingredients{
-    
-    self = [super init];
-    if (self) {
-        
-        _flavours = flavours;
-        _ingredients = ingredients;
-        
-    }
-    return  self;
-    
-}
+
 
 
 
 #pragma mark -Node1
 -(void) createNode1 {
     
-    SKNode *shapeParentNode = [self childNodeWithName:@"Node1"];
-    SKShapeNode *hexagono = [SKShapeNode node];
-    hexagono.name = @"terroso";
+//    CGFloat height = 95.75f;
+//    CGFloat width = 95.75f;
+//    CGFloat corner = 23.94f;
+//    
+//    int i = 1;
+    for (Sabor *sabor in self.flavours) {
+        NSLog(@"-----------Flavour name: %@", sabor.name);
+        
+        
+//        // Crear uno a uno el hexágono
+//        SKNode *shapeParentNode = [self childNodeWithName:[NSString stringWithFormat:@"Node%d", i]];
+//        SKShapeNode *hexagono = [SKShapeNode node];
+//        hexagono.name = sabor.name;
+//        CGPoint positionNode = shapeParentNode.position;
+//        
+//        UIBezierPath* polygonPath = UIBezierPath.bezierPath;
+//        [polygonPath moveToPoint: CGPointMake(positionNode.x + 0, positionNode.y + (height / 2))]; // punto 1
+//        [polygonPath addLineToPoint: CGPointMake(positionNode.x + (width / 2), positionNode.y + ((height / 2) - corner))]; // punto 2
+//        [polygonPath addLineToPoint: CGPointMake(93.09, 45.44)]; // punto 3
+//        [polygonPath addLineToPoint: CGPointMake(51.62, 21.5)]; // punto 4
+//        [polygonPath addLineToPoint: CGPointMake(10.16, 45.44)]; // punto 5
+//        [polygonPath addLineToPoint: CGPointMake(10.16, 93.31)]; // punto 6
+//        [polygonPath closePath];
+//        
+//        hexagono.path = polygonPath.CGPath;
+//        hexagono.lineWidth = 1;
+//        hexagono.strokeColor = [SKColor colorWithRed:1 green:0.688 blue:0 alpha:1];
+//        
+//        
+//        SKShapeNode *line1 = [SKShapeNode node];
+//        UIBezierPath* bezierPath = UIBezierPath.bezierPath;
+//        [bezierPath moveToPoint: CGPointMake(i + 10.5, i + 20.5)];
+//        [bezierPath addLineToPoint: CGPointMake(i + 10.5, i + 45.5)];
+//        [bezierPath addLineToPoint: CGPointMake(i + 10.5, i + 45.5)];
+//        [bezierPath addLineToPoint: CGPointMake(i + 10.5, i + 45.5)];
+//        
+//        SKShapeNode *line2 = [SKShapeNode node];
+//        UIBezierPath* bezier2Path = UIBezierPath.bezierPath;
+//        [bezier2Path moveToPoint: CGPointMake(i + 51.5, i + 21.5)];
+//        [bezier2Path addCurveToPoint: CGPointMake(i + 51.5, i + 2.5) controlPoint1: CGPointMake(i + 51.5, i + 2.5) controlPoint2: CGPointMake(i + 51.5, i + 2.5)];
+//        line2.strokeColor = [SKColor colorWithRed:1 green:0.688 blue:0 alpha:1];
+//        
+//        SKShapeNode *line3 = [SKShapeNode node];
+//        UIBezierPath* bezier3Path = UIBezierPath.bezierPath;
+//        [bezier3Path moveToPoint: CGPointMake(i + 93.5, i + 45.5)];
+//        [bezier3Path addCurveToPoint: CGPointMake(i + 93.5, i + 20.5) controlPoint1: CGPointMake(i + 93.5, i + 20.5) controlPoint2: CGPointMake(i + 93.5, i + 20.5)];
+//        
+//        line1.path = bezierPath.CGPath;
+//        line1.lineWidth = 1;
+//        line1.strokeColor = [SKColor colorWithRed:1 green:0.688 blue:0 alpha:1];
+//        
+//        line2.path = bezier2Path.CGPath;
+//        line2.lineWidth = 1;
+//        line2.strokeColor = [SKColor colorWithRed:1 green:0.688 blue:0 alpha:1];
+//        
+//        line3.path = bezier3Path.CGPath;
+//        line3.lineWidth = 1;
+//        line3.strokeColor = [SKColor colorWithRed:1 green:0.688 blue:0 alpha:1];
+//        
+//        
+//        [shapeParentNode addChild:hexagono];
+//        [shapeParentNode addChild:line1];
+//        [shapeParentNode addChild:line2];
+//        [shapeParentNode addChild:line3];
+//        
+//        
+//        
+//        //Labels
+//        SKLabelNode *myLabel = [SKLabelNode labelNodeWithFontNamed:@"Optima"];
+//        myLabel.alpha = 1.0;
+//        myLabel.text = sabor.name;// Iteramos por el array y llenamos los datos
+//        myLabel.name = @"TerrosoLabel";
+//        myLabel.fontSize = 19;
+//        myLabel.fontColor = [SKColor colorWithRed:1 green:0.688 blue:0 alpha:1];
+//        myLabel.position = CGPointMake (hexagono.position.x +45 , hexagono.position.y +45);
+//        myLabel.zPosition = 10;
+//        
+//        [shapeParentNode addChild:myLabel];
+        
+        
+        for (Ingrediente *ingrediente in sabor.ingredientes) {
+            NSLog(@"--------------ingrediente name: %@", ingrediente.name);
+//            // Métodos para las labels del hexágono
+//            //Ingredientes labels
+//            SKLabelNode *patataLabel = [SKLabelNode labelNodeWithFontNamed:@"Optima"];
+//            patataLabel.alpha = 1.0;
+//            patataLabel.text = @"Patata";
+//            patataLabel.name = @"PatataLabel";
+//            patataLabel.fontSize = 15;
+//            patataLabel.fontColor = [SKColor colorWithRed:1 green:0.688 blue:0 alpha:1];
+//            patataLabel.position = CGPointMake (hexagono.position.x +10 , hexagono.position.y +5);
+//            patataLabel.zPosition = 10;
+//            
+//            [shapeParentNode addChild:patataLabel];
+//            
+//            //    //Ingredientes labels
+//            SKLabelNode *setaLabel = [SKLabelNode labelNodeWithFontNamed:@"Optima"];
+//            setaLabel.alpha = 1.0;
+//            setaLabel.text = @"Seta";
+//            setaLabel.name = @"SetaLabel";
+//            setaLabel.fontSize = 15;
+//            setaLabel.fontColor = [SKColor colorWithRed:1 green:0.688 blue:0 alpha:1];
+//            setaLabel.position = CGPointMake (hexagono.position.x +50 , hexagono.position.y -8);
+//            setaLabel.zPosition = 10;
+//            
+//            [shapeParentNode addChild:setaLabel];
+//            
+//            //    //Ingredientes labels
+//            SKLabelNode *trufaLabel = [SKLabelNode labelNodeWithFontNamed:@"Optima"];
+//            trufaLabel.alpha = 1.0;
+//            trufaLabel.text = @"Trufa";
+//            trufaLabel.name = @"trufaLabel";
+//            trufaLabel.fontSize = 15;
+//            trufaLabel.fontColor = [SKColor colorWithRed:1 green:0.688 blue:0 alpha:1];
+//            trufaLabel.position = CGPointMake (hexagono.position.x +90 , hexagono.position.y +5);
+//            trufaLabel.zPosition = 10;
+//            
+//            [shapeParentNode addChild:trufaLabel];
+//        }
+//        i++;
+//        
+    }
+    
+    
+
     
     
     //Polígono
@@ -83,107 +194,11 @@
 //    hexagono.lineWidth = 1;
 //    hexagono.strokeColor = [SKColor colorWithRed:1 green:0.688 blue:0 alpha:1];
     
-    UIBezierPath* polygonPath = UIBezierPath.bezierPath;
-    [polygonPath moveToPoint: CGPointMake(51.62, 117.25)];
-    [polygonPath addLineToPoint: CGPointMake(93.09, 93.31)];
-    [polygonPath addLineToPoint: CGPointMake(93.09, 45.44)];
-    [polygonPath addLineToPoint: CGPointMake(51.62, 21.5)];
-    [polygonPath addLineToPoint: CGPointMake(10.16, 45.44)];
-    [polygonPath addLineToPoint: CGPointMake(10.16, 93.31)];
-    [polygonPath closePath];
-    
-    hexagono.path = polygonPath.CGPath;
-    hexagono.lineWidth = 1;
-    hexagono.strokeColor = [SKColor colorWithRed:1 green:0.688 blue:0 alpha:1];
-    
-   
-    SKShapeNode *line1 = [SKShapeNode node];
-    UIBezierPath* bezierPath = UIBezierPath.bezierPath;
-    [bezierPath moveToPoint: CGPointMake(10.5, 20.5)];
-    [bezierPath addLineToPoint: CGPointMake(10.5, 45.5)];
-    [bezierPath addLineToPoint: CGPointMake(10.5, 45.5)];
-    [bezierPath addLineToPoint: CGPointMake(10.5, 45.5)];
-    
-    SKShapeNode *line2 = [SKShapeNode node];
-    UIBezierPath* bezier2Path = UIBezierPath.bezierPath;
-    [bezier2Path moveToPoint: CGPointMake(51.5, 21.5)];
-    [bezier2Path addCurveToPoint: CGPointMake(51.5, 2.5) controlPoint1: CGPointMake(51.5, 2.5) controlPoint2: CGPointMake(51.5, 2.5)];
-    line2.strokeColor = [SKColor colorWithRed:1 green:0.688 blue:0 alpha:1];
-    
-    SKShapeNode *line3 = [SKShapeNode node];
-    UIBezierPath* bezier3Path = UIBezierPath.bezierPath;
-    [bezier3Path moveToPoint: CGPointMake(93.5, 45.5)];
-    [bezier3Path addCurveToPoint: CGPointMake(93.5, 20.5) controlPoint1: CGPointMake(93.5, 20.5) controlPoint2: CGPointMake(93.5, 20.5)];
-    
-    line1.path = bezierPath.CGPath;
-    line1.lineWidth = 1;
-    line1.strokeColor = [SKColor colorWithRed:1 green:0.688 blue:0 alpha:1];
-    
-    line2.path = bezier2Path.CGPath;
-    line2.lineWidth = 1;
-    line2.strokeColor = [SKColor colorWithRed:1 green:0.688 blue:0 alpha:1];
-    
-    line3.path = bezier3Path.CGPath;
-    line3.lineWidth = 1;
-    line3.strokeColor = [SKColor colorWithRed:1 green:0.688 blue:0 alpha:1];
     
 
-    [shapeParentNode addChild:hexagono];
-    [shapeParentNode addChild:line1];
-    [shapeParentNode addChild:line2];
-    [shapeParentNode addChild:line3];
     
     
-    
-    //Labels
-    SKLabelNode *myLabel = [SKLabelNode labelNodeWithFontNamed:@"Optima"];
-    myLabel.alpha = 1.0;
-    myLabel.text = @"Tierra";// Iteramos por el array y llenamos los datos
-    myLabel.name = @"TerrosoLabel";
-    myLabel.fontSize = 19;
-    myLabel.fontColor = [SKColor colorWithRed:1 green:0.688 blue:0 alpha:1];
-    myLabel.position = CGPointMake (hexagono.position.x +45 , hexagono.position.y +45);
-    myLabel.zPosition = 10;
-    
-    [shapeParentNode addChild:myLabel];
-    
-    //Ingredientes labels
-    SKLabelNode *patataLabel = [SKLabelNode labelNodeWithFontNamed:@"Optima"];
-    patataLabel.alpha = 1.0;
-    patataLabel.text = @"Patata";
-    patataLabel.name = @"PatataLabel";
-    patataLabel.fontSize = 15;
-    patataLabel.fontColor = [SKColor colorWithRed:1 green:0.688 blue:0 alpha:1];
-    patataLabel.position = CGPointMake (hexagono.position.x +10 , hexagono.position.y +5);
-    patataLabel.zPosition = 10;
-    
-    [shapeParentNode addChild:patataLabel];
-    
-//    //Ingredientes labels
-    SKLabelNode *setaLabel = [SKLabelNode labelNodeWithFontNamed:@"Optima"];
-    setaLabel.alpha = 1.0;
-    setaLabel.text = @"Seta";
-    setaLabel.name = @"SetaLabel";
-    setaLabel.fontSize = 15;
-    setaLabel.fontColor = [SKColor colorWithRed:1 green:0.688 blue:0 alpha:1];
-    setaLabel.position = CGPointMake (hexagono.position.x +50 , hexagono.position.y -8);
-    setaLabel.zPosition = 10;
-    
-    [shapeParentNode addChild:setaLabel];
-   
-//    //Ingredientes labels
-    SKLabelNode *trufaLabel = [SKLabelNode labelNodeWithFontNamed:@"Optima"];
-    trufaLabel.alpha = 1.0;
-    trufaLabel.text = @"Trufa";
-    trufaLabel.name = @"trufaLabel";
-    trufaLabel.fontSize = 15;
-    trufaLabel.fontColor = [SKColor colorWithRed:1 green:0.688 blue:0 alpha:1];
-    trufaLabel.position = CGPointMake (hexagono.position.x +90 , hexagono.position.y +5);
-    trufaLabel.zPosition = 10;
-    
-    [shapeParentNode addChild:trufaLabel];
-    
-    
+        }
 }
 
 
@@ -245,5 +260,15 @@
 -(void)update:(CFTimeInterval)currentTime {
     /* Called before each frame is rendered */
 }
+
+-(NSManagedObjectContext *)context {
+    if (!_context) {
+        AppDataStack *stack = [[AppDataStack alloc] init];
+        _context = stack.context;
+    }
+    return _context;
+}
+
+
 
 @end

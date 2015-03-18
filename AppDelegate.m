@@ -12,7 +12,7 @@
 
 @interface AppDelegate ()
 
-
+@property (strong, nonatomic) AppDataStack *appDataStack;
 
 @end
 
@@ -21,16 +21,13 @@
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
     // Override point for customization after application launch.
+    
     AppDataStack *dataStack = [[AppDataStack alloc] init];
+    
     
     [dataStack importDataIfNeeded];
     
-
     
-//    NSFetchRequest *ingredients = [NSFetchRequest fetchRequestWithEntityName:@"Ingrediente"];
-//                          
-//    
-//   GameScene *gameScene = [[GameScene alloc] initWithFlavours:flavours andIngredients:ingredients];
     
     return YES;
 }
