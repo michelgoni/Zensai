@@ -19,6 +19,8 @@
 @property (strong, nonatomic) NSManagedObjectContext *context;
 
 
+
+
 @end
 
 @implementation GameScene
@@ -27,6 +29,7 @@
     
     [self loadSabores];
     [self createNode1];
+    
 
     //[self moveHexagon];
     
@@ -51,12 +54,19 @@
 
 #pragma mark -Node1
 -(void) createNode1 {
-    
-//    CGFloat height = 95.75f;
-//    CGFloat width = 95.75f;
-//    CGFloat corner = 23.94f;
-//    
-   int i = 1;
+ 
+    //Arrays de
+    NSArray *colores =      @[[SKColor colorWithRed: 0.891 green: 0.552 blue: 0.138 alpha: 1],
+                              [SKColor colorWithRed: 0.5 green: 0.2 blue: 0.13 alpha: 1],
+                              [SKColor colorWithRed: 0.844 green: 0.157 blue: 0.157 alpha: 1],
+                              [SKColor colorWithRed: 0.844 green: 0.157 blue: 0.157 alpha: 1],
+                              [SKColor colorWithRed: 0.2 green: 0.157 blue: 0.4 alpha: 1],
+                              [SKColor colorWithRed: 0.844 green: 0.157 blue: 0.157 alpha: 1],
+                              [SKColor colorWithRed: 0.5 green: 0.157 blue: 0.157 alpha: 1],
+                              [SKColor colorWithRed: 0.844 green: 0.157 blue: 0.157 alpha: 1],
+                              [SKColor colorWithRed: 0.844 green: 0.157 blue: 0.157 alpha: 1],
+                              [SKColor colorWithRed: 1 green: 0.3 blue: 0.157 alpha: 1]];
+   int i = 0;
     for (Sabor *sabor in self.flavours) {
         NSLog(@"-----------Flavour name: %@", sabor.name);
         
@@ -65,7 +75,8 @@
         SKNode *shapeParentNode = [self childNodeWithName:[NSString stringWithFormat:@"Node%d", i]];
         SKShapeNode *hexagono = [SKShapeNode node];
         hexagono.name = sabor.name;
-//        CGPoint positionNode = shapeParentNode.position;
+        
+        
         
         UIBezierPath* polygonPath = UIBezierPath.bezierPath;
         [polygonPath moveToPoint: CGPointMake(51.62, 117.25)];
@@ -78,7 +89,9 @@
         
         hexagono.path = polygonPath.CGPath;
         hexagono.lineWidth = 1;
-        hexagono.strokeColor = [SKColor colorWithRed:1 green:0.688 blue:0 alpha:1];
+        hexagono.strokeColor = colores [i];
+        //hexagono.strokeColor = clores[i];
+        //[UIColor colorWithRed:1 green:0.688 blue:0 alpha:1];
         
         
         SKShapeNode *line1 = [SKShapeNode node];
