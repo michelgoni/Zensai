@@ -20,29 +20,26 @@
 
 @property (strong, nonatomic) NSManagedObjectContext *context;
 
-
+@property (strong, nonatomic) SKLabelNode *matchingIngredient1;
+@property (strong, nonatomic) SKLabelNode *matchingIngredient2;
 
 
 @end
 
-@implementation GameScene
+@implementation GameScene {
+    
+    int touchNumber;
+}
 
 -(void)didMoveToView:(SKView *)view {
     
     [self loadSabores];
     [self createNode1];
+  [self testMatching];
     //[self moveHexagon];
-    [self testMatching];
+    [self.view setMultipleTouchEnabled:YES];
     
-    
-    
- 
-
-
-    
-
-    
-    
+    touchNumber = 0;
 
 }
 
@@ -52,54 +49,68 @@
     //Fetch sabor
     NSFetchRequest *flavoursRequest = [NSFetchRequest fetchRequestWithEntityName:@"Sabor"];
     NSError *error;
-    flavoursRequest.sortDescriptors = @[[NSSortDescriptor sortDescriptorWithKey:@"name" ascending:YES]];
+   flavoursRequest.sortDescriptors = @[[NSSortDescriptor sortDescriptorWithKey:@"name" ascending:YES]];
     self.flavours = [self.context executeFetchRequest:flavoursRequest error:&error];
     
     //fetch ingredient
     NSFetchRequest *ingredientsRequest = [NSFetchRequest fetchRequestWithEntityName:@"Ingrediente"];
-    ingredientsRequest.sortDescriptors = @[[NSSortDescriptor sortDescriptorWithKey:@"name" ascending:YES]];
+  ingredientsRequest.sortDescriptors = @[[NSSortDescriptor sortDescriptorWithKey:@"name" ascending:YES]];
     self.ingredients = [self.context executeFetchRequest:ingredientsRequest error:&error];
-    
-    
-
-    
-    
-}
-
-
-
-
--(void)testMatching {
-    
-    //Test matching
-    SKNode *buttontest = [self childNodeWithName:@"Buttontest"];
-    SKShapeNode *button = [SKShapeNode node];
-    UIBezierPath* rectanglePath = [UIBezierPath bezierPathWithRect: CGRectMake(56, 35, 58, 29)];
-    button.path = rectanglePath.CGPath;
-    button.lineWidth = 1;
-    button.name = @"testmatching";
-    button.strokeColor = [SKColor redColor];
-    
-    [buttontest addChild:button];
     
     //Fetch matching
     NSFetchRequest *matchingFetch = [NSFetchRequest fetchRequestWithEntityName:@"Matching"];
     self.matching = [self.context executeFetchRequest:matchingFetch error:nil];
     
-    Ingrediente *ingredientOne = [[self.context executeFetchRequest:matchingFetch error:nil] firstObject];
-    Ingrediente *ingredientTwo =[[self.context executeFetchRequest:matchingFetch error:nil] lastObject];
+}
+
+
+//-(void)testMatching {
+//    
+//
+//    //Fetch matching
+//    NSFetchRequest *matchingFetch = [NSFetchRequest fetchRequestWithEntityName:@"Matching"];
+//    self.matching = [self.context executeFetchRequest:matchingFetch error:nil];
+//    
+//    Ingrediente *ingredientOne = [[self.context executeFetchRequest:matchingFetch error:nil] firstObject];
+//    Ingrediente *ingredientTwo =[[self.context executeFetchRequest:matchingFetch error:nil] lastObject];
+//    
+//    [Matching matchingWithIngredient:ingredientOne ingrediente:ingredientTwo inContext:self.context];
+//    
+//    NSLog(@"%@", self.context);
+//}
+
+-(void) testMatching {
     
-    [Matching matchingWithIngredient:ingredientOne ingrediente:ingredientTwo inContext:self.context];
+    
+    self.matchingIngredient1 = [SKLabelNode labelNodeWithFontNamed:@"Optima"];
+    
+    self.matchingIngredient1.text = @"";
+    self.matchingIngredient1.name = @""; //name de la label seleccionada y esto viene en un método que hay
+    self.matchingIngredient1.fontSize = 18;
+    self.matchingIngredient1.position = CGPointMake(CGRectGetMidX(self.frame) ,
+                                   CGRectGetMidY(self.frame) +90);
+    
+    [self addChild:self.matchingIngredient1];
+    
+    
+    self.matchingIngredient2 = [SKLabelNode labelNodeWithFontNamed:@"Optima"];
+    
+    self.matchingIngredient2.text = @"";
+    self.matchingIngredient2.name = @"";
+    self.matchingIngredient2.fontSize = 18;
+    self.matchingIngredient2.position = CGPointMake(self.matchingIngredient1.position.x, self.matchingIngredient1.position.y -140);
+    
+    [self addChild:self.matchingIngredient2];
     
     
 }
-
 
 #pragma mark -Create nodes
 -(void) createNode1 {
     
     
     int i = 0;
+    //Colors array to be refactored
     NSArray *colores =      @[[SKColor colorWithRed:192/255.0f green:57/255.0f blue:43/255.0f alpha:1.0f],
                               [SKColor colorWithRed: 0.5 green: 0.2 blue: 0.13 alpha: 1],
                               [SKColor colorWithRed: 0.844 green: 0.157 blue: 0.157 alpha: 1],
@@ -110,8 +121,8 @@
                               [SKColor colorWithRed: 0.844 green: 0.157 blue: 0.157 alpha: 1],
                               [SKColor colorWithRed: 0.844 green: 0.157 blue: 0.157 alpha: 1],
                               [SKColor colorWithRed: 1 green: 0.3 blue: 0.157 alpha: 1]];
-    
-    
+
+
    
     for (Sabor *sabor in self.flavours) {
         
@@ -121,9 +132,9 @@
         
         // Crear uno a uno el hexágono
         SKNode *shapeParentNode = [self childNodeWithName:[NSString stringWithFormat:@"Node%d", i]];
+        
+       
         SKShapeNode *hexagono = [SKShapeNode node];
-        
-        
         UIBezierPath* polygonPath = UIBezierPath.bezierPath;
         [polygonPath moveToPoint: CGPointMake(51.62, 117.25)];
         [polygonPath addLineToPoint: CGPointMake(93.09, 93.31)];
@@ -133,12 +144,11 @@
         [polygonPath addLineToPoint: CGPointMake(10.16, 93.31)];
         [polygonPath closePath];
         
+        
         hexagono.path = polygonPath.CGPath;
         hexagono.lineWidth = 1;
         hexagono.strokeColor = colores[i];
 
-        
-        
         SKShapeNode *line1 = [SKShapeNode node];
         UIBezierPath* bezierPath = UIBezierPath.bezierPath;
         [bezierPath moveToPoint: CGPointMake( 10.5,  20.5)];
@@ -159,17 +169,17 @@
         line1.path = bezierPath.CGPath;
         line1.lineWidth = 1;
         line1.strokeColor = colores [i];
-        line1.hidden = YES;
+        
         
         line2.path = bezier2Path.CGPath;
         line2.lineWidth = 1;
        line2.strokeColor = colores [i];
-        line2.hidden = YES;
+        
         
         line3.path = bezier3Path.CGPath;
         line3.lineWidth = 1;
        line3.strokeColor = colores [i];
-        line3.hidden = YES;
+        
         
         
         [shapeParentNode addChild:hexagono];
@@ -177,13 +187,14 @@
         [shapeParentNode addChild:line2];
         [shapeParentNode addChild:line3];
         i++;
-        //Labels hexagon
+        
+        //Label sabor
         SKLabelNode *myLabel = [SKLabelNode labelNodeWithFontNamed:@"Optima"];
         myLabel.alpha = 1.0;
         myLabel.text = sabor.name;
-        myLabel.fontSize = 19;
+        myLabel.fontSize = 22;
         myLabel.fontColor = [SKColor colorWithRed:1 green:0.688 blue:0 alpha:1];
-        myLabel.position = CGPointMake (hexagono.position.x +45 , hexagono.position.y +45);
+        myLabel.position = CGPointMake (hexagono.position.x +48 , hexagono.position.y +45);
         myLabel.zPosition = 10;
         
         
@@ -194,11 +205,13 @@
 
             //Ingredientes labels
             SKLabelNode *labelIngrediente = [SKLabelNode labelNodeWithFontNamed:@"Optima"];
-            labelIngrediente.alpha = 1.0;
+            labelIngrediente.alpha = 0.0;
             labelIngrediente.text = ingrediente.name;
-            labelIngrediente.fontSize = 14;
+            labelIngrediente.name = ingrediente.identifier;
+            labelIngrediente.fontSize = 16;
             labelIngrediente.fontColor = [SKColor colorWithRed:1 green:0.688 blue:0 alpha:1];
-            labelIngrediente.hidden = YES;
+            
+            
            
             CGFloat y = 0;
             if (j == 1) {
@@ -210,13 +223,13 @@
             [shapeParentNode addChild:labelIngrediente];
             
             j++;
-
         }
-        
-        
     }
-    
 }
+
+
+#pragma  mark -Matching
+
 
 #pragma  mark-Animaciones
 
@@ -241,31 +254,33 @@
 }
 
 
-
 -(void)touchesBegan:(NSSet *)touches withEvent:(UIEvent *)event {
     
+    if (touchNumber == 0) {
+        //Entramos en el primer toque
+        for (UITouch* touch in touches){
+            CGPoint p = [touch locationInNode:self];
+            SKNode *node = [self.scene nodeAtPoint:p];
+            self.matchingIngredient1.text = node.name;
+            self.matchingIngredient1.name = node.name; //name de la label seleccionada y esto viene en un método que hay
+        }
+        touchNumber++;
+        
+    }else if (touchNumber == 1) {
+
+        //Entramos en el segundo toque
+        for (UITouch* touch in touches){
+            CGPoint p = [touch locationInNode:self];
+            SKNode *node2 = [self.scene nodeAtPoint:p];
+            self.matchingIngredient2.text = node2.name;
+            self.matchingIngredient2.name = node2.name;
+        
+        touchNumber = 0;
+        }
     
-    
-    for (UITouch* touch in touches){
-        
-        CGPoint p = [touch locationInNode:self];
-        SKNode *node = [self.scene nodeAtPoint:p];
-        NSLog(@"touched on a node called %@",node.name);
-        
-//        if ([node.name isEqualToString:@"Node1"]){
-//            
-//            NSLog(@"Nodo 1 tocado");
-//            
-//
-//        }
-        
-        
     }
-    
-    
-    
-    
 }
+
 
 -(void)update:(CFTimeInterval)currentTime {
     /* Called before each frame is rendered */
