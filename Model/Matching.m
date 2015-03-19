@@ -9,6 +9,7 @@
 @implementation Matching
 
 // Custom logic goes here.
+
 +(Matching *)matchingWithIngredient:(Ingrediente *)ingrediente1 ingrediente:(Ingrediente *)ingrediente2 inContext:(NSManagedObjectContext *)context {
     NSFetchRequest *fetchRequest = [NSFetchRequest fetchRequestWithEntityName:[Matching entityName]];
     // Specify criteria for filtering which objects to fetch

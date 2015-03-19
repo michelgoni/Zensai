@@ -30,9 +30,9 @@
     
     [self loadSabores];
     [self createNode1];
+    //[self moveHexagon];
+    [self testMatching];
     
-
-    [self moveHexagon];
     
 
 }
@@ -40,22 +40,48 @@
 
 -(void) loadSabores
 {
-    //Fetch
+    //Fetch sabor
     NSFetchRequest *flavoursRequest = [NSFetchRequest fetchRequestWithEntityName:@"Sabor"];
     NSError *error;
     flavoursRequest.sortDescriptors = @[[NSSortDescriptor sortDescriptorWithKey:@"name" ascending:YES]];
     self.flavours = [self.context executeFetchRequest:flavoursRequest error:&error];
     
+    //fetch ingredient
     NSFetchRequest *ingredientsRequest = [NSFetchRequest fetchRequestWithEntityName:@"Ingrediente"];
     ingredientsRequest.sortDescriptors = @[[NSSortDescriptor sortDescriptorWithKey:@"name" ascending:YES]];
     self.ingredients = [self.context executeFetchRequest:ingredientsRequest error:&error];
+    
+    
+    //Fetch matching
+    NSFetchRequest *matchingFetch = [NSFetchRequest fetchRequestWithEntityName:@"Matching"];
+    self.matching = [self.context executeFetchRequest:matchingFetch error:&error];
+    
+    
 }
 
 
 
 
+-(void)testMatching {
+    
+    //Test matching
+    SKNode *buttontest = [self childNodeWithName:@"Buttontest"];
+    SKShapeNode *button = [SKShapeNode node];
+    UIBezierPath* rectanglePath = [UIBezierPath bezierPathWithRect: CGRectMake(56, 35, 58, 29)];
+    button.path = rectanglePath.CGPath;
+    button.lineWidth = 1;
+    button.name = @"testmatching";
+    button.strokeColor = [SKColor redColor];
+    
+    [buttontest addChild:button];
+    
+    
+    //[Matching matchingWithIngredient:<#(Ingrediente *)#> ingrediente:<#(Ingrediente *)#> inContext:_context]
+    
+}
 
-#pragma mark -Node1
+
+#pragma mark -Create nodes
 -(void) createNode1 {
     
     
@@ -187,6 +213,8 @@
     for (int i = 0; i< 9; i++) {
         SKNode *shapeParentNode = [self childNodeWithName:[NSString stringWithFormat:@"Node%d", i]];
         SKAction *move = [SKAction moveBy:CGVectorMake(arc4random()%10, arc4random()%15) duration:3];
+//        SKAction *scaleY = [SKAction scaleYTo:(arc4random()%7) duration:4];
+//        SKAction *scaleX = [SKAction scaleYTo:(arc4random()%7) duration:4];
         SKAction *reseversedMove = [move reversedAction];
         SKAction *moveSeq = [SKAction sequence:@[ move, reseversedMove]];
         SKAction* groupAction = [SKAction group:@[moveSeq]];
@@ -207,20 +235,15 @@
     for (UITouch* touch in touches){
         
         CGPoint p = [touch locationInNode:self];
-        
-        
         SKNode *node = [self.scene nodeAtPoint:p];
+        NSLog(@"touched on a node called %@",node.name);
         
-        
-       // NSLog(@"touched on something called %@",node.name);
-        
-        
-        if ([node.name isEqualToString:@"Node1"]){
-            
-            NSLog(@"Nodo 1 tocado");
-            
-
-        }
+//        if ([node.name isEqualToString:@"Node1"]){
+//            
+//            NSLog(@"Nodo 1 tocado");
+//            
+//
+//        }
         
         
     }

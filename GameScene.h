@@ -12,6 +12,7 @@
 
 @property (copy, nonatomic) NSArray *flavours;
 @property (copy, nonatomic) NSArray *ingredients;
+@property (copy, nonatomic) NSArray *matching;
 
 
 @end
