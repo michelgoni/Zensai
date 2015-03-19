@@ -4,4 +4,5 @@
 
 + (Matching *)matchingWithIngredient:(Ingrediente *)ingrediente1 ingrediente:(Ingrediente *)ingrediente2 inContext:(NSManagedObjectContext *)context;
 
+
 @end
