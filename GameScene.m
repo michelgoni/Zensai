@@ -205,7 +205,7 @@
 
             //Ingredientes labels
             SKLabelNode *labelIngrediente = [SKLabelNode labelNodeWithFontNamed:@"Optima"];
-            labelIngrediente.alpha = 0.0;
+            labelIngrediente.alpha = 1.0;
             labelIngrediente.text = ingrediente.name;
             labelIngrediente.name = ingrediente.identifier;
             labelIngrediente.fontSize = 16;
