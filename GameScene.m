@@ -54,7 +54,7 @@
     
     //fetch ingredient
     NSFetchRequest *ingredientsRequest = [NSFetchRequest fetchRequestWithEntityName:@"Ingrediente"];
-  ingredientsRequest.sortDescriptors = @[[NSSortDescriptor sortDescriptorWithKey:@"name" ascending:YES]];
+   ingredientsRequest.sortDescriptors = @[[NSSortDescriptor sortDescriptorWithKey:@"name" ascending:YES]];
     self.ingredients = [self.context executeFetchRequest:ingredientsRequest error:&error];
     
     //Fetch matching
@@ -63,29 +63,13 @@
     
 }
 
-
-//-(void)testMatching {
-//    
-//
-//    //Fetch matching
-//    NSFetchRequest *matchingFetch = [NSFetchRequest fetchRequestWithEntityName:@"Matching"];
-//    self.matching = [self.context executeFetchRequest:matchingFetch error:nil];
-//    
-//    Ingrediente *ingredientOne = [[self.context executeFetchRequest:matchingFetch error:nil] firstObject];
-//    Ingrediente *ingredientTwo =[[self.context executeFetchRequest:matchingFetch error:nil] lastObject];
-//    
-//    [Matching matchingWithIngredient:ingredientOne ingrediente:ingredientTwo inContext:self.context];
-//    
-//    NSLog(@"%@", self.context);
-//}
-
 -(void) testMatching {
     
     
     self.matchingIngredient1 = [SKLabelNode labelNodeWithFontNamed:@"Optima"];
     
     self.matchingIngredient1.text = @"";
-    self.matchingIngredient1.name = @""; //name de la label seleccionada y esto viene en un método que hay
+    self.matchingIngredient1.name = @"";
     self.matchingIngredient1.fontSize = 18;
     self.matchingIngredient1.position = CGPointMake(CGRectGetMidX(self.frame) ,
                                    CGRectGetMidY(self.frame) +90);
@@ -173,14 +157,12 @@
         
         line2.path = bezier2Path.CGPath;
         line2.lineWidth = 1;
-       line2.strokeColor = colores [i];
+        line2.strokeColor = colores [i];
         
         
         line3.path = bezier3Path.CGPath;
         line3.lineWidth = 1;
-       line3.strokeColor = colores [i];
-        
-        
+        line3.strokeColor = colores [i];
         
         [shapeParentNode addChild:hexagono];
         [shapeParentNode addChild:line1];
@@ -202,7 +184,6 @@
         int j = 0;
         for (Ingrediente *ingrediente in sabor.ingredientes) {
             NSLog(@"--------------ingrediente name: %@", ingrediente.name);
-
             //Ingredientes labels
             SKLabelNode *labelIngrediente = [SKLabelNode labelNodeWithFontNamed:@"Optima"];
             labelIngrediente.alpha = 1.0;
@@ -210,8 +191,6 @@
             labelIngrediente.name = ingrediente.identifier;
             labelIngrediente.fontSize = 16;
             labelIngrediente.fontColor = [SKColor colorWithRed:1 green:0.688 blue:0 alpha:1];
-            
-            
            
             CGFloat y = 0;
             if (j == 1) {
@@ -275,11 +254,41 @@
             self.matchingIngredient2.text = node2.name;
             self.matchingIngredient2.name = node2.name;
         
-        touchNumber = 0;
+            touchNumber = 0;
+            
+
+            //Pasamos al método matchingWithIngrediente:ingrediente:
+            NSFetchRequest *fetchRequest1 = [NSFetchRequest fetchRequestWithEntityName:[Ingrediente entityName]];
+            fetchRequest1.predicate = [NSPredicate predicateWithFormat:@"%K = %@", @"identifier", self.matchingIngredient1.name];
+            
+             Ingrediente *ingrediente1 =  [[self.context executeFetchRequest:fetchRequest1 error:nil] firstObject];
+            
+            //Pasamos al método matchingWithIngrediente:ingrediente:
+            NSFetchRequest *fetchRequest2 = [NSFetchRequest fetchRequestWithEntityName:[Ingrediente entityName]];
+            fetchRequest1.predicate = [NSPredicate predicateWithFormat:@"%K = %@", @"identifier", self.matchingIngredient2.name];
+            
+            Ingrediente *ingrediente2 =  [[self.context executeFetchRequest:fetchRequest2 error:nil] firstObject];
+            
+            [Matching matchingWithIngredient:ingrediente1 ingrediente:ingrediente2 inContext:self.context];
+           
         }
     
     }
 }
+
+//-(NSArray *) askCoreData {
+//
+//    NSFetchRequest *ingredientsRequest =  [NSFetchRequest fetchRequestWithEntityName:[Ingrediente entityName]];
+//    //ingredientsRequest.sortDescriptors = @[[NSSortDescriptor sortDescriptorWithKey:@"identifier" ascending:YES]];
+//    NSError *error;
+//    NSArray *ingredentsFeched = [self.context executeFetchRequest:ingredientsRequest error:&error];
+//    
+//    //Asignamos predicado a este array
+//    NSPredicate *predicate = [NSPredicate predicateWithFormat:@"%@ matches [cd] %@", self.matchingIngredient1.name, self.matchingIngredient2.name];
+//    NSArray *predicateIngredients = [ingredentsFeched filteredArrayUsingPredicate:predicate];
+//    return predicateIngredients;
+//    
+//}
 
 
 -(void)update:(CFTimeInterval)currentTime {
