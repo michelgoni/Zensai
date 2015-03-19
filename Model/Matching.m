@@ -13,7 +13,7 @@
 +(Matching *)matchingWithIngredient:(Ingrediente *)ingrediente1 ingrediente:(Ingrediente *)ingrediente2 inContext:(NSManagedObjectContext *)context {
     NSFetchRequest *fetchRequest = [NSFetchRequest fetchRequestWithEntityName:[Matching entityName]];
     // Specify criteria for filtering which objects to fetch
-    NSPredicate *predicate = [NSPredicate predicateWithFormat:@"ingredients contains $@ and ingredients contains %@", ingrediente1, ingrediente2];
+    NSPredicate *predicate = [NSPredicate predicateWithFormat:@"%@ in ingredients AND %@ in ingredients", ingrediente1, ingrediente2];
     [fetchRequest setPredicate:predicate];
     
     NSError *error = nil;

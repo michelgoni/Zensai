@@ -13,6 +13,7 @@
 #import "AppDataStack.h"
 #import "Sabor.h"
 #import "Ingrediente.h"
+#import <CoreData/CoreData.h>
 
 
 @interface GameScene()
@@ -34,6 +35,14 @@
     [self testMatching];
     
     
+    
+ 
+
+
+    
+
+    
+    
 
 }
 
@@ -52,9 +61,7 @@
     self.ingredients = [self.context executeFetchRequest:ingredientsRequest error:&error];
     
     
-    //Fetch matching
-    NSFetchRequest *matchingFetch = [NSFetchRequest fetchRequestWithEntityName:@"Matching"];
-    self.matching = [self.context executeFetchRequest:matchingFetch error:&error];
+
     
     
 }
@@ -75,8 +82,15 @@
     
     [buttontest addChild:button];
     
+    //Fetch matching
+    NSFetchRequest *matchingFetch = [NSFetchRequest fetchRequestWithEntityName:@"Matching"];
+    self.matching = [self.context executeFetchRequest:matchingFetch error:nil];
     
-    //[Matching matchingWithIngredient:<#(Ingrediente *)#> ingrediente:<#(Ingrediente *)#> inContext:_context]
+    Ingrediente *ingredientOne = [[self.context executeFetchRequest:matchingFetch error:nil] firstObject];
+    Ingrediente *ingredientTwo =[[self.context executeFetchRequest:matchingFetch error:nil] lastObject];
+    
+    [Matching matchingWithIngredient:ingredientOne ingrediente:ingredientTwo inContext:self.context];
+    
     
 }
 
