@@ -59,9 +59,9 @@ const struct IngredienteRelationships IngredienteRelationships = {
 
 @dynamic sabor;
 
-+ (NSArray*)fetchIngredienteById:(NSManagedObjectContext*)moc_ {
++ (NSArray*)fetchIngredienteById:(NSManagedObjectContext*)moc_ id:(NSString*)id_ {
 	NSError *error = nil;
-	NSArray *result = [self fetchIngredienteById:moc_ error:&error];
+	NSArray *result = [self fetchIngredienteById:moc_ id:id_ error:&error];
 	if (error) {
 #ifdef NSAppKitVersionNumber10_0
 		[NSApp presentError:error];
@@ -71,13 +71,17 @@ const struct IngredienteRelationships IngredienteRelationships = {
 	}
 	return result;
 }
-+ (NSArray*)fetchIngredienteById:(NSManagedObjectContext*)moc_ error:(NSError**)error_ {
++ (NSArray*)fetchIngredienteById:(NSManagedObjectContext*)moc_ id:(NSString*)id_ error:(NSError**)error_ {
 	NSParameterAssert(moc_);
 	NSError *error = nil;
 
 	NSManagedObjectModel *model = [[moc_ persistentStoreCoordinator] managedObjectModel];
 
-	NSDictionary *substitutionVariables = [NSDictionary dictionary];
+	NSDictionary *substitutionVariables = [NSDictionary dictionaryWithObjectsAndKeys:
+
+														id_, @"id",
+
+														nil];
 
 	NSFetchRequest *fetchRequest = [model fetchRequestFromTemplateWithName:@"ingredienteById"
 													 substitutionVariables:substitutionVariables];

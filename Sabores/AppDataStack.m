@@ -67,30 +67,51 @@
                                                          options:kNilOptions
                                                            error:&err];
     
-    [matchings enumerateObjectsUsingBlock:^(NSDictionary *matchingsDict, NSUInteger idx, BOOL *stop) {
+    [matchings enumerateObjectsUsingBlock:^(NSDictionary *matchingDict, NSUInteger idx, BOOL *stop) {
         
-        NSArray *buenos = matchingsDict[@"matchingbueno"];
-        [buenos enumerateObjectsUsingBlock:^(NSDictionary *matchingsDict, NSUInteger idx, BOOL *stop) {
+        NSArray *buenos = matchingDict[@"matchingbueno"];
+        [buenos enumerateObjectsUsingBlock:^(NSDictionary *matchingGoodDict, NSUInteger idx, BOOL *stop) {
         
             Matching *matching = [Matching insertInManagedObjectContext:self.context];
-            matching.comment = matchingsDict[@"comentario"];
+            matching.comment = matchingGoodDict[@"comentario"];
             matching.good = @YES;
             
-            [matching addIngredientsObject:[Ingrediente ingredienteById:@"id_ingrediente" inContext:self.context]];
+            Ingrediente *ingrediente1 = [Ingrediente ingredienteById:matchingDict[@"id_ingrediente"] inContext:self.context];
+            if (ingrediente1) {
+                [matching addIngredientsObject:ingrediente1];
+            } else {
+                NSLog(@"Error: Ingrediente with id '%@' not found", matchingDict[@"id_ingrediente"]);
+            }
             
-            
-            
+            Ingrediente *ingrediente2 = [Ingrediente ingredienteById:matchingGoodDict[@"id_ingrediente"] inContext:self.context];
+            if (ingrediente2) {
+                [matching addIngredientsObject:ingrediente2];
+            } else {
+                NSLog(@"Error: Ingrediente with id '%@' not found", matchingGoodDict[@"id_ingrediente"]);
+            }
+
         }];
         
-        NSArray *malos = matchingsDict[@"matchingmalo"];
-        [malos enumerateObjectsUsingBlock:^(NSDictionary *matchingsDict, NSUInteger idx, BOOL *stop) {
+        NSArray *malos = matchingDict[@"matchingmalo"];
+        [malos enumerateObjectsUsingBlock:^(NSDictionary *matchingBadDict, NSUInteger idx, BOOL *stop) {
             
             Matching *matching = [Matching insertInManagedObjectContext:self.context];
-            matching.comment = matchingsDict[@"comentario"];
+            matching.comment = matchingBadDict[@"comentario"];
             matching.good = @NO;
-            [matching addIngredientsObject:[Ingrediente ingredienteById:@"id_ingrediente" inContext:self.context]];
 
+            Ingrediente *ingrediente1 = [Ingrediente ingredienteById:matchingDict[@"id_ingrediente"] inContext:self.context];
+            if (ingrediente1) {
+                [matching addIngredientsObject:ingrediente1];
+            } else {
+                NSLog(@"Error: Ingrediente with id '%@' not found", matchingDict[@"id_ingrediente"]);
+            }
             
+            Ingrediente *ingrediente2 = [Ingrediente ingredienteById:matchingBadDict[@"id_ingrediente"] inContext:self.context];
+            if (ingrediente2) {
+                [matching addIngredientsObject:ingrediente2];
+            } else {
+                NSLog(@"Error: Ingrediente with id '%@' not found", matchingBadDict[@"id_ingrediente"]);
+            }
         }];
 
         

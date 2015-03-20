@@ -53,21 +53,9 @@
 
 -(void) loadSabores
 {
-    //Fetch sabor
-    NSFetchRequest *flavoursRequest = [NSFetchRequest fetchRequestWithEntityName:@"Sabor"];
-    NSError *error;
-   flavoursRequest.sortDescriptors = @[[NSSortDescriptor sortDescriptorWithKey:@"name" ascending:YES]];
-    self.flavours = [self.context executeFetchRequest:flavoursRequest error:&error];
+    self.flavours = [Sabor allSaboresInContext:self.context];
     
-    //fetch ingredient
-    NSFetchRequest *ingredientsRequest = [NSFetchRequest fetchRequestWithEntityName:@"Ingrediente"];
-   ingredientsRequest.sortDescriptors = @[[NSSortDescriptor sortDescriptorWithKey:@"name" ascending:YES]];
-    self.ingredients = [self.context executeFetchRequest:ingredientsRequest error:&error];
-    
-    //Fetch matching
-    NSFetchRequest *matchingFetch = [NSFetchRequest fetchRequestWithEntityName:@"Matching"];
-    self.matching = [self.context executeFetchRequest:matchingFetch error:nil];
-    
+    self.ingredients = [Ingrediente allIngredientsInContext:self.context];
 }
 
 -(void) testMatching {
@@ -187,7 +175,7 @@
         self.saborLabel = [SKLabelNode labelNodeWithFontNamed:@"Optima"];
         self.saborLabel.alpha = 1.0;
         self.saborLabel.text = sabor.name;
-        //self.saborLabel.name = sabor.name;
+        self.saborLabel.name = sabor.identifier;
         self.saborLabel.fontSize = 22;
         self.saborLabel.fontColor = [SKColor colorWithRed:1 green:0.688 blue:0 alpha:1];
         self.saborLabel.position = CGPointMake (hexagono.position.x +48 , hexagono.position.y +45);
@@ -203,7 +191,7 @@
             self.ingredienteLabel = [SKLabelNode labelNodeWithFontNamed:@"Optima"];
             self.ingredienteLabel.alpha = 1.0;
             self.ingredienteLabel.text = ingrediente.name;
-            self.ingredienteLabel.name = ingrediente.name;
+            self.ingredienteLabel.name = ingrediente.identifier;
             self.ingredienteLabel.fontSize = 16;
             self.ingredienteLabel.fontColor = [SKColor colorWithRed:1 green:0.688 blue:0 alpha:1];
            
@@ -290,22 +278,36 @@
             
             touchNumber = 0;
             
+            if (self.matchingIngredient1.name && self.matchingIngredient2.name) {
+            
+                Ingrediente *ingrediente1 = [Ingrediente ingredienteById:self.matchingIngredient1.name inContext:self.context];
+                Ingrediente *ingrediente2 = [Ingrediente ingredienteById:self.matchingIngredient2.name inContext:self.context];
+                
+                if (ingrediente1 && ingrediente2) {
+                    Matching *matching = [Matching matchingWithIngredient:ingrediente1 ingrediente:ingrediente2 inContext:self.context];
+                    
+                    if (matching) {
+                        if (matching.good) {
+                            //Make action for GOOD matching
+                            NSLog(@"Good matching between %@ and %@", ingrediente1.name, ingrediente2.name);
+                            
+                        } else {
+                            //Make action for BAD matching
+                            NSLog(@"Bad matching between %@ and %@", ingrediente1.name, ingrediente2.name);
+                            
+                        }
+                        
+                    } else {
+                        // MAke action for NOT matching found
+                        NSLog(@"No matching between %@ and %@", ingrediente1.name, ingrediente2.name);
 
+                    }
+                } else {
+                    // We hava a problem
+                    NSLog(@"Problem with ingredients with names %@ and %@", self.matchingIngredient1.name, self.matchingIngredient1.name);
 
-//            //Pasamos al método matchingWithIngrediente:ingrediente:
-//            NSFetchRequest *fetchRequest1 = [NSFetchRequest fetchRequestWithEntityName:[Ingrediente entityName]];
-//            fetchRequest1.predicate = [NSPredicate predicateWithFormat:@"%K = %@", @"identifier", self.matchingIngredient1.name];
-//            
-//             Ingrediente *ingrediente1 =  [[self.context executeFetchRequest:fetchRequest1 error:nil] firstObject];
-//            
-//            //Pasamos al método matchingWithIngrediente:ingrediente:
-//            NSFetchRequest *fetchRequest2 = [NSFetchRequest fetchRequestWithEntityName:[Ingrediente entityName]];
-//            fetchRequest1.predicate = [NSPredicate predicateWithFormat:@"%K = %@", @"identifier", self.matchingIngredient2.name];
-//            
-//            Ingrediente *ingrediente2 =  [[self.context executeFetchRequest:fetchRequest2 error:nil] firstObject];
-//            
-//            [Matching matchingWithIngredient:ingrediente1 ingrediente:ingrediente2 inContext:self.context];
-           
+                }
+            }
         }
     
     }
