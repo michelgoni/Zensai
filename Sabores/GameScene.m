@@ -16,6 +16,8 @@
 #import <CoreData/CoreData.h>
 #import "SKEase.h"
 #import "TouchesHexagon.h"
+#import "CreateFlavourLabel.h"
+#import "CreateLabelIngredients.h"
 
 
 
@@ -23,11 +25,19 @@
 
 @property (strong, nonatomic) NSManagedObjectContext *context;
 
+@property (strong, nonatomic) SKNode *node;
+@property (strong, nonatomic) SKNode *flavourLabelNode;
+@property (strong, nonatomic) SKNode *ingredientLabelNode;
+
+
 @property (strong, nonatomic) SKLabelNode *saborLabel;
 @property (strong, nonatomic) SKLabelNode *ingredienteLabel;
 @property (strong, nonatomic) SKLabelNode *matchingIngredient1;
 @property (strong, nonatomic) SKLabelNode *matchingIngredient2;
 
+@property (strong, nonatomic) TouchesHexagon *touches;
+@property (strong, nonatomic) CreateFlavourLabel *labelFlavour;
+@property (strong, nonatomic) CreateLabelIngredients *labelIngredients;
 
 
 @end
@@ -39,17 +49,44 @@
 
 -(void)didMoveToView:(SKView *)view {
    
-    [self loadSabores];
-    [self createNode1];
-    [self testMatching];
+   [self loadSabores];
+//    [self createNode1];
+//    [self testMatching];
     //[self moveHexagon];
+    [self createHexagons];
     
     touchNumber = 0;
-    
-
+  
 
 }
 
+-(void) createHexagons {
+    int i = 0;
+    for (Sabor *sabor in self.flavours) {
+        
+        NSLog(@"-----------Flavour name: %@", sabor.name);
+        _touches = [TouchesHexagon node];
+        self.node = [self childNodeWithName:[NSString stringWithFormat:@"Node%d", i]];
+        [self.node addChild:_touches];
+        
+        _labelFlavour = [CreateFlavourLabel node];
+        self.flavourLabelNode = [self childNodeWithName:[NSString stringWithFormat:@"flavourLabel%d", i]];
+        [self.flavourLabelNode addChild:_labelFlavour];
+        
+
+        i++;
+        
+        int j = 0;
+        for (Ingrediente *ingrediente in self.ingredients) {
+            
+             NSLog(@"--------------ingrediente name: %@", ingrediente.name);
+            _labelIngredients = [CreateLabelIngredients node];
+            self.ingredientLabelNode = [self childNodeWithName:[NSString stringWithFormat:@"ingredientLabel%d", j]];
+            [self.ingredientLabelNode addChild:_labelIngredients];
+            j++;
+        }
+    }
+}
 
 -(void) loadSabores
 {
@@ -71,8 +108,6 @@
 }
 
 -(void) testMatching {
-    
-
     
     self.matchingIngredient1 = [SKLabelNode labelNodeWithFontNamed:@"Optima"];
     
@@ -97,6 +132,8 @@
     
     
 }
+
+
 
 #pragma mark -Create nodes
 -(void) createNode1 {
@@ -126,10 +163,8 @@
         // Crear uno a uno el hexágono
         SKNode *shapeParentNode = [self childNodeWithName:[NSString stringWithFormat:@"Node%d", i]];
         
-        
-        
-       
         SKShapeNode *hexagono = [SKShapeNode node];
+        hexagono.name = [NSString stringWithFormat:@"Hexagono%d", i];
         UIBezierPath* polygonPath = UIBezierPath.bezierPath;
         [polygonPath moveToPoint: CGPointMake(51.62, 117.25)];
         [polygonPath addLineToPoint: CGPointMake(93.09, 93.31)];
@@ -182,26 +217,29 @@
         [shapeParentNode addChild:line2];
         [shapeParentNode addChild:line3];
         i++;
+//        
+//        //Label sabor
+//        
+//        self.saborLabel = [SKLabelNode labelNodeWithFontNamed:@"Optima"];
+//        self.saborLabel.alpha = 1.0;
+//        self.saborLabel.text = sabor.name;
+//        self.saborLabel.name = sabor.name;
+//        self.saborLabel.fontSize = 22;
+//        self.saborLabel.fontColor = [SKColor colorWithRed:1 green:0.688 blue:0 alpha:1];
+//        self.saborLabel.position = CGPointMake (hexagono.position.x +48 , hexagono.position.y +45);
+//        self.saborLabel.zPosition = 10;
+//        
+//     
+//        [shapeParentNode addChild:self.saborLabel];
         
-        //Label sabor
-        self.saborLabel = [SKLabelNode labelNodeWithFontNamed:@"Optima"];
-        self.saborLabel.alpha = 1.0;
-        self.saborLabel.text = sabor.name;
-        //self.saborLabel.name = sabor.name;
-        self.saborLabel.fontSize = 22;
-        self.saborLabel.fontColor = [SKColor colorWithRed:1 green:0.688 blue:0 alpha:1];
-        self.saborLabel.position = CGPointMake (hexagono.position.x +48 , hexagono.position.y +45);
-        self.saborLabel.zPosition = 10;
-        
-     
-        [shapeParentNode addChild:self.saborLabel];
+
         
         int j = 0;
         for (Ingrediente *ingrediente in sabor.ingredientes) {
             NSLog(@"--------------ingrediente name: %@", ingrediente.name);
             //Ingredientes labels
             self.ingredienteLabel = [SKLabelNode labelNodeWithFontNamed:@"Optima"];
-            self.ingredienteLabel.alpha = 1.0;
+            self.ingredienteLabel.alpha = 0.0;
             self.ingredienteLabel.text = ingrediente.name;
             self.ingredienteLabel.name = ingrediente.name;
             self.ingredienteLabel.fontSize = 16;
@@ -251,26 +289,25 @@
         //Entramos en el primer toque
         for (UITouch* touch in touches){
             CGPoint p = [touch locationInNode:self];
-            SKNode *node = [self.scene nodeAtPoint:p];
-            self.matchingIngredient1.text = node.name;
-            self.matchingIngredient1.name = node.name;
+            SKNode *nodeK = [self.scene nodeAtPoint:p];
+            self.matchingIngredient1.text = nodeK.name;
+            self.matchingIngredient1.name = nodeK.name;
             
-            NSLog(@"Touched someting called %@", node.name);
+            NSLog(@"Touched someting called %@", nodeK.name);
             
             SKAction *fadeIn = [SKAction fadeAlphaTo:1.0 duration:1.5];
             fadeIn.timingMode = SKActionTimingEaseInEaseOut;
             [self.matchingIngredient1 runAction:fadeIn];
 
-            SKAction *bounce = [SKEase ScaleFromWithNode:node EaseFunction:CurveTypeBounce Mode:ElasticEaseInOut(5) Time:2.2 FromValue:1.2];
+            SKAction *bounce = [SKEase ScaleFromWithNode:nodeK EaseFunction:CurveTypeBounce Mode:ElasticEaseInOut(5) Time:2.2 FromValue:1.2];
             [self.matchingIngredient1 runAction:bounce];
             
             //Añadir una acción al label del sabor que aparezcan los ingredientes
             
-            SKAction *fadeInIngrediente = [SKAction moveToX:200 duration:3];
-            fadeInIngrediente.timingMode = SKActionTimingEaseInEaseOut;
-            [self.saborLabel runAction:fadeInIngrediente];
-            
 
+
+            
+            
         }
         touchNumber ++;
         
@@ -292,7 +329,7 @@
             
 
 
-//            //Pasamos al método matchingWithIngrediente:ingrediente:
+////            //Pasamos al método matchingWithIngrediente:ingrediente:
 //            NSFetchRequest *fetchRequest1 = [NSFetchRequest fetchRequestWithEntityName:[Ingrediente entityName]];
 //            fetchRequest1.predicate = [NSPredicate predicateWithFormat:@"%K = %@", @"identifier", self.matchingIngredient1.name];
 //            
@@ -304,7 +341,11 @@
 //            
 //            Ingrediente *ingrediente2 =  [[self.context executeFetchRequest:fetchRequest2 error:nil] firstObject];
 //            
-//            [Matching matchingWithIngredient:ingrediente1 ingrediente:ingrediente2 inContext:self.context];
+//            Matching *matching = [Matching matchingWithIngredient:ingrediente1 ingrediente:ingrediente2 inContext:self.context];
+            
+            
+           
+            
            
         }
     
