@@ -25,19 +25,5 @@
     return [fetchedObjects firstObject];
 }
 
-//+(Matching *)matchingWithIngredient:(NSArray *)ingrediente1 ingrediente:(NSArray *)ingrediente2 inContext:(NSManagedObjectContext *)context {
-//    NSFetchRequest *fetchRequest = [NSFetchRequest fetchRequestWithEntityName:[Matching entityName]];
-//    // Specify criteria for filtering which objects to fetch
-//    NSPredicate *predicate = [NSPredicate predicateWithFormat:@"%@ in ingredients AND %@ in ingredients", ingrediente1, ingrediente2];
-//    [fetchRequest setPredicate:predicate];
-//    
-//    NSError *error = nil;
-//    NSArray *fetchedObjects = [context executeFetchRequest:fetchRequest error:&error];
-//    if (fetchedObjects == nil) {
-//        NSLog(@"%@", error);
-//    }
-//    
-//    return [fetchedObjects firstObject];
-//}
 
 @end

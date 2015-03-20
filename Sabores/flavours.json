@@ -26,12 +26,12 @@
                    "nombre": "Café"
                    },
                    {
-                   "id_ingrediente": "      chocolate",
+                   "id_ingrediente": "chocolate",
                    "nombre": "Chocolate"
                    },
                    {
                    "id_ingrediente": "cacahuete",
-                   "nombre": "      Cacahuete"
+                   "nombre": "Cacahuete"
                    }
                    ]
   },
@@ -44,7 +44,7 @@
                    "nombre": "Patata"
                    },
                    {
-                   "id_ingrediente": "    trufa",
+                   "id_ingrediente": "trufa",
                    "nombre": "Trufa"
                    },
                    {

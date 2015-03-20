@@ -1,0 +1,597 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		2D517B461ABC142400BEC559 /* easing.c in Sources */ = {isa = PBXBuildFile; fileRef = 2D517B401ABC142400BEC559 /* easing.c */; };
+		2D517B471ABC142400BEC559 /* SKEase.m in Sources */ = {isa = PBXBuildFile; fileRef = 2D517B441ABC142400BEC559 /* SKEase.m */; };
+		2D524A241AB6EE8A00B9C507 /* background.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 2D524A231AB6EE8A00B9C507 /* background.jpg */; };
+		2D6A8E031AB6DFA6008955E8 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 2D6A8E021AB6DFA6008955E8 /* main.m */; };
+		2D6A8E061AB6DFA6008955E8 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 2D6A8E051AB6DFA6008955E8 /* AppDelegate.m */; };
+		2D6A8E091AB6DFA6008955E8 /* GameScene.m in Sources */ = {isa = PBXBuildFile; fileRef = 2D6A8E081AB6DFA6008955E8 /* GameScene.m */; };
+		2D6A8E0B1AB6DFA6008955E8 /* GameScene.sks in Resources */ = {isa = PBXBuildFile; fileRef = 2D6A8E0A1AB6DFA6008955E8 /* GameScene.sks */; };
+		2D6A8E0E1AB6DFA6008955E8 /* GameViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 2D6A8E0D1AB6DFA6008955E8 /* GameViewController.m */; };
+		2D6A8E111AB6DFA6008955E8 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 2D6A8E0F1AB6DFA6008955E8 /* Main.storyboard */; };
+		2D6A8E131AB6DFA6008955E8 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 2D6A8E121AB6DFA6008955E8 /* Images.xcassets */; };
+		2D6A8E161AB6DFA6008955E8 /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = 2D6A8E141AB6DFA6008955E8 /* LaunchScreen.xib */; };
+		2D6A8E221AB6DFA6008955E8 /* SaboresTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 2D6A8E211AB6DFA6008955E8 /* SaboresTests.m */; };
+		2D6A8E2D1AB6DFC1008955E8 /* flavours.json in Resources */ = {isa = PBXBuildFile; fileRef = 2D6A8E2B1AB6DFC1008955E8 /* flavours.json */; };
+		2D6A8E2E1AB6DFC1008955E8 /* matchings.json in Resources */ = {isa = PBXBuildFile; fileRef = 2D6A8E2C1AB6DFC1008955E8 /* matchings.json */; };
+		2D8FA45A1ABC5955005D4E8C /* TouchesHexagon.m in Sources */ = {isa = PBXBuildFile; fileRef = 2D8FA4591ABC5955005D4E8C /* TouchesHexagon.m */; };
+		2D98B6241AB8323700FCDE1C /* _Ingrediente.m in Sources */ = {isa = PBXBuildFile; fileRef = 2D98B6191AB8323700FCDE1C /* _Ingrediente.m */; };
+		2D98B6251AB8323700FCDE1C /* _Matching.m in Sources */ = {isa = PBXBuildFile; fileRef = 2D98B61B1AB8323700FCDE1C /* _Matching.m */; };
+		2D98B6261AB8323700FCDE1C /* _Sabor.m in Sources */ = {isa = PBXBuildFile; fileRef = 2D98B61D1AB8323700FCDE1C /* _Sabor.m */; };
+		2D98B6271AB8323700FCDE1C /* Ingrediente.m in Sources */ = {isa = PBXBuildFile; fileRef = 2D98B61F1AB8323700FCDE1C /* Ingrediente.m */; };
+		2D98B6281AB8323700FCDE1C /* Matching.m in Sources */ = {isa = PBXBuildFile; fileRef = 2D98B6211AB8323700FCDE1C /* Matching.m */; };
+		2D98B6291AB8323700FCDE1C /* Sabor.m in Sources */ = {isa = PBXBuildFile; fileRef = 2D98B6231AB8323700FCDE1C /* Sabor.m */; };
+		2D98B62D1AB8342700FCDE1C /* AppDataStack.m in Sources */ = {isa = PBXBuildFile; fileRef = 2D98B62C1AB8342700FCDE1C /* AppDataStack.m */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		2D6A8E1C1AB6DFA6008955E8 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 2D6A8DF51AB6DFA6008955E8 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 2D6A8DFC1AB6DFA6008955E8;
+			remoteInfo = Sabores;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		2D517B401ABC142400BEC559 /* easing.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = easing.c; sourceTree = "<group>"; };
+		2D517B411ABC142400BEC559 /* easing.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = easing.h; sourceTree = "<group>"; };
+		2D517B421ABC142400BEC559 /* EasingDeclarations.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EasingDeclarations.h; sourceTree = "<group>"; };
+		2D517B431ABC142400BEC559 /* SKEase.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SKEase.h; sourceTree = "<group>"; };
+		2D517B441ABC142400BEC559 /* SKEase.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SKEase.m; sourceTree = "<group>"; };
+		2D517B451ABC142400BEC559 /* SpriteKit-Easing-Prefix.pch */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "SpriteKit-Easing-Prefix.pch"; sourceTree = "<group>"; };
+		2D524A231AB6EE8A00B9C507 /* background.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = background.jpg; sourceTree = "<group>"; };
+		2D6960A11ABA144D00281327 /* SourceSansPro-Light.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "SourceSansPro-Light.ttf"; sourceTree = "<group>"; };
+		2D6A8DFD1AB6DFA6008955E8 /* Sabores.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Sabores.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		2D6A8E011AB6DFA6008955E8 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		2D6A8E021AB6DFA6008955E8 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
+		2D6A8E041AB6DFA6008955E8 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
+		2D6A8E051AB6DFA6008955E8 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
+		2D6A8E071AB6DFA6008955E8 /* GameScene.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = GameScene.h; sourceTree = "<group>"; };
+		2D6A8E081AB6DFA6008955E8 /* GameScene.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = GameScene.m; sourceTree = "<group>"; };
+		2D6A8E0A1AB6DFA6008955E8 /* GameScene.sks */ = {isa = PBXFileReference; lastKnownFileType = file.sks; path = GameScene.sks; sourceTree = "<group>"; };
+		2D6A8E0C1AB6DFA6008955E8 /* GameViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = GameViewController.h; sourceTree = "<group>"; };
+		2D6A8E0D1AB6DFA6008955E8 /* GameViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = GameViewController.m; sourceTree = "<group>"; };
+		2D6A8E101AB6DFA6008955E8 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		2D6A8E121AB6DFA6008955E8 /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
+		2D6A8E151AB6DFA6008955E8 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/LaunchScreen.xib; sourceTree = "<group>"; };
+		2D6A8E1B1AB6DFA6008955E8 /* SaboresTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = SaboresTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		2D6A8E201AB6DFA6008955E8 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		2D6A8E211AB6DFA6008955E8 /* SaboresTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SaboresTests.m; sourceTree = "<group>"; };
+		2D6A8E2B1AB6DFC1008955E8 /* flavours.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = flavours.json; sourceTree = "<group>"; };
+		2D6A8E2C1AB6DFC1008955E8 /* matchings.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = matchings.json; sourceTree = "<group>"; };
+		2D8FA4581ABC5955005D4E8C /* TouchesHexagon.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TouchesHexagon.h; sourceTree = "<group>"; };
+		2D8FA4591ABC5955005D4E8C /* TouchesHexagon.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TouchesHexagon.m; sourceTree = "<group>"; };
+		2D94330F1AB9D93D00B35348 /* SaboresModel 2.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = "SaboresModel 2.xcdatamodel"; sourceTree = "<group>"; };
+		2D98B6151AB82C9100FCDE1C /* SaboresModel.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = SaboresModel.xcdatamodel; sourceTree = "<group>"; };
+		2D98B6181AB8323700FCDE1C /* _Ingrediente.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = _Ingrediente.h; path = Model/_Ingrediente.h; sourceTree = "<group>"; };
+		2D98B6191AB8323700FCDE1C /* _Ingrediente.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = _Ingrediente.m; path = Model/_Ingrediente.m; sourceTree = "<group>"; };
+		2D98B61A1AB8323700FCDE1C /* _Matching.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = _Matching.h; path = Model/_Matching.h; sourceTree = "<group>"; };
+		2D98B61B1AB8323700FCDE1C /* _Matching.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = _Matching.m; path = Model/_Matching.m; sourceTree = "<group>"; };
+		2D98B61C1AB8323700FCDE1C /* _Sabor.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = _Sabor.h; path = Model/_Sabor.h; sourceTree = "<group>"; };
+		2D98B61D1AB8323700FCDE1C /* _Sabor.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = _Sabor.m; path = Model/_Sabor.m; sourceTree = "<group>"; };
+		2D98B61E1AB8323700FCDE1C /* Ingrediente.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = Ingrediente.h; path = Model/Ingrediente.h; sourceTree = "<group>"; };
+		2D98B61F1AB8323700FCDE1C /* Ingrediente.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = Ingrediente.m; path = Model/Ingrediente.m; sourceTree = "<group>"; };
+		2D98B6201AB8323700FCDE1C /* Matching.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = Matching.h; path = Model/Matching.h; sourceTree = "<group>"; };
+		2D98B6211AB8323700FCDE1C /* Matching.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = Matching.m; path = Model/Matching.m; sourceTree = "<group>"; };
+		2D98B6221AB8323700FCDE1C /* Sabor.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = Sabor.h; path = Model/Sabor.h; sourceTree = "<group>"; };
+		2D98B6231AB8323700FCDE1C /* Sabor.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = Sabor.m; path = Model/Sabor.m; sourceTree = "<group>"; };
+		2D98B62B1AB8342700FCDE1C /* AppDataStack.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AppDataStack.h; sourceTree = "<group>"; };
+		2D98B62C1AB8342700FCDE1C /* AppDataStack.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AppDataStack.m; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		2D6A8DFA1AB6DFA6008955E8 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		2D6A8E181AB6DFA6008955E8 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		2D517B3F1ABC142400BEC559 /* SpriteKit-Easing */ = {
+			isa = PBXGroup;
+			children = (
+				2D517B401ABC142400BEC559 /* easing.c */,
+				2D517B411ABC142400BEC559 /* easing.h */,
+				2D517B421ABC142400BEC559 /* EasingDeclarations.h */,
+				2D517B431ABC142400BEC559 /* SKEase.h */,
+				2D517B441ABC142400BEC559 /* SKEase.m */,
+				2D517B451ABC142400BEC559 /* SpriteKit-Easing-Prefix.pch */,
+			);
+			path = "SpriteKit-Easing";
+			sourceTree = "<group>";
+		};
+		2D524A251AB6EE9100B9C507 /* Assets */ = {
+			isa = PBXGroup;
+			children = (
+				2D524A231AB6EE8A00B9C507 /* background.jpg */,
+			);
+			name = Assets;
+			sourceTree = "<group>";
+		};
+		2D6A8DF41AB6DFA6008955E8 = {
+			isa = PBXGroup;
+			children = (
+				2D6A8DFF1AB6DFA6008955E8 /* Sabores */,
+				2D6A8E1E1AB6DFA6008955E8 /* SaboresTests */,
+				2D6A8DFE1AB6DFA6008955E8 /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		2D6A8DFE1AB6DFA6008955E8 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				2D6A8DFD1AB6DFA6008955E8 /* Sabores.app */,
+				2D6A8E1B1AB6DFA6008955E8 /* SaboresTests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		2D6A8DFF1AB6DFA6008955E8 /* Sabores */ = {
+			isa = PBXGroup;
+			children = (
+				2D517B3F1ABC142400BEC559 /* SpriteKit-Easing */,
+				2D6960A11ABA144D00281327 /* SourceSansPro-Light.ttf */,
+				2D98B6131AB82C3400FCDE1C /* Model */,
+				2D524A251AB6EE9100B9C507 /* Assets */,
+				2D6A8E2F1AB6DFC8008955E8 /* Json */,
+				2D6A8E041AB6DFA6008955E8 /* AppDelegate.h */,
+				2D6A8E051AB6DFA6008955E8 /* AppDelegate.m */,
+				2D98B62B1AB8342700FCDE1C /* AppDataStack.h */,
+				2D98B62C1AB8342700FCDE1C /* AppDataStack.m */,
+				2D6A8E071AB6DFA6008955E8 /* GameScene.h */,
+				2D6A8E081AB6DFA6008955E8 /* GameScene.m */,
+				2D8FA4581ABC5955005D4E8C /* TouchesHexagon.h */,
+				2D8FA4591ABC5955005D4E8C /* TouchesHexagon.m */,
+				2D6A8E0A1AB6DFA6008955E8 /* GameScene.sks */,
+				2D6A8E0C1AB6DFA6008955E8 /* GameViewController.h */,
+				2D6A8E0D1AB6DFA6008955E8 /* GameViewController.m */,
+				2D6A8E0F1AB6DFA6008955E8 /* Main.storyboard */,
+				2D6A8E121AB6DFA6008955E8 /* Images.xcassets */,
+				2D6A8E141AB6DFA6008955E8 /* LaunchScreen.xib */,
+				2D6A8E001AB6DFA6008955E8 /* Supporting Files */,
+			);
+			path = Sabores;
+			sourceTree = "<group>";
+		};
+		2D6A8E001AB6DFA6008955E8 /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				2D6A8E011AB6DFA6008955E8 /* Info.plist */,
+				2D6A8E021AB6DFA6008955E8 /* main.m */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		2D6A8E1E1AB6DFA6008955E8 /* SaboresTests */ = {
+			isa = PBXGroup;
+			children = (
+				2D6A8E211AB6DFA6008955E8 /* SaboresTests.m */,
+				2D6A8E1F1AB6DFA6008955E8 /* Supporting Files */,
+			);
+			path = SaboresTests;
+			sourceTree = "<group>";
+		};
+		2D6A8E1F1AB6DFA6008955E8 /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				2D6A8E201AB6DFA6008955E8 /* Info.plist */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		2D6A8E2F1AB6DFC8008955E8 /* Json */ = {
+			isa = PBXGroup;
+			children = (
+				2D6A8E2B1AB6DFC1008955E8 /* flavours.json */,
+				2D6A8E2C1AB6DFC1008955E8 /* matchings.json */,
+			);
+			name = Json;
+			sourceTree = "<group>";
+		};
+		2D98B6131AB82C3400FCDE1C /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				2D98B62A1AB8324100FCDE1C /* Internal */,
+				2D98B61E1AB8323700FCDE1C /* Ingrediente.h */,
+				2D98B61F1AB8323700FCDE1C /* Ingrediente.m */,
+				2D98B6201AB8323700FCDE1C /* Matching.h */,
+				2D98B6211AB8323700FCDE1C /* Matching.m */,
+				2D98B6221AB8323700FCDE1C /* Sabor.h */,
+				2D98B6231AB8323700FCDE1C /* Sabor.m */,
+				2D98B6141AB82C9100FCDE1C /* SaboresModel.xcdatamodeld */,
+			);
+			name = Model;
+			sourceTree = "<group>";
+		};
+		2D98B62A1AB8324100FCDE1C /* Internal */ = {
+			isa = PBXGroup;
+			children = (
+				2D98B6181AB8323700FCDE1C /* _Ingrediente.h */,
+				2D98B6191AB8323700FCDE1C /* _Ingrediente.m */,
+				2D98B61A1AB8323700FCDE1C /* _Matching.h */,
+				2D98B61B1AB8323700FCDE1C /* _Matching.m */,
+				2D98B61C1AB8323700FCDE1C /* _Sabor.h */,
+				2D98B61D1AB8323700FCDE1C /* _Sabor.m */,
+			);
+			name = Internal;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		2D6A8DFC1AB6DFA6008955E8 /* Sabores */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 2D6A8E251AB6DFA6008955E8 /* Build configuration list for PBXNativeTarget "Sabores" */;
+			buildPhases = (
+				2D98B6171AB82FCD00FCDE1C /* Run mogenerator */,
+				2D6A8DF91AB6DFA6008955E8 /* Sources */,
+				2D6A8DFA1AB6DFA6008955E8 /* Frameworks */,
+				2D6A8DFB1AB6DFA6008955E8 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = Sabores;
+			productName = Sabores;
+			productReference = 2D6A8DFD1AB6DFA6008955E8 /* Sabores.app */;
+			productType = "com.apple.product-type.application";
+		};
+		2D6A8E1A1AB6DFA6008955E8 /* SaboresTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 2D6A8E281AB6DFA6008955E8 /* Build configuration list for PBXNativeTarget "SaboresTests" */;
+			buildPhases = (
+				2D6A8E171AB6DFA6008955E8 /* Sources */,
+				2D6A8E181AB6DFA6008955E8 /* Frameworks */,
+				2D6A8E191AB6DFA6008955E8 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				2D6A8E1D1AB6DFA6008955E8 /* PBXTargetDependency */,
+			);
+			name = SaboresTests;
+			productName = SaboresTests;
+			productReference = 2D6A8E1B1AB6DFA6008955E8 /* SaboresTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		2D6A8DF51AB6DFA6008955E8 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastUpgradeCheck = 0610;
+				ORGANIZATIONNAME = "Michel Goñi";
+				TargetAttributes = {
+					2D6A8DFC1AB6DFA6008955E8 = {
+						CreatedOnToolsVersion = 6.1.1;
+						DevelopmentTeam = XE7T8479F3;
+					};
+					2D6A8E1A1AB6DFA6008955E8 = {
+						CreatedOnToolsVersion = 6.1.1;
+						TestTargetID = 2D6A8DFC1AB6DFA6008955E8;
+					};
+				};
+			};
+			buildConfigurationList = 2D6A8DF81AB6DFA6008955E8 /* Build configuration list for PBXProject "Sabores" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = 2D6A8DF41AB6DFA6008955E8;
+			productRefGroup = 2D6A8DFE1AB6DFA6008955E8 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				2D6A8DFC1AB6DFA6008955E8 /* Sabores */,
+				2D6A8E1A1AB6DFA6008955E8 /* SaboresTests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		2D6A8DFB1AB6DFA6008955E8 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				2D6A8E2D1AB6DFC1008955E8 /* flavours.json in Resources */,
+				2D6A8E2E1AB6DFC1008955E8 /* matchings.json in Resources */,
+				2D6A8E161AB6DFA6008955E8 /* LaunchScreen.xib in Resources */,
+				2D6A8E131AB6DFA6008955E8 /* Images.xcassets in Resources */,
+				2D6A8E0B1AB6DFA6008955E8 /* GameScene.sks in Resources */,
+				2D524A241AB6EE8A00B9C507 /* background.jpg in Resources */,
+				2D6A8E111AB6DFA6008955E8 /* Main.storyboard in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		2D6A8E191AB6DFA6008955E8 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		2D98B6171AB82FCD00FCDE1C /* Run mogenerator */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Run mogenerator";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "MODELS_DIR=\"${PROJECT_DIR}/Sabores/Model\"\nDATA_MODEL_PACKAGE=\"${PROJECT_DIR}/Sabores/SaboresModel.xcdatamodeld\"\nmogenerator --v2 --model \"$DATA_MODEL_PACKAGE\" --output-dir \"$MODELS_DIR/\"";
+		};
+/* End PBXShellScriptBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		2D6A8DF91AB6DFA6008955E8 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				2D517B461ABC142400BEC559 /* easing.c in Sources */,
+				2D6A8E0E1AB6DFA6008955E8 /* GameViewController.m in Sources */,
+				2D517B471ABC142400BEC559 /* SKEase.m in Sources */,
+				2D98B6261AB8323700FCDE1C /* _Sabor.m in Sources */,
+				2D98B6291AB8323700FCDE1C /* Sabor.m in Sources */,
+				2D98B6241AB8323700FCDE1C /* _Ingrediente.m in Sources */,
+				2D98B6281AB8323700FCDE1C /* Matching.m in Sources */,
+				2D98B62D1AB8342700FCDE1C /* AppDataStack.m in Sources */,
+				2D6A8E061AB6DFA6008955E8 /* AppDelegate.m in Sources */,
+				2D8FA45A1ABC5955005D4E8C /* TouchesHexagon.m in Sources */,
+				2D6A8E091AB6DFA6008955E8 /* GameScene.m in Sources */,
+				2D98B6271AB8323700FCDE1C /* Ingrediente.m in Sources */,
+				2D98B6251AB8323700FCDE1C /* _Matching.m in Sources */,
+				2D6A8E031AB6DFA6008955E8 /* main.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		2D6A8E171AB6DFA6008955E8 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				2D6A8E221AB6DFA6008955E8 /* SaboresTests.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		2D6A8E1D1AB6DFA6008955E8 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 2D6A8DFC1AB6DFA6008955E8 /* Sabores */;
+			targetProxy = 2D6A8E1C1AB6DFA6008955E8 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin PBXVariantGroup section */
+		2D6A8E0F1AB6DFA6008955E8 /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				2D6A8E101AB6DFA6008955E8 /* Base */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+		2D6A8E141AB6DFA6008955E8 /* LaunchScreen.xib */ = {
+			isa = PBXVariantGroup;
+			children = (
+				2D6A8E151AB6DFA6008955E8 /* Base */,
+			);
+			name = LaunchScreen.xib;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		2D6A8E231AB6DFA6008955E8 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.1;
+				MTL_ENABLE_DEBUG_INFO = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				TARGETED_DEVICE_FAMILY = 2;
+			};
+			name = Debug;
+		};
+		2D6A8E241AB6DFA6008955E8 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = YES;
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.1;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				SDKROOT = iphoneos;
+				TARGETED_DEVICE_FAMILY = 2;
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		2D6A8E261AB6DFA6008955E8 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				INFOPLIST_FILE = Sabores/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.1;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Debug;
+		};
+		2D6A8E271AB6DFA6008955E8 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				INFOPLIST_FILE = Sabores/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.1;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Release;
+		};
+		2D6A8E291AB6DFA6008955E8 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(SDKROOT)/Developer/Library/Frameworks",
+					"$(inherited)",
+				);
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				INFOPLIST_FILE = SaboresTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Sabores.app/Sabores";
+			};
+			name = Debug;
+		};
+		2D6A8E2A1AB6DFA6008955E8 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(SDKROOT)/Developer/Library/Frameworks",
+					"$(inherited)",
+				);
+				INFOPLIST_FILE = SaboresTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Sabores.app/Sabores";
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		2D6A8DF81AB6DFA6008955E8 /* Build configuration list for PBXProject "Sabores" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				2D6A8E231AB6DFA6008955E8 /* Debug */,
+				2D6A8E241AB6DFA6008955E8 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		2D6A8E251AB6DFA6008955E8 /* Build configuration list for PBXNativeTarget "Sabores" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				2D6A8E261AB6DFA6008955E8 /* Debug */,
+				2D6A8E271AB6DFA6008955E8 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		2D6A8E281AB6DFA6008955E8 /* Build configuration list for PBXNativeTarget "SaboresTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				2D6A8E291AB6DFA6008955E8 /* Debug */,
+				2D6A8E2A1AB6DFA6008955E8 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+
+/* Begin XCVersionGroup section */
+		2D98B6141AB82C9100FCDE1C /* SaboresModel.xcdatamodeld */ = {
+			isa = XCVersionGroup;
+			children = (
+				2D94330F1AB9D93D00B35348 /* SaboresModel 2.xcdatamodel */,
+				2D98B6151AB82C9100FCDE1C /* SaboresModel.xcdatamodel */,
+			);
+			currentVersion = 2D98B6151AB82C9100FCDE1C /* SaboresModel.xcdatamodel */;
+			path = SaboresModel.xcdatamodeld;
+			sourceTree = "<group>";
+			versionGroupType = wrapper.xcdatamodel;
+		};
+/* End XCVersionGroup section */
+	};
+	rootObject = 2D6A8DF51AB6DFA6008955E8 /* Project object */;
+}

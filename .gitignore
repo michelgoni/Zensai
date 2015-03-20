@@ -1,2 +1,4 @@
 .dat2109.02c
 background.jpg
+*.DS_Store
+*xcuserdata*
