@@ -41,8 +41,8 @@ extern const struct IngredienteRelationships {
 
 //- (BOOL)validateSabor:(id*)value_ error:(NSError**)error_;
 
-+ (NSArray*)fetchIngredienteById:(NSManagedObjectContext*)moc_ ;
-+ (NSArray*)fetchIngredienteById:(NSManagedObjectContext*)moc_ error:(NSError**)error_;
++ (NSArray*)fetchIngredienteById:(NSManagedObjectContext*)moc_ id:(NSString*)id_ ;
++ (NSArray*)fetchIngredienteById:(NSManagedObjectContext*)moc_ id:(NSString*)id_ error:(NSError**)error_;
 
 @end
 
