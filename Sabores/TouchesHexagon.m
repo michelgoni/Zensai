@@ -52,6 +52,7 @@
     
     hexagono.path = polygonPath.CGPath;
     hexagono.lineWidth = 1;
+    hexagono.zPosition = 10;
     hexagono.strokeColor = [SKColor whiteColor];
     
     
@@ -75,17 +76,20 @@
     line1.path = bezierPath.CGPath;
     line1.lineWidth = 1;
     line1.strokeColor = [SKColor whiteColor];
+    line1.zPosition = 10;
 
     
     
     line2.path = bezier2Path.CGPath;
     line2.lineWidth = 1;
     line2.strokeColor = [SKColor whiteColor];
+    line2.zPosition = 10;
 
     
     line3.path = bezier3Path.CGPath;
     line3.lineWidth = 1;
     line3.strokeColor = [SKColor whiteColor];
+    line3.zPosition = 10;
 
      [self addChild:hexagono];
      [self addChild:line1];

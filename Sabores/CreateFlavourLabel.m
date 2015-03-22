@@ -7,6 +7,10 @@
 //
 
 #import "CreateFlavourLabel.h"
+#import "Sabor.h"
+#import "AppDataStack.h"
+
+
 
 @interface CreateFlavourLabel  ()
 
@@ -19,23 +23,32 @@
     
     if (self = [super init]) {
         
+
         [self createLabelFlavours];
     }
     return  self;
 }
 
+
+
+
 -(void) createLabelFlavours {
     
-    SKLabelNode *saborLabel = [SKLabelNode labelNodeWithFontNamed:@"Optima"];
-    saborLabel.alpha = 1.0;
-    saborLabel.text = @"Hi";
-    //self.saborLabel.name = sabor.name;
-    saborLabel.fontSize = 22;
-    saborLabel.fontColor = [SKColor colorWithRed:1 green:0.688 blue:0 alpha:1];
-    //self.saborLabel.position = CGPointMake (hexagono.position.x +48 , hexagono.position.y +45);
-    saborLabel.zPosition = 10;
-    [self addChild:saborLabel];
+    
+        
+
+        self.flavourLabelName = [SKLabelNode labelNodeWithFontNamed:@"Optima"];
+        self.flavourLabelName.alpha = 1.0;
+        self.flavourLabelName.fontSize = 22;
+        self.flavourLabelName.fontColor = [SKColor colorWithRed:1 green:0.688 blue:0 alpha:1];
+        self.flavourLabelName.zPosition = 10;
+    
+        [self addChild:self.flavourLabelName];
+    
+    
+
 }
+
 
 
 @end

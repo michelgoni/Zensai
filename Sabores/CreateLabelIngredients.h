@@ -10,4 +10,6 @@
 
 @interface CreateLabelIngredients : SKNode
 
+@property (strong, nonatomic) SKLabelNode *ingredientLabelName;
+
 @end

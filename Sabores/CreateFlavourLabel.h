@@ -10,4 +10,10 @@
 
 @interface CreateFlavourLabel : SKNode
 
+@property (copy, nonatomic) NSArray *flavours;
+@property (strong, nonatomic) NSManagedObjectContext *context;
+@property (strong, nonatomic) SKLabelNode *flavourLabelName;
+
+
+
 @end

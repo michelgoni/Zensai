@@ -10,7 +10,6 @@
 
 @interface CreateLabelIngredients  ()
 
-@property (strong, nonatomic) SKLabelNode *ingredienteLabel;
 
 @end
 
@@ -25,22 +24,16 @@
     return  self;
 }
 
+
+
 -(void) createLabelIngredients {
     
-    SKLabelNode *ingredienteLabel = [SKLabelNode labelNodeWithFontNamed:@"Optima"];
-    ingredienteLabel.alpha = 1.0;
-    ingredienteLabel.text = @"Ingredient";
-    //self.ingredienteLabel.name = ingrediente.name;
-    ingredienteLabel.fontSize = 16;
-    ingredienteLabel.fontColor = [SKColor colorWithRed:1 green:0.688 blue:0 alpha:1];
-    
-//    CGFloat y = 0;
-//    if (j == 1) {
-//        y = -27;
-//    }
-    //self.ingredienteLabel.position = CGPointMake ((j*37) + hexagono.position.x +10 , y + hexagono.position.y +5);
-    ingredienteLabel.zPosition = 10;
-    [self addChild: ingredienteLabel];
+    self.ingredientLabelName= [SKLabelNode labelNodeWithFontNamed:@"Optima"];
+    self.ingredientLabelName.alpha = 1.0;
+    self.ingredientLabelName.fontSize = 16;
+    self.ingredientLabelName.fontColor = [SKColor colorWithRed:1 green:0.688 blue:0 alpha:1];
+    self.ingredientLabelName.zPosition = 10;
+    [self addChild: self.ingredientLabelName];
 }
 
 @end
