@@ -43,10 +43,11 @@
     
 }
 
+
 -(void) createText {
     
-    self.matchingLabel = [[UILabel alloc] initWithFrame:CGRectMake(50, 50, 400, 400)];
-    self.matchingLabel.textColor = [UIColor whiteColor];
+    self.matchingLabel = [[UILabel alloc] initWithFrame:CGRectMake(40, -300, 800, 1024)];
+    self.matchingLabel.textColor = [UIColor colorWithRed:230 /255.0 green:126/255.0 blue:34/255.0 alpha:1.0];
     self.matchingLabel.text = self.comment;
     self.matchingLabel.alpha = 0.0;
     self.matchingLabel.numberOfLines = 0;
@@ -74,7 +75,6 @@
         GameScene *myScene = [GameScene nodeWithFileNamed:@"GameScene"];
         myScene.scaleMode = SKSceneScaleModeAspectFill;
         [UIView animateWithDuration:1 animations:^{
-            
             self.matchingLabel.alpha = 0.0;
             self.matchingLabel.text = @"";
             

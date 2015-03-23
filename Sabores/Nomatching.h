@@ -10,4 +10,7 @@
 
 @interface Nomatching : SKScene
 
+@property (strong, nonatomic) UILabel *matchingLabel;
+@property (strong, nonatomic) NSString *comment;
+
 @end

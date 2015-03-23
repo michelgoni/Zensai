@@ -10,5 +10,7 @@
 #import "GameScene.h"
 
 @interface MatchingBad : SKScene
+@property (strong, nonatomic) UILabel *matchingLabel;
+@property (strong, nonatomic) NSString *comment;
 
 @end

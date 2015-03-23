@@ -22,11 +22,6 @@
 #import "MatchingBad.h"
 #import "Nomatching.h"
 
-
-
-
-
-
 @interface GameScene() <UICollisionBehaviorDelegate>
 
 @property (strong, nonatomic) NSManagedObjectContext *context;
@@ -44,11 +39,7 @@
 @property (strong, nonatomic) TouchesHexagon *touches;
 @property (strong, nonatomic) CreateFlavourLabel *labelFlavour;
 @property (strong, nonatomic) CreateLabelIngredients *labelIngredients;
-
-
 @end
-
-
 
 @implementation GameScene {
     
@@ -169,22 +160,8 @@
             CGPoint p = [touch locationInNode:self];
             SKNode *nodeK = [self.scene nodeAtPoint:p];
             
-            
-            if([self.matchingIngredient1.text isEqualToString:@"Afrutado"] ||
-               [self.matchingIngredient1.text  isEqualToString:@"Carne"] ||
-               [self.matchingIngredient1.text isEqualToString:@"Cítrico"] ||
-               [self.matchingIngredient1.text isEqualToString:@"Especia"] ||
-               [self.matchingIngredient1.text isEqualToString:@"Mar"] ||
-               [self.matchingIngredient1.text isEqualToString:@"Queso"] ||
-               [self.matchingIngredient1.text isEqualToString:@"Salado"] ||
-               [self.matchingIngredient1.text isEqualToString:@"Tierra"] ) {
-                
-                self.matchingIngredient1.text = nil;
-            }else {
-                
-                self.matchingIngredient1.text = nodeK.name;
-                self.matchingIngredient1.name  = nodeK.name;
-            }
+            self.matchingIngredient1.text = nodeK.name;
+            self.matchingIngredient1.name  = nodeK.name;
             
             SKAction *bounce2 = [SKEase ScaleFromWithNode:nodeK EaseFunction:CurveTypeBounce
                                                      Mode:ElasticEaseInOut(5)
@@ -198,7 +175,7 @@
             
             NSLog(@"Touched someting called %@", nodeK.name);
             
-            if ([nodeK.name isEqualToString:@"Carne"]){
+            if ([nodeK.name isEqualToString:@"flavourLabel0"]){
                 
                 //Ejecutamos animación donde aparecen los ingredientes afrutados
                 for (int i = 0; i< 3; i++) {
@@ -267,11 +244,11 @@
                         } else {
                             //Make action for BAD matching
                             NSLog(@"Bad matching between %@ and %@", ingrediente1.name, ingrediente2.name);
-                            
-                            
                             MatchingBad *matchingBadScreen = [MatchingBad sceneWithSize:CGSizeMake(self.frame.size.width, self.frame.size.height)];
                             
-                            [self.view presentScene:matchingBadScreen transition:[SKTransition doorwayWithDuration:1.0]];
+                            matchingBadScreen.comment = matching.comment;
+                            matchingBadScreen.scaleMode =SKSceneScaleModeAspectFill;
+                            [self.view presentScene:matchingBadScreen transition:[SKTransition doorwayWithDuration:0.3]];
                             
                         }
                         
@@ -280,6 +257,8 @@
                         NSLog(@"No matching between %@ and %@", ingrediente1.name, ingrediente2.name);
                         
                         Nomatching *noMatchingScreen = [Nomatching sceneWithSize:CGSizeMake(self.frame.size.width, self.frame.size.height)];
+                        noMatchingScreen.comment = matching.comment;
+                        noMatchingScreen.scaleMode =SKSceneScaleModeAspectFill;
                         
                         [self.view presentScene:noMatchingScreen transition:[SKTransition doorwayWithDuration:1.0]];
                         
@@ -309,8 +288,6 @@
         SKNode *flavourLabelNode = [self childNodeWithName:[NSString stringWithFormat:@"flavourLabel%d", i]];
         SKNode *ingredientsLabelNode = [self childNodeWithName:[NSString stringWithFormat:@"ingredientLabel%d", i]];
         SKAction *move = [SKAction moveBy:CGVectorMake(arc4random()%10, arc4random()%15) duration:3];
-        //        SKAction *scaleY = [SKAction scaleYTo:(arc4random()%7) duration:4];
-        //        SKAction *scaleX = [SKAction scaleYTo:(arc4random()%7) duration:4];
         SKAction *reseversedMove = [move reversedAction];
         SKAction *moveSeq = [SKAction sequence:@[ move, reseversedMove]];
         SKAction* groupAction = [SKAction group:@[moveSeq]];
