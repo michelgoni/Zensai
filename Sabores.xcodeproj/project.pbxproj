@@ -31,6 +31,8 @@
 		2D98B6291AB8323700FCDE1C /* Sabor.m in Sources */ = {isa = PBXBuildFile; fileRef = 2D98B6231AB8323700FCDE1C /* Sabor.m */; };
 		2D98B62D1AB8342700FCDE1C /* AppDataStack.m in Sources */ = {isa = PBXBuildFile; fileRef = 2D98B62C1AB8342700FCDE1C /* AppDataStack.m */; };
 		2DBA93341ABF74BD00E3B827 /* MatchingGood.m in Sources */ = {isa = PBXBuildFile; fileRef = 2DBA93331ABF74BD00E3B827 /* MatchingGood.m */; };
+		2DD308481AC0321600784CCF /* MatchingBad.m in Sources */ = {isa = PBXBuildFile; fileRef = 2DD308471AC0321600784CCF /* MatchingBad.m */; };
+		2DD3084B1AC0336D00784CCF /* Nomatching.m in Sources */ = {isa = PBXBuildFile; fileRef = 2DD3084A1AC0336D00784CCF /* Nomatching.m */; };
 		2DE77F2D1ABED96B0066B4A6 /* 1024x1024.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 2DE77F2C1ABED96B0066B4A6 /* 1024x1024.jpg */; };
 		A9436A661ABC7E640088F344 /* SaboresModel.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 2D98B6141AB82C9100FCDE1C /* SaboresModel.xcdatamodeld */; };
 /* End PBXBuildFile section */
@@ -52,7 +54,7 @@
 		2D517B431ABC142400BEC559 /* SKEase.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SKEase.h; sourceTree = "<group>"; };
 		2D517B441ABC142400BEC559 /* SKEase.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SKEase.m; sourceTree = "<group>"; };
 		2D517B451ABC142400BEC559 /* SpriteKit-Easing-Prefix.pch */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "SpriteKit-Easing-Prefix.pch"; sourceTree = "<group>"; };
-		2D6960A11ABA144D00281327 /* SourceSansPro-Light.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "SourceSansPro-Light.ttf"; sourceTree = "<group>"; };
+		2D6960A11ABA144D00281327 /* SSPLight.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = SSPLight.ttf; sourceTree = "<group>"; };
 		2D6A8DFD1AB6DFA6008955E8 /* Sabores.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Sabores.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		2D6A8E011AB6DFA6008955E8 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		2D6A8E021AB6DFA6008955E8 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
@@ -95,6 +97,10 @@
 		2D98B62C1AB8342700FCDE1C /* AppDataStack.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AppDataStack.m; sourceTree = "<group>"; };
 		2DBA93321ABF74BD00E3B827 /* MatchingGood.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MatchingGood.h; sourceTree = "<group>"; };
 		2DBA93331ABF74BD00E3B827 /* MatchingGood.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MatchingGood.m; sourceTree = "<group>"; };
+		2DD308461AC0321600784CCF /* MatchingBad.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MatchingBad.h; sourceTree = "<group>"; };
+		2DD308471AC0321600784CCF /* MatchingBad.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MatchingBad.m; sourceTree = "<group>"; };
+		2DD308491AC0336D00784CCF /* Nomatching.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Nomatching.h; sourceTree = "<group>"; };
+		2DD3084A1AC0336D00784CCF /* Nomatching.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Nomatching.m; sourceTree = "<group>"; };
 		2DE77F2C1ABED96B0066B4A6 /* 1024x1024.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = 1024x1024.jpg; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -132,9 +138,7 @@
 		2D524A251AB6EE9100B9C507 /* Assets */ = {
 			isa = PBXGroup;
 			children = (
-				2D6960A11ABA144D00281327 /* SourceSansPro-Light.ttf */,
-				2D98B62B1AB8342700FCDE1C /* AppDataStack.h */,
-				2D98B62C1AB8342700FCDE1C /* AppDataStack.m */,
+				2D6960A11ABA144D00281327 /* SSPLight.ttf */,
 				2DE77F2C1ABED96B0066B4A6 /* 1024x1024.jpg */,
 			);
 			name = Assets;
@@ -240,6 +244,8 @@
 			isa = PBXGroup;
 			children = (
 				2D98B62A1AB8324100FCDE1C /* Internal */,
+				2D98B62B1AB8342700FCDE1C /* AppDataStack.h */,
+				2D98B62C1AB8342700FCDE1C /* AppDataStack.m */,
 				2D98B61E1AB8323700FCDE1C /* Ingrediente.h */,
 				2D98B61F1AB8323700FCDE1C /* Ingrediente.m */,
 				2D98B6201AB8323700FCDE1C /* Matching.h */,
@@ -269,6 +275,10 @@
 			children = (
 				2D6A8E071AB6DFA6008955E8 /* GameScene.h */,
 				2D6A8E081AB6DFA6008955E8 /* GameScene.m */,
+				2DD308491AC0336D00784CCF /* Nomatching.h */,
+				2DD3084A1AC0336D00784CCF /* Nomatching.m */,
+				2DD308461AC0321600784CCF /* MatchingBad.h */,
+				2DD308471AC0321600784CCF /* MatchingBad.m */,
 				2DBA93321ABF74BD00E3B827 /* MatchingGood.h */,
 				2DBA93331ABF74BD00E3B827 /* MatchingGood.m */,
 			);
@@ -404,10 +414,12 @@
 				2DBA93341ABF74BD00E3B827 /* MatchingGood.m in Sources */,
 				2D8FA4611ABC98C7005D4E8C /* CreateLabelIngredients.m in Sources */,
 				2D98B6261AB8323700FCDE1C /* _Sabor.m in Sources */,
+				2DD308481AC0321600784CCF /* MatchingBad.m in Sources */,
 				2D98B6291AB8323700FCDE1C /* Sabor.m in Sources */,
 				2D98B6241AB8323700FCDE1C /* _Ingrediente.m in Sources */,
 				2D98B6281AB8323700FCDE1C /* Matching.m in Sources */,
 				2D98B62D1AB8342700FCDE1C /* AppDataStack.m in Sources */,
+				2DD3084B1AC0336D00784CCF /* Nomatching.m in Sources */,
 				2D6A8E061AB6DFA6008955E8 /* AppDelegate.m in Sources */,
 				2D8FA45A1ABC5955005D4E8C /* TouchesHexagon.m in Sources */,
 				2D6A8E091AB6DFA6008955E8 /* GameScene.m in Sources */,

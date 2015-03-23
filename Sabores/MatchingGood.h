@@ -13,5 +13,10 @@
 @interface MatchingGood : SKScene
 
 @property (strong, nonatomic) UILabel *matchingLabel;
+@property (strong, nonatomic) NSString *comment;
+
+
+
+
 
 @end

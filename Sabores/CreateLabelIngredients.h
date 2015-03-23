@@ -11,5 +11,5 @@
 @interface CreateLabelIngredients : SKNode
 
 @property (strong, nonatomic) SKLabelNode *ingredientLabelName;
-
+@property (strong, nonatomic) SKSpriteNode *ingredientLabelSprite;
 @end

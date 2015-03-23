@@ -14,6 +14,6 @@
 @property (strong, nonatomic) NSManagedObjectContext *context;
 @property (strong, nonatomic) SKLabelNode *flavourLabelName;
 
-
+-(instancetype)initWithColor: (int) color;
 
 @end

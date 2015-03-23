@@ -53,27 +53,9 @@
                    }
                    ]
   },
-  {
-  "id_sabor": "mar",
-  "sabor": "Mar",
-  "ingredientes": [
-                   {
-                   "id_ingrediente": "marisco",
-                   "nombre": "Marisco"
-                   },
-                   {
-                   "id_ingrediente": "pescadoblanco",
-                   "nombre": "TBD"
-                   },
-                   {
-                   "id_ingrediente": "pescadograso",
-                   "nombre": "TBD"
-                   }
-                   ]
-  },
-  {
+{
   "id_sabor": "hierba",
-  "sabor": "Verdura",
+  "sabor": "Hierba",
   "ingredientes": [
                    {
                    "id_ingrediente": "cilantro",

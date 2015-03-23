@@ -28,11 +28,13 @@
 
 -(void) createLabelIngredients {
     
+
     self.ingredientLabelName= [SKLabelNode labelNodeWithFontNamed:@"Optima"];
     self.ingredientLabelName.alpha = 1.0;
     self.ingredientLabelName.fontSize = 16;
     self.ingredientLabelName.fontColor = [SKColor colorWithRed:1 green:0.688 blue:0 alpha:1];
     self.ingredientLabelName.zPosition = 10;
+    
     [self addChild: self.ingredientLabelName];
 }
 
