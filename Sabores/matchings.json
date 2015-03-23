@@ -13,16 +13,57 @@
                     ],
   "matchingmalo": [
                    {
-                   "id_ingrediente": "tomate",
-                   "comentario": "Este es el comentario sobre el no de los elementos tomate y sandía"
+                   "id_ingrediente": "pimiento",
+                   "comentario": "Este es el comentario sobre el no de los elementos pimiento y sandía"
                    }
                    ]
+  },
+  {
+  "id_ingrediente": "tomate",
+  "matchingbueno": [
+                    {
+                    "id_ingrediente": "sandía",
+                    "comentario": "Este es el comentario sobre el matching de los elementos tomate y sandía"
+                    },
+                    {
+                    "id_ingrediente": "marisco",
+                    "comentario": "Este es el comentario sobre el matching de los elementos marisco y sandía"
+                    }
+                    ]
+  },
+  {
+  "id_ingrediente": "marisco",
+  "matchingbueno": [
+                    {
+                    "id_ingrediente": "sandía",
+                    "comentario": "Este es el comentario sobre el matching de los elementos tomate y sandía"
+                    }
+                    ]
   },
   {
   "id_ingrediente": "cacahuete",
   "matchingbueno": [
                     {
                     "id_ingrediente": "guindilla",
+                    "comentario": "Este es el comentario sobre el matching de los elementos cacahuete  y guindilla."
+                    },
+                    {
+                    "id_ingrediente": "chocolate",
+                    "comentario": "Este es el comentario sobre el matching de los elementos chocolate y cacahuete"
+                    }
+                    ],
+  "matchingmalo": [
+                   {
+                   "id_ingrediente": "jamon",
+                   "comentario": "Este es el comentario sobre el no de los elementos jamón y cacahuete"
+                   }
+                   ]
+  },
+  {
+  "id_ingrediente": "guindilla",
+  "matchingbueno": [
+                    {
+                    "id_ingrediente": "cacahuete",
                     "comentario": "Este es el comentario sobre el matching de los elementos cacahuete  y guindilla."
                     },
                     {
@@ -45,8 +86,8 @@
                     "comentario": "Este es el comentario sobre el matching de los elementos cacahuete  y guindilla."
                     },
                     {
-                    "id_ingrediente": "guindilla",
-                    "comentario": "Este es el comentario sobre el matching de los elementos qchocolate y gundilla"
+                    "id_ingrediente": "cafe",
+                    "comentario": "Este es el comentario sobre el matching de los elementos chocolate y cafe"
                     }
                     ],
   "matchingmalo": [
@@ -57,16 +98,16 @@
                    ]
   },
   {
-  "id_ingrediente": "berenjena",
+  "id_ingrediente": "anchoa",
   "matchingbueno": [
                     {
-                    "id_ingrediente": "jengibre",
-                    "comentario": "Este es el comentario sobre el matching de los elementos berenjena y jengibre."
+                    "id_ingrediente": "azul",
+                    "comentario": "Este es el comentario sobre el matching de los elementos anchoa y queso azul."
                     }
                     ],
   "matchingmalo": [
                    {
-                   "id_ingrediente": "trufa",
+                   "id_ingrediente": "chocolate",
                    "comentario": "Este es el comentario sobre el no de los elementos trufa y berenjena"
                    }
                    ]
