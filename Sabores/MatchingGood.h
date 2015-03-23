@@ -9,8 +9,9 @@
 #import <SpriteKit/SpriteKit.h>
 #import "GameScene.h"
 
+
 @interface MatchingGood : SKScene
 
-@property BOOL sceneCreate;
+@property (strong, nonatomic) UILabel *matchingLabel;
 
 @end
