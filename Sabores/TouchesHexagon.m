@@ -38,8 +38,8 @@
     
     
     
-    SKShapeNode *hexagono = [SKShapeNode node];
-    hexagono.name = [NSString stringWithFormat:@"Hexagono1"];
+    self.hexagono = [SKShapeNode node];
+    self.hexagono.name = [NSString stringWithFormat:@"Hexagono1"];
     UIBezierPath* polygonPath = UIBezierPath.bezierPath;
     [polygonPath moveToPoint: CGPointMake(51.62, 117.25)];
     [polygonPath addLineToPoint: CGPointMake(93.09, 93.31)];
@@ -50,10 +50,28 @@
     [polygonPath closePath];
     
     
-    hexagono.path = polygonPath.CGPath;
-    hexagono.lineWidth = 1;
-    hexagono.zPosition = 10;
-    hexagono.strokeColor = [SKColor whiteColor];
+    self.hexagono.path = polygonPath.CGPath;
+    self.hexagono.userInteractionEnabled = YES;
+    self.hexagono.lineWidth = 1;
+    self.hexagono.zPosition = 10;
+    int i = 0;
+    //Colors array 
+    NSArray *colores =      @[[SKColor colorWithRed:192/255.0f green:57/255.0f blue:43/255.0f alpha:1.0f],
+                                  [SKColor colorWithRed: 0.5 green: 0.2 blue: 0.13 alpha: 1],
+                                  [SKColor colorWithRed: 0.844 green: 0.157 blue: 0.157 alpha: 1],
+                                  [SKColor colorWithRed: 0.844 green: 0.157 blue: 0.157 alpha: 1],
+                                  [SKColor colorWithRed: 0.2 green: 0.157 blue: 0.4 alpha: 1],
+                                  [SKColor colorWithRed: 0.844 green: 0.157 blue: 0.157 alpha: 1],
+                                  [SKColor colorWithRed: 0.5 green: 0.157 blue: 0.157 alpha: 1],
+                                  [SKColor colorWithRed: 0.844 green: 0.157 blue: 0.157 alpha: 1],
+                                  [SKColor colorWithRed: 0.844 green: 0.157 blue: 0.157 alpha: 1],
+                                  [SKColor colorWithRed: 1 green: 0.3 blue: 0.157 alpha: 1]];
+    
+    for (SKColor *color in colores) {
+        NSLog(@"%@ Color is", color);
+        self.hexagono.strokeColor = colores [i];
+    }
+    
     
     
     SKShapeNode *line1 = [SKShapeNode node];
@@ -91,7 +109,7 @@
     line3.strokeColor = [SKColor whiteColor];
     line3.zPosition = 10;
 
-     [self addChild:hexagono];
+     [self addChild:self.hexagono];
      [self addChild:line1];
      [self addChild:line2];
      [self addChild:line3];
