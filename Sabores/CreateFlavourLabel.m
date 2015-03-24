@@ -40,6 +40,7 @@
         self.flavourLabelName = [SKLabelNode labelNodeWithFontNamed:@"SSPLight"];
         self.flavourLabelName.alpha = 1.0;
         self.flavourLabelName.fontSize = 22;
+        
 
     
     
@@ -54,13 +55,18 @@
                               [SKColor colorWithRed: 22/255.0 green: 160/255.0 blue: 133/255.0 alpha: 1],
                               [SKColor colorWithRed: 22/255.0 green: 160/255.0 blue: 133/255.0 alpha: 1]];
     
-    self.flavourLabelName.fontColor = colores [color];
+        self.flavourLabelName.fontColor = colores [color];
 
         self.flavourLabelName.zPosition = 10;
         [self addChild:self.flavourLabelName];
     
     
 
+}
+
+-(void) touchesBegan:(NSSet *)touches withEvent:(UIEvent *)event {
+    
+    [super touchesBegan:touches withEvent:event];
 }
 
 

@@ -53,6 +53,7 @@
     self.hexagono.path = polygonPath.CGPath;
     self.hexagono.lineWidth = 1;
     self.hexagono.zPosition = 10;
+    self.hexagono.name = @"";
 
 
     

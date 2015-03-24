@@ -39,6 +39,10 @@
 @property (strong, nonatomic) TouchesHexagon *touches;
 @property (strong, nonatomic) CreateFlavourLabel *labelFlavour;
 @property (strong, nonatomic) CreateLabelIngredients *labelIngredients;
+
+@property (strong, nonatomic) Ingrediente *selectedIngredient1;
+@property (strong, nonatomic) Ingrediente *selectedIngredient2;
+
 @end
 
 @implementation GameScene {
@@ -57,7 +61,6 @@
     [self createHexagons];
     [self createIngredientsLabel];
     
-    
 }
 
 
@@ -69,20 +72,30 @@
         NSLog(@"-----------Flavour name: %@", sabor.name);
         _touches = [TouchesHexagon node];
         _touches = [_touches initWithColor: i];
+        _touches.saborID = sabor.identifier;
+        
+        self.touches.name = sabor.name;
         self.node = (SKNode *)[self childNodeWithName:[NSString stringWithFormat:@"Node%d", i]];
         [self.node addChild:_touches];
-    
+        self.node.userData = [@{@"saborID":sabor.identifier} mutableCopy];
+
         //Sabores
         _labelFlavour = [CreateFlavourLabel node];
         _labelFlavour = [_labelFlavour initWithColor:i];
+        _labelFlavour.saborID = sabor.identifier;
+        self.labelFlavour.name = sabor.name;
         self.labelFlavour.flavourLabelName.text = sabor.name;
         self.labelFlavour.flavourLabelName.name = sabor.name;
         self.flavourLabelNode = (SKNode *)[self childNodeWithName:[NSString stringWithFormat:@"flavourLabel%d", i]];
+        
         [self.flavourLabelNode addChild:_labelFlavour];
+        self.flavourLabelNode.userData = [@{@"saborID":sabor.identifier} mutableCopy];
         i++;
         
          }
 }
+
+
 
 
 -(void) createIngredientsLabel {
@@ -97,11 +110,13 @@
            NSLog(@"--------------ingrediente name: %@", ingrediente.name);
           
           _labelIngredients = [CreateLabelIngredients node];
-
+            _labelIngredients.ingredienteID = ingrediente.identifier;
             self.ingredientLabelNode = (SKNode *)[self childNodeWithName:[NSString stringWithFormat:@"ingredientLabel%d", j]];
             self.labelIngredients.ingredientLabelName.text = ingrediente.name;
             self.labelIngredients.ingredientLabelName.name = ingrediente.identifier;
             [self.ingredientLabelNode addChild:_labelIngredients];
+            self.ingredientLabelNode.alpha = 0.0;
+            self.ingredientLabelNode.userData = [@{@"saborID":ingrediente.sabor.identifier, @"ingredienteID":ingrediente.identifier} mutableCopy];
 
            j++;
             
@@ -116,7 +131,6 @@
 {
     self.flavours = [Sabor allSaboresInContext:self.context];
     
-    self.ingredients = [Ingrediente allIngredientsInContext:self.context];
 }
 
 -(void) testMatching {
@@ -148,7 +162,25 @@
     
 }
 
+- (TouchesHexagon *)flavourNode:(SKNode *)node {
+    if (!node) return nil;
+    
+    if ([node isKindOfClass:[TouchesHexagon class]]) {
+        return (TouchesHexagon *)node;
+    }
+    
+    return [self flavourNode:node.parent];
+}
 
+- (CreateLabelIngredients *)ingredientNode:(SKNode *)node {
+    if (!node) return nil;
+    
+    if ([node isKindOfClass:[CreateLabelIngredients class]]) {
+        return (CreateLabelIngredients *)node;
+    }
+    
+    return [self ingredientNode:node.parent];
+}
 
 -(void)touchesBegan:(NSSet *)touches withEvent:(UIEvent *)event {
     
@@ -160,8 +192,50 @@
             CGPoint p = [touch locationInNode:self];
             SKNode *nodeK = [self.scene nodeAtPoint:p];
             
-            self.matchingIngredient1.text = nodeK.name;
-            self.matchingIngredient1.name  = nodeK.name;
+            CreateLabelIngredients *ingredientNode = [self ingredientNode:nodeK];
+            if (ingredientNode) {
+                NSLog(@"Ingrediente %@", nodeK);
+                if (self.selectedIngredient1) {
+                    if (self.selectedIngredient2) {
+                        // Two ingredients already selected
+                        
+                        
+                    } else {
+                        // Test if the same ingredient
+                        
+                        // If not the same
+                        self.selectedIngredient2 = [Ingrediente ingredienteById:ingredientNode.ingredienteID inContext:self.context];
+                        
+                        // Two ingredients just selected
+                        
+                        // Search matching
+                        
+                    }
+                } else {
+                    self.selectedIngredient1 = [Ingrediente ingredienteById:ingredientNode.ingredienteID inContext:self.context];
+                    
+                    // Only one ingredient selected
+//                    [self fillIngredienteNode:self.matchingIngredient1 withIngredient:self.selectedIngredient1];
+                    
+                }
+
+            } else {
+                // Touched on other node not an ingredient label
+                TouchesHexagon *flavourNode = [self flavourNode:nodeK];
+                if (flavourNode) {
+                    
+                }
+            }
+
+///////////////////////////////
+            if ([self.matchingIngredient1.text isEqualToString: @"Carne"]) {
+                
+                self.matchingIngredient1.text = @"";
+            }else {
+                self.matchingIngredient1.text = nodeK.name;
+                self.matchingIngredient1.name  = nodeK.name;
+            }
+
             
             SKAction *bounce2 = [SKEase ScaleFromWithNode:nodeK EaseFunction:CurveTypeBounce
                                                      Mode:ElasticEaseInOut(5)
@@ -175,19 +249,26 @@
             
             NSLog(@"Touched someting called %@", nodeK.name);
             
-            if ([nodeK.name isEqualToString:@"flavourLabel0"]){
+            if ([nodeK.name isEqualToString:@"Carne"]){
                 
                 //Ejecutamos animación donde aparecen los ingredientes afrutados
                 for (int i = 0; i< 3; i++) {
                 
                 SKNode *ingredientNode1 = [self childNodeWithName:[NSString stringWithFormat:@"ingredientLabel%d", i]];
-                SKAction *bounce2 = [SKEase ScaleFromWithNode:nodeK EaseFunction:CurveTypeBounce
-                                                             Mode:ElasticEaseInOut(5)
-                                                             Time:0.2
-                                                        FromValue:2.2];
+
                     
+                    SKAction *bounce2 = [SKEase ScaleToWithNode:nodeK EaseFunction:CurveTypeElastic Mode:ElasticEaseInOut(5) Time:2 ToValue:20];
                     
-                [ingredientNode1 runAction:bounce2];
+                    SKAction *fade = [SKAction fadeAlphaTo:1 duration:0.2];
+                    
+//                SKAction *bounce2 = [SKEase ScaleToWithNode:nodeK EaseFunction:CurveTypeBounce
+//                                                             Mode:ElasticEaseInOut(5)
+//                                                             Time:0.2
+//                                                        FromValue:0.0];
+//                    
+                    
+                [ingredientNode1 runAction:fade];
+
                     
   
                 }
@@ -316,6 +397,8 @@
     return _context;
 }
 
-
+- (BOOL)gestureRecognizer:(UIGestureRecognizer *)gestureRecognizer shouldRecognizeSimultaneouslyWithGestureRecognizer:(UIGestureRecognizer *)otherGestureRecognizer {
+    return YES;
+}
 
 @end

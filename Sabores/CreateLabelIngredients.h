@@ -10,6 +10,8 @@
 
 @interface CreateLabelIngredients : SKNode
 
+@property (copy, nonatomic) NSString *ingredienteID;
+
 @property (strong, nonatomic) SKLabelNode *ingredientLabelName;
 @property (strong, nonatomic) SKSpriteNode *ingredientLabelSprite;
 @end

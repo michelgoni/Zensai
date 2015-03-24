@@ -7,8 +7,17 @@
 //
 
 #import <SpriteKit/SpriteKit.h>
+#import <UIKit/UIGestureRecognizerSubclass.h>
+
+@protocol GestureeLsFlavour <UIGestureRecognizerDelegate>
+
+
+
+@end
 
 @interface CreateFlavourLabel : SKNode
+
+@property (copy, nonatomic) NSString *saborID;
 
 @property (copy, nonatomic) NSArray *flavours;
 @property (strong, nonatomic) NSManagedObjectContext *context;

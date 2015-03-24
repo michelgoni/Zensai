@@ -34,6 +34,8 @@
     self.ingredientLabelName.fontSize = 16;
     self.ingredientLabelName.fontColor = [SKColor colorWithRed:1 green:0.688 blue:0 alpha:1];
     self.ingredientLabelName.zPosition = 10;
+
+    
     
     [self addChild: self.ingredientLabelName];
 }

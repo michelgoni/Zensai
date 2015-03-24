@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		2D49BAC21AC16BE7003851D2 /* grapes1.png in Resources */ = {isa = PBXBuildFile; fileRef = 2D49BAC11AC16BE7003851D2 /* grapes1.png */; };
 		2D517B461ABC142400BEC559 /* easing.c in Sources */ = {isa = PBXBuildFile; fileRef = 2D517B401ABC142400BEC559 /* easing.c */; };
 		2D517B471ABC142400BEC559 /* SKEase.m in Sources */ = {isa = PBXBuildFile; fileRef = 2D517B441ABC142400BEC559 /* SKEase.m */; };
 		2D6A8E031AB6DFA6008955E8 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 2D6A8E021AB6DFA6008955E8 /* main.m */; };
@@ -48,6 +49,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		2D49BAC11AC16BE7003851D2 /* grapes1.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = grapes1.png; sourceTree = "<group>"; };
 		2D517B401ABC142400BEC559 /* easing.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = easing.c; sourceTree = "<group>"; };
 		2D517B411ABC142400BEC559 /* easing.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = easing.h; sourceTree = "<group>"; };
 		2D517B421ABC142400BEC559 /* EasingDeclarations.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EasingDeclarations.h; sourceTree = "<group>"; };
@@ -138,6 +140,7 @@
 		2D524A251AB6EE9100B9C507 /* Assets */ = {
 			isa = PBXGroup;
 			children = (
+				2D49BAC11AC16BE7003851D2 /* grapes1.png */,
 				2D6960A11ABA144D00281327 /* SSPLight.ttf */,
 				2DE77F2C1ABED96B0066B4A6 /* 1024x1024.jpg */,
 			);
@@ -368,6 +371,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				2D6A8E2D1AB6DFC1008955E8 /* flavours.json in Resources */,
+				2D49BAC21AC16BE7003851D2 /* grapes1.png in Resources */,
 				2D6A8E2E1AB6DFC1008955E8 /* matchings.json in Resources */,
 				2D6A8E161AB6DFA6008955E8 /* LaunchScreen.xib in Resources */,
 				2D6A8E131AB6DFA6008955E8 /* Images.xcassets in Resources */,
