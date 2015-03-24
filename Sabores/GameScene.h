@@ -8,7 +8,7 @@
 
 #import <SpriteKit/SpriteKit.h>
 
-@interface GameScene : SKScene <UIGestureRecognizerDelegate>
+@interface GameScene : SKScene 
 
 @property (copy, nonatomic) NSArray *flavours;
 @property (copy, nonatomic) NSArray *ingredients;
