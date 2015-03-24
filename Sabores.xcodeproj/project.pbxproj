@@ -21,9 +21,9 @@
 		2D6A8E221AB6DFA6008955E8 /* SaboresTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 2D6A8E211AB6DFA6008955E8 /* SaboresTests.m */; };
 		2D6A8E2D1AB6DFC1008955E8 /* flavours.json in Resources */ = {isa = PBXBuildFile; fileRef = 2D6A8E2B1AB6DFC1008955E8 /* flavours.json */; };
 		2D6A8E2E1AB6DFC1008955E8 /* matchings.json in Resources */ = {isa = PBXBuildFile; fileRef = 2D6A8E2C1AB6DFC1008955E8 /* matchings.json */; };
-		2D8FA45A1ABC5955005D4E8C /* TouchesHexagon.m in Sources */ = {isa = PBXBuildFile; fileRef = 2D8FA4591ABC5955005D4E8C /* TouchesHexagon.m */; };
-		2D8FA45D1ABC91B2005D4E8C /* CreateFlavourLabel.m in Sources */ = {isa = PBXBuildFile; fileRef = 2D8FA45C1ABC91B2005D4E8C /* CreateFlavourLabel.m */; };
-		2D8FA4611ABC98C7005D4E8C /* CreateLabelIngredients.m in Sources */ = {isa = PBXBuildFile; fileRef = 2D8FA4601ABC98C7005D4E8C /* CreateLabelIngredients.m */; };
+		2D8FA45A1ABC5955005D4E8C /* Hexagon.m in Sources */ = {isa = PBXBuildFile; fileRef = 2D8FA4591ABC5955005D4E8C /* Hexagon.m */; };
+		2D8FA45D1ABC91B2005D4E8C /* FlavourLabel.m in Sources */ = {isa = PBXBuildFile; fileRef = 2D8FA45C1ABC91B2005D4E8C /* FlavourLabel.m */; };
+		2D8FA4611ABC98C7005D4E8C /* LabelIngredients.m in Sources */ = {isa = PBXBuildFile; fileRef = 2D8FA4601ABC98C7005D4E8C /* LabelIngredients.m */; };
 		2D98B6241AB8323700FCDE1C /* _Ingrediente.m in Sources */ = {isa = PBXBuildFile; fileRef = 2D98B6191AB8323700FCDE1C /* _Ingrediente.m */; };
 		2D98B6251AB8323700FCDE1C /* _Matching.m in Sources */ = {isa = PBXBuildFile; fileRef = 2D98B61B1AB8323700FCDE1C /* _Matching.m */; };
 		2D98B6261AB8323700FCDE1C /* _Sabor.m in Sources */ = {isa = PBXBuildFile; fileRef = 2D98B61D1AB8323700FCDE1C /* _Sabor.m */; };
@@ -75,12 +75,12 @@
 		2D6A8E211AB6DFA6008955E8 /* SaboresTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SaboresTests.m; sourceTree = "<group>"; };
 		2D6A8E2B1AB6DFC1008955E8 /* flavours.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = flavours.json; sourceTree = "<group>"; };
 		2D6A8E2C1AB6DFC1008955E8 /* matchings.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = matchings.json; sourceTree = "<group>"; };
-		2D8FA4581ABC5955005D4E8C /* TouchesHexagon.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TouchesHexagon.h; sourceTree = "<group>"; };
-		2D8FA4591ABC5955005D4E8C /* TouchesHexagon.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TouchesHexagon.m; sourceTree = "<group>"; };
-		2D8FA45B1ABC91B2005D4E8C /* CreateFlavourLabel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CreateFlavourLabel.h; sourceTree = "<group>"; };
-		2D8FA45C1ABC91B2005D4E8C /* CreateFlavourLabel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CreateFlavourLabel.m; sourceTree = "<group>"; };
-		2D8FA45F1ABC98C7005D4E8C /* CreateLabelIngredients.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CreateLabelIngredients.h; sourceTree = "<group>"; };
-		2D8FA4601ABC98C7005D4E8C /* CreateLabelIngredients.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CreateLabelIngredients.m; sourceTree = "<group>"; };
+		2D8FA4581ABC5955005D4E8C /* Hexagon.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Hexagon.h; sourceTree = "<group>"; };
+		2D8FA4591ABC5955005D4E8C /* Hexagon.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Hexagon.m; sourceTree = "<group>"; };
+		2D8FA45B1ABC91B2005D4E8C /* FlavourLabel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FlavourLabel.h; sourceTree = "<group>"; };
+		2D8FA45C1ABC91B2005D4E8C /* FlavourLabel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FlavourLabel.m; sourceTree = "<group>"; };
+		2D8FA45F1ABC98C7005D4E8C /* LabelIngredients.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LabelIngredients.h; sourceTree = "<group>"; };
+		2D8FA4601ABC98C7005D4E8C /* LabelIngredients.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LabelIngredients.m; sourceTree = "<group>"; };
 		2D94330F1AB9D93D00B35348 /* SaboresModel 2.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = "SaboresModel 2.xcdatamodel"; sourceTree = "<group>"; };
 		2D98B6151AB82C9100FCDE1C /* SaboresModel.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = SaboresModel.xcdatamodel; sourceTree = "<group>"; };
 		2D98B6181AB8323700FCDE1C /* _Ingrediente.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = _Ingrediente.h; path = Model/_Ingrediente.h; sourceTree = "<group>"; };
@@ -223,12 +223,12 @@
 		2D8FA45E1ABC91B7005D4E8C /* Creators */ = {
 			isa = PBXGroup;
 			children = (
-				2D8FA4581ABC5955005D4E8C /* TouchesHexagon.h */,
-				2D8FA4591ABC5955005D4E8C /* TouchesHexagon.m */,
-				2D8FA45B1ABC91B2005D4E8C /* CreateFlavourLabel.h */,
-				2D8FA45C1ABC91B2005D4E8C /* CreateFlavourLabel.m */,
-				2D8FA45F1ABC98C7005D4E8C /* CreateLabelIngredients.h */,
-				2D8FA4601ABC98C7005D4E8C /* CreateLabelIngredients.m */,
+				2D8FA4581ABC5955005D4E8C /* Hexagon.h */,
+				2D8FA4591ABC5955005D4E8C /* Hexagon.m */,
+				2D8FA45B1ABC91B2005D4E8C /* FlavourLabel.h */,
+				2D8FA45C1ABC91B2005D4E8C /* FlavourLabel.m */,
+				2D8FA45F1ABC98C7005D4E8C /* LabelIngredients.h */,
+				2D8FA4601ABC98C7005D4E8C /* LabelIngredients.m */,
 			);
 			name = Creators;
 			sourceTree = "<group>";
@@ -416,7 +416,7 @@
 				2D6A8E0E1AB6DFA6008955E8 /* GameViewController.m in Sources */,
 				2D517B471ABC142400BEC559 /* SKEase.m in Sources */,
 				2DBA93341ABF74BD00E3B827 /* MatchingGood.m in Sources */,
-				2D8FA4611ABC98C7005D4E8C /* CreateLabelIngredients.m in Sources */,
+				2D8FA4611ABC98C7005D4E8C /* LabelIngredients.m in Sources */,
 				2D98B6261AB8323700FCDE1C /* _Sabor.m in Sources */,
 				2DD308481AC0321600784CCF /* MatchingBad.m in Sources */,
 				2D98B6291AB8323700FCDE1C /* Sabor.m in Sources */,
@@ -425,13 +425,13 @@
 				2D98B62D1AB8342700FCDE1C /* AppDataStack.m in Sources */,
 				2DD3084B1AC0336D00784CCF /* Nomatching.m in Sources */,
 				2D6A8E061AB6DFA6008955E8 /* AppDelegate.m in Sources */,
-				2D8FA45A1ABC5955005D4E8C /* TouchesHexagon.m in Sources */,
+				2D8FA45A1ABC5955005D4E8C /* Hexagon.m in Sources */,
 				2D6A8E091AB6DFA6008955E8 /* GameScene.m in Sources */,
 				A9436A661ABC7E640088F344 /* SaboresModel.xcdatamodeld in Sources */,
 				2D98B6271AB8323700FCDE1C /* Ingrediente.m in Sources */,
 				2D98B6251AB8323700FCDE1C /* _Matching.m in Sources */,
 				2D6A8E031AB6DFA6008955E8 /* main.m in Sources */,
-				2D8FA45D1ABC91B2005D4E8C /* CreateFlavourLabel.m in Sources */,
+				2D8FA45D1ABC91B2005D4E8C /* FlavourLabel.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
