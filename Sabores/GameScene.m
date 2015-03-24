@@ -27,6 +27,7 @@
 @property (strong, nonatomic) NSManagedObjectContext *context;
 
 @property (strong, nonatomic) SKNode *node;
+@property (strong, nonatomic) SKNode *nodeK;
 @property (strong, nonatomic) SKNode *flavourLabelNode;
 @property (strong, nonatomic) SKNode *ingredientLabelNode;
 
@@ -121,7 +122,6 @@
         }
     }
 }
-        
 
 
 -(void) loadSabores
@@ -184,15 +184,14 @@
         for (UITouch* touch in touches){
             
             CGPoint p = [touch locationInNode:self];
-            SKNode *nodeK = [self.scene nodeAtPoint:p];
+            self.nodeK = [self.scene nodeAtPoint:p];
             
-            LabelIngredients *ingredientNode = [self ingredientNode:nodeK];
+            LabelIngredients *ingredientNode = [self ingredientNode:self.nodeK];
             if (ingredientNode) {
-                NSLog(@"Ingrediente %@", nodeK);
+                NSLog(@"Ingrediente %@", self.nodeK);
                 if (self.selectedIngredient1) {
                     if (self.selectedIngredient2) {
                         // Two ingredients already selected
-  
                         
                     } else {
                         // Test if the same ingredient shake some animations!
@@ -265,27 +264,183 @@
 
             } else {
                 // Touched on other node not an ingredient label
-                Hexagon *flavourNode = [self flavourNode:nodeK];
+                Hexagon *flavourNode = [self flavourNode:self.nodeK];
                 if (flavourNode) {
-                    //Which kind of flavour
                     self.selectedFlavour = [Sabor saborById:flavourNode.saborID inContext:self.context];
-                    if ([self.selectedFlavour.identifier isEqualToString:@"salado"]) {
                     
-                        for (int i = 0; i< 3; i++) {
-                            
-                            SKNode *ingredientNode1 = [self childNodeWithName:[NSString stringWithFormat:@"ingredientLabel%d", i]];
-                            SKAction *fade = [SKAction fadeAlphaTo:1 duration:0.2];
-                            
-                            [ingredientNode1 runAction:fade];
-                        }
+                    if ( [self.selectedFlavour.identifier isEqualToString:@"afrutado"]) {
+                        
+                    [self animateAfrutadoIngredients];
+                        
                     }
+                    
+                    if ( [self.selectedFlavour.identifier isEqualToString:@"carne"]) {
+                        
+                        [self animateCarneIngredients];
+                        
+                    }
+                    
+                    if ( [self.selectedFlavour.identifier isEqualToString:@"citrico"]) {
+                        
+                        [self animateCitricoIngredients];
+                        
+                    }
+                    
+                    if ( [self.selectedFlavour.identifier isEqualToString:@"especia"]) {
+                        
+                        [self animateEspeciaIngredients];
+                        
+                    }
+                    
+                    
+                    if ( [self.selectedFlavour.identifier isEqualToString:@"hierba"]) {
+                        
+                        [self animateHierbaIngredients];
+                        
+                    }
+                    
+                    if ( [self.selectedFlavour.identifier isEqualToString:@"queso"]) {
+                        
+                        [self animateQuesoIngredients];
+                        
+                    }
+                    
+                    if ( [self.selectedFlavour.identifier isEqualToString:@"salado"]) {
+                        
+                        [self animateSaladoIngredients];
+                        
+                    }
+                    
+                    if ( [self.selectedFlavour.identifier isEqualToString:@"tierra"]) {
+                        
+                        [self animateTierraIngredients];
+                        
+                    }
+                    
+                    if ( [self.selectedFlavour.identifier isEqualToString:@"tostado"]) {
+                        
+                        [self animateTostadoIngredients];
+                        
+                    }
+
+                    
                 }
             }
         }
 }
 
 
+#pragma  mark - Animaciones flavours
 
+-(void) animateAfrutadoIngredients {
+    
+    for (int i = 0; i< 3; i++) {
+       
+        SKNode *ingredientNode1 = [self childNodeWithName:[NSString stringWithFormat:@"ingredientLabel%d", i]];
+        SKAction *fade = [SKAction fadeAlphaTo:1 duration:0.2];
+        SKAction *fade2 = [SKEase ScaleToWithNode:self.nodeK EaseFunction:CurveTypeBounce Mode:ElasticEaseInOut(5) Time:0.5 ToValue:1.2];
+        fade.timingMode = SKActionTimingEaseIn;
+
+        [ingredientNode1 runAction:fade];
+        [ingredientNode1 runAction:fade2];
+
+    }
+}
+
+
+-(void) animateCarneIngredients {
+    
+    for (int i = 3; i< 6; i++) {
+        
+        SKNode *ingredientNode1 = [self childNodeWithName:[NSString stringWithFormat:@"ingredientLabel%d", i]];
+        SKAction *fade = [SKAction fadeAlphaTo:1 duration:0.2];
+        SKAction *fade2 = [SKEase ScaleToWithNode:self.nodeK EaseFunction:CurveTypeBounce Mode:ElasticEaseInOut(5) Time:0.5 ToValue:1.2];
+        fade.timingMode = SKActionTimingEaseIn;
+        
+        [ingredientNode1 runAction:fade];
+        [ingredientNode1 runAction:fade2];
+        
+    }
+}
+
+
+
+-(void) animateCitricoIngredients {
+    
+    for (int i = 6; i< 9; i++) {
+        
+        SKNode *ingredientNode1 = [self childNodeWithName:[NSString stringWithFormat:@"ingredientLabel%d", i]];
+        SKAction *fade = [SKAction fadeAlphaTo:1 duration:0.2];
+        
+        [ingredientNode1 runAction:fade];
+    }
+}
+
+-(void) animateEspeciaIngredients {
+    
+    for (int i = 9; i< 12; i++) {
+        
+        SKNode *ingredientNode1 = [self childNodeWithName:[NSString stringWithFormat:@"ingredientLabel%d", i]];
+        SKAction *fade = [SKAction fadeAlphaTo:1 duration:0.2];
+        
+        [ingredientNode1 runAction:fade];
+    }
+}
+
+-(void) animateHierbaIngredients {
+    
+    for (int i = 12; i< 15; i++) {
+        
+        SKNode *ingredientNode1 = [self childNodeWithName:[NSString stringWithFormat:@"ingredientLabel%d", i]];
+        SKAction *fade = [SKAction fadeAlphaTo:1 duration:0.2];
+        
+        [ingredientNode1 runAction:fade];
+    }
+}
+
+-(void) animateQuesoIngredients {
+    
+    for (int i = 15; i< 18; i++) {
+        
+        SKNode *ingredientNode1 = [self childNodeWithName:[NSString stringWithFormat:@"ingredientLabel%d", i]];
+        SKAction *fade = [SKAction fadeAlphaTo:1 duration:0.2];
+        
+        [ingredientNode1 runAction:fade];
+    }
+}
+
+-(void) animateSaladoIngredients {
+    
+    for (int i = 18; i< 21; i++) {
+        
+        SKNode *ingredientNode1 = [self childNodeWithName:[NSString stringWithFormat:@"ingredientLabel%d", i]];
+        SKAction *fade = [SKAction fadeAlphaTo:1 duration:0.2];
+        
+        [ingredientNode1 runAction:fade];
+    }
+}
+
+-(void) animateTierraIngredients {
+    
+    for (int i = 21; i< 24; i++) {
+        
+        SKNode *ingredientNode1 = [self childNodeWithName:[NSString stringWithFormat:@"ingredientLabel%d", i]];
+        SKAction *fade = [SKAction fadeAlphaTo:1 duration:0.2];
+        
+        [ingredientNode1 runAction:fade];
+    }
+}
+
+-(void) animateTostadoIngredients {
+    
+    for (int i = 24; i< 27; i++) {
+        
+        SKNode *ingredientNode1 = [self childNodeWithName:[NSString stringWithFormat:@"ingredientLabel%d", i]];
+        SKAction *fade = [SKAction fadeAlphaTo:1 duration:0.2];
+        
+        [ingredientNode1 runAction:fade];
+    }
+}
 
 
 #pragma  mark-Animaciones
