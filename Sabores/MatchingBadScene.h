@@ -9,7 +9,7 @@
 #import <SpriteKit/SpriteKit.h>
 #import "GameScene.h"
 
-@interface MatchingBad : SKScene
+@interface MatchingBadScene : SKScene
 @property (strong, nonatomic) UILabel *matchingLabel;
 @property (strong, nonatomic) NSString *comment;
 

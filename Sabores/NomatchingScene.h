@@ -8,7 +8,7 @@
 
 #import <SpriteKit/SpriteKit.h>
 
-@interface Nomatching : SKScene
+@interface NomatchingScene : SKScene
 
 @property (strong, nonatomic) UILabel *matchingLabel;
 @property (strong, nonatomic) NSString *comment;
