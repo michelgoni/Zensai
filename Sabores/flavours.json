@@ -36,24 +36,6 @@
                    ]
   },
   {
-  "id_sabor": "tierra",
-  "sabor": "Tierra",
-  "ingredientes": [
-                   {
-                   "id_ingrediente": "patata",
-                   "nombre": "Patata"
-                   },
-                   {
-                   "id_ingrediente": "trufa",
-                   "nombre": "Trufa"
-                   },
-                   {
-                   "id_ingrediente": "seta",
-                   "nombre": "Seta"
-                   }
-                   ]
-  },
-{
   "id_sabor": "hierba",
   "sabor": "Hierba",
   "ingredientes": [

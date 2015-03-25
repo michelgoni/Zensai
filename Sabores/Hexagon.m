@@ -79,33 +79,34 @@
     self.line1.path = bezierPath.CGPath;
     self.line1.lineWidth = 1;
     self.line1.zPosition = 10;
+    self.line1.alpha = 0;
 
     
     
     self.line2.path = bezier2Path.CGPath;
     self.line2.lineWidth = 1;
     self.line2.zPosition = 10;
+    self.line2.alpha = 0;
 
     
     self.line3.path = bezier3Path.CGPath;
     self.line3.lineWidth = 1;
     self.line3.zPosition = 10;
+    self.line3.alpha = 0;
 
-    //Colorsrgb pumpkin rgb(211, 84, 0) carrot rgb(230, 126, 34)
-
-    NSArray *colores =      @[[SKColor colorWithRed: 155/255.0 green:89/255.0 blue:182/255.0 alpha:1.0],
-                              [SKColor colorWithRed: 230/255.0 green:126/255.0 blue:34/255.0 alpha:1.0],
-                              [SKColor colorWithRed: 241/ 255.0  green: 196/255.0  blue:15/255.0 alpha: 1],
-                              [SKColor colorWithRed: 243/255.0 green:156/255.0 blue: 18/255.0 alpha: 1],
-                              [SKColor colorWithRed: 39/255.0 green: 174/255.0 blue: 96/255.0  alpha: 1],
-                              [SKColor colorWithRed: 230/255.0 green: 126/255.0  blue: 34/255.0  alpha: 1],
-                              [SKColor colorWithRed: 149/255.0 green:165/255.0 blue:166/255.0 alpha:1.0],
-                              [SKColor colorWithRed: 189/255.0 green:195/255.0 blue:199/255.0 alpha:1.0],
-                              [SKColor colorWithRed: 22/255.0 green: 160/255.0 blue: 133/255.0 alpha: 1],
-                              [SKColor colorWithRed: 22/255.0 green: 160/255.0 blue: 133/255.0 alpha: 1]];
+    
+    NSArray *colores =     @[[SKColor colorWithRed: 155/255.0 green:89/255.0 blue:182/255.0 alpha:1.0],
+                             [SKColor colorWithRed: 211/255.0 green:84/255.0 blue:0/255.0 alpha:1.0],
+                             [SKColor colorWithRed: 241/ 255.0  green: 196/255.0  blue:15/255.0 alpha: 1],
+                             [SKColor colorWithRed: 243/255.0 green:156/255.0 blue: 18/255.0 alpha: 1],
+                             [SKColor colorWithRed: 39/255.0 green: 174/255.0 blue: 96/255.0  alpha: 1],
+                             [SKColor colorWithRed: 230/255.0 green: 126/255.0  blue: 34/255.0  alpha: 1],
+                             [SKColor colorWithRed: 149/255.0 green:165/255.0 blue:166/255.0 alpha:1.0],
+                             [SKColor colorWithRed: 211/255.0 green:84/255.0 blue:0/255.0 alpha:1.0]];
+    
     
 
-        
+    
         self.hexagono.strokeColor = colores [color] ;
         self.line1.strokeColor = colores [color];
         self.line2.strokeColor = colores [color];

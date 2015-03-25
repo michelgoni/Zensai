@@ -120,7 +120,7 @@
             self.labelIngredients.ingredientLabelName.text = ingrediente.name;
             self.labelIngredients.ingredientLabelName.name = ingrediente.identifier;
             [self.ingredientLabelNode addChild:_labelIngredients];
-            self.ingredientLabelNode.alpha = 1.0;
+            self.ingredientLabelNode.alpha = 0.0;
             self.ingredientLabelNode.userData = [@{@"saborID":ingrediente.sabor.identifier, @"ingredienteID":ingrediente.identifier} mutableCopy];
 
            j++;
@@ -134,6 +134,7 @@
 -(void) loadSabores
 {
     self.flavours = [Sabor allSaboresInContext:self.context];
+    self.ingredients = [Ingrediente allIngredientsInContext:self.context];
     
 }
 
@@ -201,7 +202,6 @@
                         // Two ingredients already selected
                         
                     } else {
-                        // Test if the same ingredient shake some animations!
                         
                         // If not the same
                         self.selectedIngredient2 = [Ingrediente ingredienteById:ingredientNode.ingredienteID inContext:self.context];
@@ -242,7 +242,7 @@
                                         matchingBadScreen.ingredient1Name = ingrediente1.name;
                                         matchingBadScreen.ingredient2Name = ingrediente2.name;
                                         matchingBadScreen.scaleMode =SKSceneScaleModeAspectFill;
-                                        [self.view presentScene:matchingBadScreen transition:[SKTransition doorwayWithDuration:0.3]];
+                                        [self.view presentScene:matchingBadScreen transition:[SKTransition fadeWithDuration:1.2]];
                                         
                                     }
                                     
@@ -256,8 +256,7 @@
                                     noMatchingScreen.ingredient2Name = ingrediente2.name;
                                     noMatchingScreen.scaleMode =SKSceneScaleModeAspectFill;
                                     
-                                    [self.view presentScene:noMatchingScreen transition:[SKTransition doorwayWithDuration:1.0]];
-                                    
+                                    [self.view presentScene:noMatchingScreen transition:[SKTransition fadeWithDuration:1.2]];                                    
                                 }
                             } else {
                                 // We hava a problem
@@ -272,7 +271,10 @@
                     self.selectedIngredient1 = [Ingrediente ingredienteById:ingredientNode.ingredienteID inContext:self.context];
                     self.matchingIngredient1.text = self.selectedIngredient1.name;
                     self.matchingIngredient1.name = self.selectedIngredient1.identifier;
-                    //Esconder los ingredientes
+                    if (self.matchingIngredient1.name == self.selectedIngredient1.identifier) {
+                        
+                        [self animateAfrutadoIngredientsBack];
+                    }
                 }
 
             } else {
@@ -359,6 +361,29 @@
 
     }
 }
+
+-(void) animateAfrutadoIngredientsBack {
+    
+    for (int i = 0; i< 3; i++) {
+        SKNode *ingredientNode1 = [SKNode node];
+        //SKNode *ingredientNode1 = [self childNodeWithName:[NSString stringWithFormat:@"ingredientLabel%d", i]];
+        ingredientNode1.userData = self.ingredientLabelNode.userData;
+        if ([ingredientNode1.userData objectForKey:self.labelFlavour.saborID]){
+            
+            SKAction *fade = [SKAction fadeAlphaTo:0 duration:0.2];
+            SKAction *fade2 = [SKEase ScaleToWithNode:self.nodeK EaseFunction:CurveTypeBounce Mode:ElasticEaseInOut(5) Time:0.5 ToValue:0.0];
+            fade.timingMode = SKActionTimingEaseIn;
+            
+            [ingredientNode1 runAction:fade];
+            [ingredientNode1 runAction:fade2];
+            
+        }
+
+        
+        
+    }
+}
+
 
 
 -(void) animateCarneIngredients {
