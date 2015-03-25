@@ -4,77 +4,36 @@
   "matchingbueno": [
                     {
                     "id_ingrediente": "tomate",
-                    "comentario": "Este es el comentario sobre el matching de los elementos tomate y sandía. Este es el comentario sobre el matching de los elementos tomate y sandía. Este es el comentario sobre el matching de los elementos\r tomate y sandía. Este es el comentario sobre el matching de los elementos\tomate y sandía."
+                    "comentario": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Morbi interdum dui placerat, pulvinar mi quis, porta est. Aliquam pellentesque in dolor in pretium. Suspendisse tempus eros urna, ac dictum est vehicula nec. Nulla condimentum lobortis dictum. Praesent efficitur condimentum massa non bibendum. Sed mattis enim id enim congue rhoncus. Duis tincidunt porta ante, non ornare mauris varius vitae. Integer lacus ante, malesuada et tellus vitae, placerat lacinia risus. Nunc commodo condimentum sodales. Pellentesque ultrices convallis tincidunt. Nulla facilisi. Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Vivamus aliquet felis vel tortor fringilla accumsan. In sed ante arcu. Nulla a libero enim. Etiam bibendum sapien lectus, sit amet tincidunt tellus semper sit amet."
                     },
                     {
                     "id_ingrediente": "marisco",
-                    "comentario": "Este es el comentario sobre el matching de los elementos marisco y sandía"
+                    "comentario": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Morbi interdum dui placerat, pulvinar mi quis, porta est. Aliquam pellentesque in dolor in pretium. Suspendisse tempus eros urna, ac dictum est vehicula nec. Nulla condimentum lobortis dictum. Praesent efficitur condimentum massa non bibendum. Sed mattis enim id enim congue rhoncus. Duis tincidunt porta ante, non ornare mauris varius vitae. Integer lacus ante, malesuada et tellus vitae, placerat lacinia risus. Nunc commodo condimentum sodales. Pellentesque ultrices convallis tincidunt. Nulla facilisi. Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Vivamus aliquet felis vel tortor fringilla accumsan. In sed ante arcu. Nulla a libero enim. Etiam bibendum sapien lectus, sit amet tincidunt tellus semper sit amet."
                     }
                     ],
   "matchingmalo": [
                    {
-                   "id_ingrediente": "pimiento",
-                   "comentario": "Este es el comentario sobre el no de los elementos pimiento y sandía"
+                   "id_ingrediente": "tomate",
+                   "comentario": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Morbi interdum dui placerat, pulvinar mi quis, porta est. Aliquam pellentesque in dolor in pretium. Suspendisse tempus eros urna, ac dictum est vehicula nec. Nulla condimentum lobortis dictum. Praesent efficitur condimentum massa non bibendum. Sed mattis enim id enim congue rhoncus. Duis tincidunt porta ante, non ornare mauris varius vitae. Integer lacus ante, malesuada et tellus vitae, placerat lacinia risus. Nunc commodo condimentum sodales. Pellentesque ultrices convallis tincidunt. Nulla facilisi. Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Vivamus aliquet felis vel tortor fringilla accumsan. In sed ante arcu. Nulla a libero enim. Etiam bibendum sapien lectus, sit amet tincidunt tellus semper sit amet."
                    }
                    ]
-  },
-  {
-  "id_ingrediente": "tomate",
-  "matchingbueno": [
-                    {
-                    "id_ingrediente": "sandía",
-                    "comentario": "Este es el comentario sobre el matching de los elementos tomate y sandía"
-                    },
-                    {
-                    "id_ingrediente": "marisco",
-                    "comentario": "Este es el comentario sobre el matching de los elementos marisco y sandía"
-                    }
-                    ]
-  },
-  {
-  "id_ingrediente": "marisco",
-  "matchingbueno": [
-                    {
-                    "id_ingrediente": "sandía",
-                    "comentario": "Este es el comentario sobre el matching de los elementos tomate y sandía"
-                    }
-                    ]
   },
   {
   "id_ingrediente": "cacahuete",
   "matchingbueno": [
                     {
                     "id_ingrediente": "guindilla",
-                    "comentario": "Este es el comentario sobre el matching de los elementos cacahuete  y guindilla."
+                    "comentario": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Morbi interdum dui placerat, pulvinar mi quis, porta est. Aliquam pellentesque in dolor in pretium. Suspendisse tempus eros urna, ac dictum est vehicula nec. Nulla condimentum lobortis dictum. Praesent efficitur condimentum massa non bibendum. Sed mattis enim id enim congue rhoncus. Duis tincidunt porta ante, non ornare mauris varius vitae. Integer lacus ante, malesuada et tellus vitae, placerat lacinia risus. Nunc commodo condimentum sodales. Pellentesque ultrices convallis tincidunt. Nulla facilisi. Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Vivamus aliquet felis vel tortor fringilla accumsan. In sed ante arcu. Nulla a libero enim. Etiam bibendum sapien lectus, sit amet tincidunt tellus semper sit amet."
                     },
                     {
                     "id_ingrediente": "chocolate",
-                    "comentario": "Este es el comentario sobre el matching de los elementos chocolate y cacahuete"
+                    "comentario": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Morbi interdum dui placerat, pulvinar mi quis, porta est. Aliquam pellentesque in dolor in pretium. Suspendisse tempus eros urna, ac dictum est vehicula nec. Nulla condimentum lobortis dictum. Praesent efficitur condimentum massa non bibendum. Sed mattis enim id enim congue rhoncus. Duis tincidunt porta ante, non ornare mauris varius vitae. Integer lacus ante, malesuada et tellus vitae, placerat lacinia risus. Nunc commodo condimentum sodales. Pellentesque ultrices convallis tincidunt. Nulla facilisi. Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Vivamus aliquet felis vel tortor fringilla accumsan. In sed ante arcu. Nulla a libero enim. Etiam bibendum sapien lectus, sit amet tincidunt tellus semper sit amet."
                     }
                     ],
   "matchingmalo": [
                    {
                    "id_ingrediente": "jamon",
-                   "comentario": "Este es el comentario sobre el no de los elementos jamón y cacahuete"
-                   }
-                   ]
-  },
-  {
-  "id_ingrediente": "guindilla",
-  "matchingbueno": [
-                    {
-                    "id_ingrediente": "cacahuete",
-                    "comentario": "Este es el comentario sobre el matching de los elementos cacahuete  y guindilla."
-                    },
-                    {
-                    "id_ingrediente": "chocolate",
-                    "comentario": "Este es el comentario sobre el matching de los elementos chocolate y cacahuete"
-                    }
-                    ],
-  "matchingmalo": [
-                   {
-                   "id_ingrediente": "jamon",
-                   "comentario": "Este es el comentario sobre el no de los elementos jamón y cacahuete"
+                   "comentario": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Morbi interdum dui placerat, pulvinar mi quis, porta est. Aliquam pellentesque in dolor in pretium. Suspendisse tempus eros urna, ac dictum est vehicula nec. Nulla condimentum lobortis dictum. Praesent efficitur condimentum massa non bibendum. Sed mattis enim id enim congue rhoncus. Duis tincidunt porta ante, non ornare mauris varius vitae. Integer lacus ante, malesuada et tellus vitae, placerat lacinia risus. Nunc commodo condimentum sodales. Pellentesque ultrices convallis tincidunt. Nulla facilisi. Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Vivamus aliquet felis vel tortor fringilla accumsan. In sed ante arcu. Nulla a libero enim. Etiam bibendum sapien lectus, sit amet tincidunt tellus semper sit amet."
                    }
                    ]
   },
@@ -83,32 +42,32 @@
   "matchingbueno": [
                     {
                     "id_ingrediente": "guindilla",
-                    "comentario": "Este es el comentario sobre el matching de los elementos cacahuete  y guindilla."
+                    "comentario": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Morbi interdum dui placerat, pulvinar mi quis, porta est. Aliquam pellentesque in dolor in pretium. Suspendisse tempus eros urna, ac dictum est vehicula nec. Nulla condimentum lobortis dictum. Praesent efficitur condimentum massa non bibendum. Sed mattis enim id enim congue rhoncus. Duis tincidunt porta ante, non ornare mauris varius vitae. Integer lacus ante, malesuada et tellus vitae, placerat lacinia risus. Nunc commodo condimentum sodales. Pellentesque ultrices convallis tincidunt. Nulla facilisi. Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Vivamus aliquet felis vel tortor fringilla accumsan. In sed ante arcu. Nulla a libero enim. Etiam bibendum sapien lectus, sit amet tincidunt tellus semper sit amet."
                     },
                     {
-                    "id_ingrediente": "cafe",
-                    "comentario": "Este es el comentario sobre el matching de los elementos chocolate y cafe"
+                    "id_ingrediente": "guindilla",
+                    "comentario": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Morbi interdum dui placerat, pulvinar mi quis, porta est. Aliquam pellentesque in dolor in pretium. Suspendisse tempus eros urna, ac dictum est vehicula nec. Nulla condimentum lobortis dictum. Praesent efficitur condimentum massa non bibendum. Sed mattis enim id enim congue rhoncus. Duis tincidunt porta ante, non ornare mauris varius vitae. Integer lacus ante, malesuada et tellus vitae, placerat lacinia risus. Nunc commodo condimentum sodales. Pellentesque ultrices convallis tincidunt. Nulla facilisi. Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Vivamus aliquet felis vel tortor fringilla accumsan. In sed ante arcu. Nulla a libero enim. Etiam bibendum sapien lectus, sit amet tincidunt tellus semper sit amet."
                     }
                     ],
   "matchingmalo": [
                    {
                    "id_ingrediente": "trufa",
-                   "comentario": "Este es el comentario sobre el no de los elementos trufa y chocolate"
+                   "comentario": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Morbi interdum dui placerat, pulvinar mi quis, porta est. Aliquam pellentesque in dolor in pretium. Suspendisse tempus eros urna, ac dictum est vehicula nec. Nulla condimentum lobortis dictum. Praesent efficitur condimentum massa non bibendum. Sed mattis enim id enim congue rhoncus. Duis tincidunt porta ante, non ornare mauris varius vitae. Integer lacus ante, malesuada et tellus vitae, placerat lacinia risus. Nunc commodo condimentum sodales. Pellentesque ultrices convallis tincidunt. Nulla facilisi. Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Vivamus aliquet felis vel tortor fringilla accumsan. In sed ante arcu. Nulla a libero enim. Etiam bibendum sapien lectus, sit amet tincidunt tellus semper sit amet."
                    }
                    ]
   },
   {
-  "id_ingrediente": "anchoa",
+  "id_ingrediente": "berenjena",
   "matchingbueno": [
                     {
-                    "id_ingrediente": "azul",
-                    "comentario": "Este es el comentario sobre el matching de los elementos anchoa y queso azul."
+                    "id_ingrediente": "jengibre",
+                    "comentario": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Morbi interdum dui placerat, pulvinar mi quis, porta est. Aliquam pellentesque in dolor in pretium. Suspendisse tempus eros urna, ac dictum est vehicula nec. Nulla condimentum lobortis dictum. Praesent efficitur condimentum massa non bibendum. Sed mattis enim id enim congue rhoncus. Duis tincidunt porta ante, non ornare mauris varius vitae. Integer lacus ante, malesuada et tellus vitae, placerat lacinia risus. Nunc commodo condimentum sodales. Pellentesque ultrices convallis tincidunt. Nulla facilisi. Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Vivamus aliquet felis vel tortor fringilla accumsan. In sed ante arcu. Nulla a libero enim. Etiam bibendum sapien lectus, sit amet tincidunt tellus semper sit amet."
                     }
                     ],
   "matchingmalo": [
                    {
-                   "id_ingrediente": "chocolate",
-                   "comentario": "Este es el comentario sobre el no de los elementos trufa y berenjena"
+                   "id_ingrediente": "trufa",
+                   "comentario": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Morbi interdum dui placerat, pulvinar mi quis, porta est. Aliquam pellentesque in dolor in pretium. Suspendisse tempus eros urna, ac dictum est vehicula nec. Nulla condimentum lobortis dictum. Praesent efficitur condimentum massa non bibendum. Sed mattis enim id enim congue rhoncus. Duis tincidunt porta ante, non ornare mauris varius vitae. Integer lacus ante, malesuada et tellus vitae, placerat lacinia risus. Nunc commodo condimentum sodales. Pellentesque ultrices convallis tincidunt. Nulla facilisi. Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Vivamus aliquet felis vel tortor fringilla accumsan. In sed ante arcu. Nulla a libero enim. Etiam bibendum sapien lectus, sit amet tincidunt tellus semper sit amet."
                    }
                    ]
   }

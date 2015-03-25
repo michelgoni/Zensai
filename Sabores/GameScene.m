@@ -18,9 +18,10 @@
 #import "Hexagon.h"
 #import "FlavourLabel.h"
 #import "LabelIngredients.h"
-#import "MatchingGood.h"
-#import "MatchingBad.h"
-#import "Nomatching.h"
+#import "MatchingGoodScene.h"
+#import "MatchingBadScene.h"
+#import "NomatchingScene.h"
+
 
 @interface GameScene()
 
@@ -43,7 +44,11 @@
 @property (strong, nonatomic) Sabor *selectedFlavour;
 
 
+
+
 @end
+
+
 
 @implementation GameScene {
     
@@ -51,6 +56,8 @@
 }
 
 -(void)didMoveToView:(SKView *)view {
+    
+    
    
        touchNumber = 0;
     
@@ -113,7 +120,7 @@
             self.labelIngredients.ingredientLabelName.text = ingrediente.name;
             self.labelIngredients.ingredientLabelName.name = ingrediente.identifier;
             [self.ingredientLabelNode addChild:_labelIngredients];
-            self.ingredientLabelNode.alpha = 0.0;
+            self.ingredientLabelNode.alpha = 1.0;
             self.ingredientLabelNode.userData = [@{@"saborID":ingrediente.sabor.identifier, @"ingredienteID":ingrediente.identifier} mutableCopy];
 
            j++;
@@ -217,18 +224,17 @@
                                     if (matching.good) {
                                         //Make action for GOOD matching
                                         NSLog(@"Good matching between %@ and %@", ingrediente1.name, ingrediente2.name);
-                                        
-                                        MatchingGood *matchingGoodScreen = [MatchingGood sceneWithSize:CGSizeMake(self.frame.size.width, self.frame.size.height)];
-                                        
+                                        MatchingGoodScene *matchingGoodScreen = [MatchingGoodScene sceneWithSize:CGSizeMake(self.frame.size.width, self.frame.size.height)];
+
                                         matchingGoodScreen.comment = matching.comment;
                                         matchingGoodScreen.scaleMode =SKSceneScaleModeAspectFill;
-                                        [self.view presentScene:matchingGoodScreen transition:[SKTransition doorwayWithDuration:0.3]];
+                                        [self.view presentScene:matchingGoodScreen transition:[SKTransition moveInWithDirection:SKTransitionDirectionLeft duration:0.3]];
                                         
                                         
                                     } else {
                                         //Make action for BAD matching
                                         NSLog(@"Bad matching between %@ and %@", ingrediente1.name, ingrediente2.name);
-                                        MatchingBad *matchingBadScreen = [MatchingBad sceneWithSize:CGSizeMake(self.frame.size.width, self.frame.size.height)];
+                                        MatchingBadScene *matchingBadScreen = [MatchingBadScene sceneWithSize:CGSizeMake(self.frame.size.width, self.frame.size.height)];
                                         
                                         matchingBadScreen.comment = matching.comment;
                                         matchingBadScreen.scaleMode =SKSceneScaleModeAspectFill;
@@ -240,7 +246,7 @@
                                     // MAke action for NOT matching found
                                     NSLog(@"No matching between %@ and %@", ingrediente1.name, ingrediente2.name);
                                     
-                                    Nomatching *noMatchingScreen = [Nomatching sceneWithSize:CGSizeMake(self.frame.size.width, self.frame.size.height)];
+                                    NomatchingScene *noMatchingScreen = [NomatchingScene sceneWithSize:CGSizeMake(self.frame.size.width, self.frame.size.height)];
                                     noMatchingScreen.comment = matching.comment;
                                     noMatchingScreen.scaleMode =SKSceneScaleModeAspectFill;
                                     
@@ -260,6 +266,7 @@
                     self.selectedIngredient1 = [Ingrediente ingredienteById:ingredientNode.ingredienteID inContext:self.context];
                     self.matchingIngredient1.text = self.selectedIngredient1.name;
                     self.matchingIngredient1.name = self.selectedIngredient1.identifier;
+                    //Esconder los ingredientes
                 }
 
             } else {
@@ -453,6 +460,7 @@
         SKNode *hexagonParentNode = [self childNodeWithName:[NSString stringWithFormat:@"Node%d", i]];
         SKNode *flavourLabelNode = [self childNodeWithName:[NSString stringWithFormat:@"flavourLabel%d", i]];
         SKNode *ingredientsLabelNode = [self childNodeWithName:[NSString stringWithFormat:@"ingredientLabel%d", i]];
+        SKNode *iconsNode = [self childNodeWithName:[NSString stringWithFormat:@"icon%d", i]];
         SKAction *move = [SKAction moveBy:CGVectorMake(arc4random()%10, arc4random()%15) duration:3];
         SKAction *reseversedMove = [move reversedAction];
         SKAction *moveSeq = [SKAction sequence:@[ move, reseversedMove]];
@@ -463,6 +471,7 @@
         [hexagonParentNode runAction:repeatSize];
         [flavourLabelNode runAction:repeatSize];
         [ingredientsLabelNode runAction:repeatSize];
+        [iconsNode runAction:repeatSize];
 
     }
     

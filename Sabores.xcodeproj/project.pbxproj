@@ -7,6 +7,14 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		2D1F01021AC2B86500577DF9 /* cheese@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 2D1F01011AC2B86500577DF9 /* cheese@2x.png */; };
+		2D1F01041AC2B86A00577DF9 /* fish@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 2D1F01031AC2B86A00577DF9 /* fish@2x.png */; };
+		2D1F01061AC2B86F00577DF9 /* grapes@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 2D1F01051AC2B86F00577DF9 /* grapes@2x.png */; };
+		2D1F01081AC2B87400577DF9 /* leaf@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 2D1F01071AC2B87400577DF9 /* leaf@2x.png */; };
+		2D1F010A1AC2B87A00577DF9 /* meat@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 2D1F01091AC2B87A00577DF9 /* meat@2x.png */; };
+		2D1F010C1AC2B88000577DF9 /* pepper@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 2D1F010B1AC2B88000577DF9 /* pepper@2x.png */; };
+		2D1F010E1AC2B89100577DF9 /* soil@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 2D1F010D1AC2B89100577DF9 /* soil@2x.png */; };
+		2D1F01101AC2B89600577DF9 /* spice@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 2D1F010F1AC2B89600577DF9 /* spice@2x.png */; };
 		2D49BAC21AC16BE7003851D2 /* grapes1.png in Resources */ = {isa = PBXBuildFile; fileRef = 2D49BAC11AC16BE7003851D2 /* grapes1.png */; };
 		2D517B461ABC142400BEC559 /* easing.c in Sources */ = {isa = PBXBuildFile; fileRef = 2D517B401ABC142400BEC559 /* easing.c */; };
 		2D517B471ABC142400BEC559 /* SKEase.m in Sources */ = {isa = PBXBuildFile; fileRef = 2D517B441ABC142400BEC559 /* SKEase.m */; };
@@ -24,6 +32,7 @@
 		2D8FA45A1ABC5955005D4E8C /* Hexagon.m in Sources */ = {isa = PBXBuildFile; fileRef = 2D8FA4591ABC5955005D4E8C /* Hexagon.m */; };
 		2D8FA45D1ABC91B2005D4E8C /* FlavourLabel.m in Sources */ = {isa = PBXBuildFile; fileRef = 2D8FA45C1ABC91B2005D4E8C /* FlavourLabel.m */; };
 		2D8FA4611ABC98C7005D4E8C /* LabelIngredients.m in Sources */ = {isa = PBXBuildFile; fileRef = 2D8FA4601ABC98C7005D4E8C /* LabelIngredients.m */; };
+		2D93E78E1AC2C1B900A7ACD1 /* orange@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 2D93E78D1AC2C1B900A7ACD1 /* orange@2x.png */; };
 		2D98B6241AB8323700FCDE1C /* _Ingrediente.m in Sources */ = {isa = PBXBuildFile; fileRef = 2D98B6191AB8323700FCDE1C /* _Ingrediente.m */; };
 		2D98B6251AB8323700FCDE1C /* _Matching.m in Sources */ = {isa = PBXBuildFile; fileRef = 2D98B61B1AB8323700FCDE1C /* _Matching.m */; };
 		2D98B6261AB8323700FCDE1C /* _Sabor.m in Sources */ = {isa = PBXBuildFile; fileRef = 2D98B61D1AB8323700FCDE1C /* _Sabor.m */; };
@@ -31,11 +40,12 @@
 		2D98B6281AB8323700FCDE1C /* Matching.m in Sources */ = {isa = PBXBuildFile; fileRef = 2D98B6211AB8323700FCDE1C /* Matching.m */; };
 		2D98B6291AB8323700FCDE1C /* Sabor.m in Sources */ = {isa = PBXBuildFile; fileRef = 2D98B6231AB8323700FCDE1C /* Sabor.m */; };
 		2D98B62D1AB8342700FCDE1C /* AppDataStack.m in Sources */ = {isa = PBXBuildFile; fileRef = 2D98B62C1AB8342700FCDE1C /* AppDataStack.m */; };
-		2D9F21761AC1DAC60095B02A /* fruit34.png in Resources */ = {isa = PBXBuildFile; fileRef = 2D9F21751AC1DAC60095B02A /* fruit34.png */; };
+		2DA263101AC2E0390076B655 /* dismiss2.png in Resources */ = {isa = PBXBuildFile; fileRef = 2DA2630F1AC2E0390076B655 /* dismiss2.png */; };
 		2DA7819A1AC1D4D400C7EDD7 /* small164.png in Resources */ = {isa = PBXBuildFile; fileRef = 2DA781991AC1D4D400C7EDD7 /* small164.png */; };
-		2DBA93341ABF74BD00E3B827 /* MatchingGood.m in Sources */ = {isa = PBXBuildFile; fileRef = 2DBA93331ABF74BD00E3B827 /* MatchingGood.m */; };
-		2DD308481AC0321600784CCF /* MatchingBad.m in Sources */ = {isa = PBXBuildFile; fileRef = 2DD308471AC0321600784CCF /* MatchingBad.m */; };
-		2DD3084B1AC0336D00784CCF /* Nomatching.m in Sources */ = {isa = PBXBuildFile; fileRef = 2DD3084A1AC0336D00784CCF /* Nomatching.m */; };
+		2DBA93341ABF74BD00E3B827 /* MatchingGoodScene.m in Sources */ = {isa = PBXBuildFile; fileRef = 2DBA93331ABF74BD00E3B827 /* MatchingGoodScene.m */; };
+		2DC7FB261AC2203D00430F38 /* fruit34.png in Resources */ = {isa = PBXBuildFile; fileRef = 2DC7FB251AC2203D00430F38 /* fruit34.png */; };
+		2DD308481AC0321600784CCF /* MatchingBadScene.m in Sources */ = {isa = PBXBuildFile; fileRef = 2DD308471AC0321600784CCF /* MatchingBadScene.m */; };
+		2DD3084B1AC0336D00784CCF /* NomatchingScene.m in Sources */ = {isa = PBXBuildFile; fileRef = 2DD3084A1AC0336D00784CCF /* NomatchingScene.m */; };
 		2DE77F2D1ABED96B0066B4A6 /* 1024x1024.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 2DE77F2C1ABED96B0066B4A6 /* 1024x1024.jpg */; };
 		A9436A661ABC7E640088F344 /* SaboresModel.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 2D98B6141AB82C9100FCDE1C /* SaboresModel.xcdatamodeld */; };
 /* End PBXBuildFile section */
@@ -51,6 +61,14 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		2D1F01011AC2B86500577DF9 /* cheese@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "cheese@2x.png"; sourceTree = "<group>"; };
+		2D1F01031AC2B86A00577DF9 /* fish@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "fish@2x.png"; sourceTree = "<group>"; };
+		2D1F01051AC2B86F00577DF9 /* grapes@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "grapes@2x.png"; sourceTree = "<group>"; };
+		2D1F01071AC2B87400577DF9 /* leaf@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "leaf@2x.png"; sourceTree = "<group>"; };
+		2D1F01091AC2B87A00577DF9 /* meat@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "meat@2x.png"; sourceTree = "<group>"; };
+		2D1F010B1AC2B88000577DF9 /* pepper@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "pepper@2x.png"; sourceTree = "<group>"; };
+		2D1F010D1AC2B89100577DF9 /* soil@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "soil@2x.png"; sourceTree = "<group>"; };
+		2D1F010F1AC2B89600577DF9 /* spice@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "spice@2x.png"; sourceTree = "<group>"; };
 		2D49BAC11AC16BE7003851D2 /* grapes1.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = grapes1.png; sourceTree = "<group>"; };
 		2D517B401ABC142400BEC559 /* easing.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = easing.c; sourceTree = "<group>"; };
 		2D517B411ABC142400BEC559 /* easing.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = easing.h; sourceTree = "<group>"; };
@@ -83,6 +101,7 @@
 		2D8FA45C1ABC91B2005D4E8C /* FlavourLabel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FlavourLabel.m; sourceTree = "<group>"; };
 		2D8FA45F1ABC98C7005D4E8C /* LabelIngredients.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LabelIngredients.h; sourceTree = "<group>"; };
 		2D8FA4601ABC98C7005D4E8C /* LabelIngredients.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LabelIngredients.m; sourceTree = "<group>"; };
+		2D93E78D1AC2C1B900A7ACD1 /* orange@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "orange@2x.png"; sourceTree = "<group>"; };
 		2D94330F1AB9D93D00B35348 /* SaboresModel 2.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = "SaboresModel 2.xcdatamodel"; sourceTree = "<group>"; };
 		2D98B6151AB82C9100FCDE1C /* SaboresModel.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = SaboresModel.xcdatamodel; sourceTree = "<group>"; };
 		2D98B6181AB8323700FCDE1C /* _Ingrediente.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = _Ingrediente.h; path = Model/_Ingrediente.h; sourceTree = "<group>"; };
@@ -99,14 +118,15 @@
 		2D98B6231AB8323700FCDE1C /* Sabor.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = Sabor.m; path = Model/Sabor.m; sourceTree = "<group>"; };
 		2D98B62B1AB8342700FCDE1C /* AppDataStack.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AppDataStack.h; sourceTree = "<group>"; };
 		2D98B62C1AB8342700FCDE1C /* AppDataStack.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AppDataStack.m; sourceTree = "<group>"; };
-		2D9F21751AC1DAC60095B02A /* fruit34.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = fruit34.png; sourceTree = "<group>"; };
+		2DA2630F1AC2E0390076B655 /* dismiss2.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = dismiss2.png; sourceTree = "<group>"; };
 		2DA781991AC1D4D400C7EDD7 /* small164.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = small164.png; sourceTree = "<group>"; };
-		2DBA93321ABF74BD00E3B827 /* MatchingGood.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MatchingGood.h; sourceTree = "<group>"; };
-		2DBA93331ABF74BD00E3B827 /* MatchingGood.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MatchingGood.m; sourceTree = "<group>"; };
-		2DD308461AC0321600784CCF /* MatchingBad.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MatchingBad.h; sourceTree = "<group>"; };
-		2DD308471AC0321600784CCF /* MatchingBad.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MatchingBad.m; sourceTree = "<group>"; };
-		2DD308491AC0336D00784CCF /* Nomatching.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Nomatching.h; sourceTree = "<group>"; };
-		2DD3084A1AC0336D00784CCF /* Nomatching.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Nomatching.m; sourceTree = "<group>"; };
+		2DBA93321ABF74BD00E3B827 /* MatchingGoodScene.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MatchingGoodScene.h; sourceTree = "<group>"; };
+		2DBA93331ABF74BD00E3B827 /* MatchingGoodScene.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MatchingGoodScene.m; sourceTree = "<group>"; };
+		2DC7FB251AC2203D00430F38 /* fruit34.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = fruit34.png; sourceTree = "<group>"; };
+		2DD308461AC0321600784CCF /* MatchingBadScene.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MatchingBadScene.h; sourceTree = "<group>"; };
+		2DD308471AC0321600784CCF /* MatchingBadScene.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MatchingBadScene.m; sourceTree = "<group>"; };
+		2DD308491AC0336D00784CCF /* NomatchingScene.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NomatchingScene.h; sourceTree = "<group>"; };
+		2DD3084A1AC0336D00784CCF /* NomatchingScene.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NomatchingScene.m; sourceTree = "<group>"; };
 		2DE77F2C1ABED96B0066B4A6 /* 1024x1024.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = 1024x1024.jpg; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -144,7 +164,17 @@
 		2D524A251AB6EE9100B9C507 /* Assets */ = {
 			isa = PBXGroup;
 			children = (
-				2D9F21751AC1DAC60095B02A /* fruit34.png */,
+				2DA2630F1AC2E0390076B655 /* dismiss2.png */,
+				2D93E78D1AC2C1B900A7ACD1 /* orange@2x.png */,
+				2D1F010F1AC2B89600577DF9 /* spice@2x.png */,
+				2D1F010D1AC2B89100577DF9 /* soil@2x.png */,
+				2D1F010B1AC2B88000577DF9 /* pepper@2x.png */,
+				2D1F01091AC2B87A00577DF9 /* meat@2x.png */,
+				2D1F01071AC2B87400577DF9 /* leaf@2x.png */,
+				2D1F01051AC2B86F00577DF9 /* grapes@2x.png */,
+				2D1F01031AC2B86A00577DF9 /* fish@2x.png */,
+				2DC7FB251AC2203D00430F38 /* fruit34.png */,
+				2D1F01011AC2B86500577DF9 /* cheese@2x.png */,
 				2DA781991AC1D4D400C7EDD7 /* small164.png */,
 				2D49BAC11AC16BE7003851D2 /* grapes1.png */,
 				2D6960A11ABA144D00281327 /* SSPLight.ttf */,
@@ -284,12 +314,12 @@
 			children = (
 				2D6A8E071AB6DFA6008955E8 /* GameScene.h */,
 				2D6A8E081AB6DFA6008955E8 /* GameScene.m */,
-				2DD308491AC0336D00784CCF /* Nomatching.h */,
-				2DD3084A1AC0336D00784CCF /* Nomatching.m */,
-				2DD308461AC0321600784CCF /* MatchingBad.h */,
-				2DD308471AC0321600784CCF /* MatchingBad.m */,
-				2DBA93321ABF74BD00E3B827 /* MatchingGood.h */,
-				2DBA93331ABF74BD00E3B827 /* MatchingGood.m */,
+				2DD308491AC0336D00784CCF /* NomatchingScene.h */,
+				2DD3084A1AC0336D00784CCF /* NomatchingScene.m */,
+				2DD308461AC0321600784CCF /* MatchingBadScene.h */,
+				2DD308471AC0321600784CCF /* MatchingBadScene.m */,
+				2DBA93321ABF74BD00E3B827 /* MatchingGoodScene.h */,
+				2DBA93331ABF74BD00E3B827 /* MatchingGoodScene.m */,
 			);
 			name = Scenes;
 			sourceTree = "<group>";
@@ -377,14 +407,24 @@
 			buildActionMask = 2147483647;
 			files = (
 				2D6A8E2D1AB6DFC1008955E8 /* flavours.json in Resources */,
+				2D1F01021AC2B86500577DF9 /* cheese@2x.png in Resources */,
+				2D1F01041AC2B86A00577DF9 /* fish@2x.png in Resources */,
 				2DA7819A1AC1D4D400C7EDD7 /* small164.png in Resources */,
+				2D1F01081AC2B87400577DF9 /* leaf@2x.png in Resources */,
 				2D49BAC21AC16BE7003851D2 /* grapes1.png in Resources */,
+				2D1F010C1AC2B88000577DF9 /* pepper@2x.png in Resources */,
 				2D6A8E2E1AB6DFC1008955E8 /* matchings.json in Resources */,
 				2D6A8E161AB6DFA6008955E8 /* LaunchScreen.xib in Resources */,
-				2D9F21761AC1DAC60095B02A /* fruit34.png in Resources */,
+				2DA263101AC2E0390076B655 /* dismiss2.png in Resources */,
+				2D1F01061AC2B86F00577DF9 /* grapes@2x.png in Resources */,
+				2DC7FB261AC2203D00430F38 /* fruit34.png in Resources */,
 				2D6A8E131AB6DFA6008955E8 /* Images.xcassets in Resources */,
+				2D1F010E1AC2B89100577DF9 /* soil@2x.png in Resources */,
+				2D1F01101AC2B89600577DF9 /* spice@2x.png in Resources */,
 				2D6A8E0B1AB6DFA6008955E8 /* GameScene.sks in Resources */,
+				2D93E78E1AC2C1B900A7ACD1 /* orange@2x.png in Resources */,
 				2DE77F2D1ABED96B0066B4A6 /* 1024x1024.jpg in Resources */,
+				2D1F010A1AC2B87A00577DF9 /* meat@2x.png in Resources */,
 				2D6A8E111AB6DFA6008955E8 /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -423,15 +463,15 @@
 				2D517B461ABC142400BEC559 /* easing.c in Sources */,
 				2D6A8E0E1AB6DFA6008955E8 /* GameViewController.m in Sources */,
 				2D517B471ABC142400BEC559 /* SKEase.m in Sources */,
-				2DBA93341ABF74BD00E3B827 /* MatchingGood.m in Sources */,
+				2DBA93341ABF74BD00E3B827 /* MatchingGoodScene.m in Sources */,
 				2D8FA4611ABC98C7005D4E8C /* LabelIngredients.m in Sources */,
 				2D98B6261AB8323700FCDE1C /* _Sabor.m in Sources */,
-				2DD308481AC0321600784CCF /* MatchingBad.m in Sources */,
+				2DD308481AC0321600784CCF /* MatchingBadScene.m in Sources */,
 				2D98B6291AB8323700FCDE1C /* Sabor.m in Sources */,
 				2D98B6241AB8323700FCDE1C /* _Ingrediente.m in Sources */,
 				2D98B6281AB8323700FCDE1C /* Matching.m in Sources */,
 				2D98B62D1AB8342700FCDE1C /* AppDataStack.m in Sources */,
-				2DD3084B1AC0336D00784CCF /* Nomatching.m in Sources */,
+				2DD3084B1AC0336D00784CCF /* NomatchingScene.m in Sources */,
 				2D6A8E061AB6DFA6008955E8 /* AppDelegate.m in Sources */,
 				2D8FA45A1ABC5955005D4E8C /* Hexagon.m in Sources */,
 				2D6A8E091AB6DFA6008955E8 /* GameScene.m in Sources */,
