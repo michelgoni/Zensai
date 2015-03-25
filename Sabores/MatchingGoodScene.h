@@ -14,6 +14,8 @@
 
 @property (strong, nonatomic) UILabel *matchingLabel;
 @property (strong, nonatomic) NSString *comment;
+@property (strong, nonatomic) NSString *ingredient1Name;
+@property (strong, nonatomic) NSString *ingredient2Name;
 
 
 

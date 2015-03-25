@@ -37,7 +37,7 @@
     
 
         
-        self.flavourLabelName = [SKLabelNode labelNodeWithFontNamed:@"SSPLight"];
+        self.flavourLabelName = [SKLabelNode labelNodeWithFontNamed:@"Optima"];
         self.flavourLabelName.alpha = 1.0;
         self.flavourLabelName.fontSize = 22;
         

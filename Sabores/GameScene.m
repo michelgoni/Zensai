@@ -227,8 +227,10 @@
                                         MatchingGoodScene *matchingGoodScreen = [MatchingGoodScene sceneWithSize:CGSizeMake(self.frame.size.width, self.frame.size.height)];
 
                                         matchingGoodScreen.comment = matching.comment;
+                                        matchingGoodScreen.ingredient1Name = ingrediente1.name;
+                                        matchingGoodScreen.ingredient2Name = ingrediente2.name;
                                         matchingGoodScreen.scaleMode =SKSceneScaleModeAspectFill;
-                                        [self.view presentScene:matchingGoodScreen transition:[SKTransition moveInWithDirection:SKTransitionDirectionLeft duration:0.3]];
+                                        [self.view presentScene:matchingGoodScreen transition:[SKTransition fadeWithDuration:1.2]];
                                         
                                         
                                     } else {
@@ -237,6 +239,8 @@
                                         MatchingBadScene *matchingBadScreen = [MatchingBadScene sceneWithSize:CGSizeMake(self.frame.size.width, self.frame.size.height)];
                                         
                                         matchingBadScreen.comment = matching.comment;
+                                        matchingBadScreen.ingredient1Name = ingrediente1.name;
+                                        matchingBadScreen.ingredient2Name = ingrediente2.name;
                                         matchingBadScreen.scaleMode =SKSceneScaleModeAspectFill;
                                         [self.view presentScene:matchingBadScreen transition:[SKTransition doorwayWithDuration:0.3]];
                                         
@@ -248,6 +252,8 @@
                                     
                                     NomatchingScene *noMatchingScreen = [NomatchingScene sceneWithSize:CGSizeMake(self.frame.size.width, self.frame.size.height)];
                                     noMatchingScreen.comment = matching.comment;
+                                    noMatchingScreen.ingredient1Name = ingrediente1.name;
+                                    noMatchingScreen.ingredient2Name = ingrediente2.name;
                                     noMatchingScreen.scaleMode =SKSceneScaleModeAspectFill;
                                     
                                     [self.view presentScene:noMatchingScreen transition:[SKTransition doorwayWithDuration:1.0]];
