@@ -772,7 +772,7 @@
     for (int i = 0; i< 9; i++) {
         SKNode *hexagonParentNode = [self childNodeWithName:[NSString stringWithFormat:@"Node%d", i]];
         SKNode *flavourLabelNode = [self childNodeWithName:[NSString stringWithFormat:@"flavourLabel%d", i]];
-        SKNode *ingredientsLabelNode = [self childNodeWithName:[NSString stringWithFormat:@"ingredientLabel%d", i+15]];
+        SKNode *ingredientsLabelNode = [self childNodeWithName:[NSString stringWithFormat:@"ingredientLabel%d", i+16]];
         SKNode *iconsNode = [self childNodeWithName:[NSString stringWithFormat:@"icon%d", i]];
         SKNode *linesNode = [self childNodeWithName:[NSString stringWithFormat:@"line%d", i]];
         SKAction *move = [SKAction moveBy:CGVectorMake(arc4random()%10, arc4random()%15) duration:3];

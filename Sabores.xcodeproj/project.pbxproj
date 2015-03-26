@@ -230,7 +230,6 @@
 				2D902B411ABF29C700D1249C /* View */,
 				2D6A8E0F1AB6DFA6008955E8 /* Main.storyboard */,
 				2D6A8E121AB6DFA6008955E8 /* Images.xcassets */,
-				2D6A8E141AB6DFA6008955E8 /* LaunchScreen.xib */,
 				2D6A8E001AB6DFA6008955E8 /* Supporting Files */,
 			);
 			path = Sabores;
@@ -289,6 +288,7 @@
 		2D902B411ABF29C700D1249C /* View */ = {
 			isa = PBXGroup;
 			children = (
+				2D6A8E141AB6DFA6008955E8 /* LaunchScreen.xib */,
 				2D6A8E0C1AB6DFA6008955E8 /* GameViewController.h */,
 				2D6A8E0D1AB6DFA6008955E8 /* GameViewController.m */,
 				2D6A8E0A1AB6DFA6008955E8 /* GameScene.sks */,
