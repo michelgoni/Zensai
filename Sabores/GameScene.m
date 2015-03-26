@@ -320,6 +320,11 @@
                         
                         [self animateAfrutadoIngredients];
                         
+                    }else {
+                        if (![self.selectedFlavour.identifier isEqualToString:@"afrutado"]){
+                            
+                            [self animateAfrutadoIngredientsBack];
+                        }
                     }
                 }
 
@@ -329,18 +334,33 @@
                         
                         [self animateCarneIngredients];
                         
+                    }else {
+                        if (![self.selectedFlavour.identifier isEqualToString:@"carne"]){
+                            
+                            [self animateCarneIngredientsBack];
+                        }
                     }
                     //Third flavour
                     if ( [self.selectedFlavour.identifier isEqualToString:@"citrico"]) {
                         
                         [self animateCitricoIngredients];
                         
+                    }else {
+                        if (![self.selectedFlavour.identifier isEqualToString:@"citrico"]){
+                            
+                            [self animateCitricoIngredientsBack];
+                        }
                     }
                     
                     if ( [self.selectedFlavour.identifier isEqualToString:@"especia"]) {
                         
                         [self animateEspeciaIngredients];
                         
+                    }else {
+                        if (![self.selectedFlavour.identifier isEqualToString:@"especia"]){
+                            
+                            [self animateEspeciaIngredientsBack];
+                        }
                     }
                     
                     
@@ -348,18 +368,34 @@
                         
                         [self animateHierbaIngredients];
                         
-                    }
-                    
-                    if ( [self.selectedFlavour.identifier isEqualToString:@"queso"]) {
-                        
-                        [self animateQuesoIngredients];
-                        
+                    }else {
+                        if (![self.selectedFlavour.identifier isEqualToString:@"hierba"]){
+                            
+                            [self animateHierbaIngredientsBack];
+                        }
                     }
                     
                     if ( [self.selectedFlavour.identifier isEqualToString:@"salado"]) {
                         
                         [self animateSaladoIngredients];
                         
+                        
+                    }else {
+                        if (![self.selectedFlavour.identifier isEqualToString:@"salado"]){
+                            
+                            [self animateSaladoIngredientsBack];
+                        }
+                    }
+                    
+                    if ( [self.selectedFlavour.identifier isEqualToString:@"tierra"]) {
+                        
+                        [self animateTierraIngredients];
+                        
+                    }else {
+                        if (![self.selectedFlavour.identifier isEqualToString:@"tierra"]){
+                            
+                            [self animateTierraIngredientsBack];
+                        }
                     }
                     
                     
@@ -367,6 +403,11 @@
                         
                         [self animateTostadoIngredients];
                         
+                    }else {
+                        if (![self.selectedFlavour.identifier isEqualToString:@"tostado"]){
+                            
+                            [self animateTostadoIngredientsBack];
+                        }
                     }
                 }
             }
@@ -406,7 +447,22 @@
         
         SKNode *ingredientNode1 = [self childNodeWithName:[NSString stringWithFormat:@"ingredientLabel%d", i]];
         SKAction *fade = [SKAction fadeAlphaTo:0 duration:0.2];
+        SKAction *fade2 = [SKEase ScaleToWithNode:self.nodeK
+                                     EaseFunction:CurveTypeBounce
+                                             Mode:ElasticEaseInOut(5)
+                                             Time:0.5
+                                          ToValue:0.0];
+
+        
+        
+        
         [ingredientNode1 runAction:fade];
+        [ingredientNode1 runAction:fade2 completion:^{
+            
+            SKNode *lineNode = [self childNodeWithName:[NSString stringWithFormat:@"line%d", i-2]];
+            [lineNode runAction:fade];
+        }];
+
 
     }
 }
@@ -419,8 +475,11 @@
         
         SKNode *ingredientNode1 = [self childNodeWithName:[NSString stringWithFormat:@"ingredientLabel%d", i]];
         SKAction *fade = [SKAction fadeAlphaTo:1 duration:0.2];
-        SKAction *fade2 = [SKEase ScaleToWithNode:self.nodeK EaseFunction:CurveTypeBounce Mode:ElasticEaseInOut(5) Time:0.5 ToValue:1.2];
-        fade.timingMode = SKActionTimingEaseIn;
+        SKAction *fade2 = [SKEase ScaleToWithNode:self.nodeK
+                                     EaseFunction:CurveTypeBounce
+                                             Mode:ElasticEaseInOut(5)
+                                             Time:0.5
+                                          ToValue:1.2];
         
         [ingredientNode1 runAction:fade];
         [ingredientNode1 runAction:fade2 completion:^{
@@ -433,23 +492,29 @@
     }
 }
 
-//-(void) animateCarneIngredientsBack {
-//    
-//    for (int i = 3; i< 6; i++) {
-//        
-//        SKNode *ingredientNode1 = [self childNodeWithName:[NSString stringWithFormat:@"ingredientLabel%d", i]];
-//        SKAction *fade = [SKAction fadeAlphaTo:0 duration:0.2];
-//        SKAction *fade2 = [SKEase ScaleToWithNode:self.nodeK
-//                                     EaseFunction:CurveTypeBounce
-//                                             Mode:ElasticEaseInOut(5)
-//                                             Time:0.5
-//                                          ToValue:0.0];
-//        fade.timingMode = SKActionTimingEaseIn;
-//        
-//        [ingredientNode1 runAction:fade];
-//        [ingredientNode1 runAction:fade2];
-//    }
-//}
+-(void) animateCarneIngredientsBack {
+    
+    for (int i = 3; i< 6; i++) {
+        
+        SKNode *ingredientNode1 = [self childNodeWithName:[NSString stringWithFormat:@"ingredientLabel%d", i]];
+        SKAction *fade = [SKAction fadeAlphaTo:0 duration:0.2];
+        SKAction *fade2 = [SKEase ScaleToWithNode:self.nodeK
+                                     EaseFunction:CurveTypeBounce
+                                             Mode:ElasticEaseInOut(5)
+                                             Time:0.5
+                                          ToValue:0.0];
+        
+        
+        
+        [ingredientNode1 runAction:fade];
+        [ingredientNode1 runAction:fade2 completion:^{
+            
+            SKNode *lineNode = [self childNodeWithName:@"line1"];
+            [lineNode runAction:fade];
+        }];
+        
+    }
+}
 
 
 
@@ -472,23 +537,28 @@
     }
 }
 
-//-(void) animateCitricoIngredientsBack {
-//    
-//    for (int i = 6; i< 9; i++) {
-//        
-//        SKNode *ingredientNode1 = [self childNodeWithName:[NSString stringWithFormat:@"ingredientLabel%d", i]];
-//        SKAction *fade = [SKAction fadeAlphaTo:0 duration:0.2];
-//        SKAction *fade2 = [SKEase ScaleToWithNode:self.nodeK
-//                                     EaseFunction:CurveTypeBounce
-//                                             Mode:ElasticEaseInOut(5)
-//                                             Time:0.5
-//                                          ToValue:0.0];
-//        fade.timingMode = SKActionTimingEaseIn;
-//        
-//        [ingredientNode1 runAction:fade];
-//        [ingredientNode1 runAction:fade2];
-//    }
-//}
+-(void) animateCitricoIngredientsBack {
+    
+    for (int i = 6; i< 9; i++) {
+        
+        SKNode *ingredientNode1 = [self childNodeWithName:[NSString stringWithFormat:@"ingredientLabel%d", i]];
+        SKAction *fade = [SKAction fadeAlphaTo:0 duration:0.2];
+        SKAction *fade2 = [SKEase ScaleToWithNode:self.nodeK
+                                     EaseFunction:CurveTypeBounce
+                                             Mode:ElasticEaseInOut(5)
+                                             Time:0.5
+                                          ToValue:0.0];
+        fade.timingMode = SKActionTimingEaseIn;
+        
+        [ingredientNode1 runAction:fade];
+        [ingredientNode1 runAction:fade2 completion:^{
+            
+            SKNode *lineNode = [self childNodeWithName:@"line2"];
+            [lineNode runAction:fade];
+        }];
+
+    }
+}
 
 
 -(void) animateEspeciaIngredients {
@@ -508,24 +578,29 @@
         }];
     }
 }
-//
-//-(void) animateEspeciaIngredientsBack {
-//    
-//    for (int i = 9; i< 12; i++) {
-//        
-//        SKNode *ingredientNode1 = [self childNodeWithName:[NSString stringWithFormat:@"ingredientLabel%d", i]];
-//        SKAction *fade = [SKAction fadeAlphaTo:0 duration:0.2];
-//        SKAction *fade2 = [SKEase ScaleToWithNode:self.nodeK
-//                                     EaseFunction:CurveTypeBounce
-//                                             Mode:ElasticEaseInOut(5)
-//                                             Time:0.5
-//                                          ToValue:0.0];
-//        fade.timingMode = SKActionTimingEaseIn;
-//        
-//        [ingredientNode1 runAction:fade];
-//        [ingredientNode1 runAction:fade2];
-//    }
-//}
+
+-(void) animateEspeciaIngredientsBack {
+    
+    for (int i = 9; i< 12; i++) {
+        
+        SKNode *ingredientNode1 = [self childNodeWithName:[NSString stringWithFormat:@"ingredientLabel%d", i]];
+        SKAction *fade = [SKAction fadeAlphaTo:0 duration:0.2];
+        SKAction *fade2 = [SKEase ScaleToWithNode:self.nodeK
+                                     EaseFunction:CurveTypeBounce
+                                             Mode:ElasticEaseInOut(5)
+                                             Time:0.5
+                                          ToValue:0.0];
+        fade.timingMode = SKActionTimingEaseIn;
+        
+        [ingredientNode1 runAction:fade];
+        [ingredientNode1 runAction:fade2 completion:^{
+            
+            SKNode *lineNode = [self childNodeWithName:@"line3"];
+            [lineNode runAction:fade];
+        }];
+
+    }
+}
 
 -(void) animateHierbaIngredients {
     
@@ -545,25 +620,29 @@
 }
 
 
-//-(void) animateHierbaIngredientsBack {
-//    
-//    for (int i = 12; i< 15; i++) {
-//        
-//        SKNode *ingredientNode1 = [self childNodeWithName:[NSString stringWithFormat:@"ingredientLabel%d", i]];
-//        SKAction *fade = [SKAction fadeAlphaTo:0 duration:0.2];
-//        SKAction *fade2 = [SKEase ScaleToWithNode:self.nodeK
-//                                     EaseFunction:CurveTypeBounce
-//                                             Mode:ElasticEaseInOut(5)
-//                                             Time:0.5
-//                                          ToValue:0.0];
-//        fade.timingMode = SKActionTimingEaseIn;
-//        
-//        [ingredientNode1 runAction:fade];
-//        [ingredientNode1 runAction:fade2];
-//    }
-//}
+-(void) animateHierbaIngredientsBack {
+    
+    for (int i = 12; i< 15; i++) {
+        
+        SKNode *ingredientNode1 = [self childNodeWithName:[NSString stringWithFormat:@"ingredientLabel%d", i]];
+        SKAction *fade = [SKAction fadeAlphaTo:0 duration:0.2];
+        SKAction *fade2 = [SKEase ScaleToWithNode:self.nodeK
+                                     EaseFunction:CurveTypeBounce
+                                             Mode:ElasticEaseInOut(5)
+                                             Time:0.5
+                                          ToValue:0.0];
+        fade.timingMode = SKActionTimingEaseIn;
+        
+        [ingredientNode1 runAction:fade];
+        [ingredientNode1 runAction:fade2 completion:^{
+            
+            SKNode *lineNode = [self childNodeWithName:@"line4"];
+            [lineNode runAction:fade];
+        }];
+    }
+}
 
--(void) animateQuesoIngredients {
+-(void) animateSaladoIngredients {
     
     for (int i = 15; i< 18; i++) {
         
@@ -581,26 +660,31 @@
     }
 }
 
-//-(void) animateQuesoIngredientsBack {
-//    
-//    for (int i = 15; i< 18; i++) {
-//        
-//        SKNode *ingredientNode1 = [self childNodeWithName:[NSString stringWithFormat:@"ingredientLabel%d", i]];
-//        SKAction *fade = [SKAction fadeAlphaTo:0 duration:0.2];
-//        SKAction *fade2 = [SKEase ScaleToWithNode:self.nodeK
-//                                     EaseFunction:CurveTypeBounce
-//                                             Mode:ElasticEaseInOut(5)
-//                                             Time:0.5
-//                                          ToValue:0.0];
-//        fade.timingMode = SKActionTimingEaseIn;
-//        
-//        [ingredientNode1 runAction:fade];
-//        [ingredientNode1 runAction:fade2];
-//    }
-//}
+-(void) animateSaladoIngredientsBack {
+    
+    for (int i = 15; i< 18; i++) {
+        
+        SKNode *ingredientNode1 = [self childNodeWithName:[NSString stringWithFormat:@"ingredientLabel%d", i]];
+        SKAction *fade = [SKAction fadeAlphaTo:0 duration:0.2];
+        SKAction *fade2 = [SKEase ScaleToWithNode:self.nodeK
+                                     EaseFunction:CurveTypeBounce
+                                             Mode:ElasticEaseInOut(5)
+                                             Time:0.5
+                                          ToValue:0.0];
+        fade.timingMode = SKActionTimingEaseIn;
+        
+        [ingredientNode1 runAction:fade];
+        [ingredientNode1 runAction:fade2 completion:^{
+            
+            SKNode *lineNode = [self childNodeWithName:@"line5"];
+            [lineNode runAction:fade];
+        }];
+
+    }
+}
 
 
--(void) animateSaladoIngredients {
+-(void) animateTierraIngredients {
     
     for (int i = 18; i< 21; i++) {
         
@@ -618,23 +702,27 @@
     }
 }
 
-//-(void) animateSaladoIngredientsBack {
-//    
-//    for (int i = 18; i< 21; i++) {
-//        
-//        SKNode *ingredientNode1 = [self childNodeWithName:[NSString stringWithFormat:@"ingredientLabel%d", i]];
-//        SKAction *fade = [SKAction fadeAlphaTo:0 duration:0.2];
-//        SKAction *fade2 = [SKEase ScaleToWithNode:self.nodeK
-//                                     EaseFunction:CurveTypeBounce
-//                                             Mode:ElasticEaseInOut(5)
-//                                             Time:0.5
-//                                          ToValue:0.0];
-//        fade.timingMode = SKActionTimingEaseIn;
-//        
-//        [ingredientNode1 runAction:fade];
-//        [ingredientNode1 runAction:fade2];
-//    }
-//}
+-(void) animateTierraIngredientsBack {
+    
+    for (int i = 18; i< 21; i++) {
+        
+        SKNode *ingredientNode1 = [self childNodeWithName:[NSString stringWithFormat:@"ingredientLabel%d", i]];
+        SKAction *fade = [SKAction fadeAlphaTo:0 duration:0.2];
+        SKAction *fade2 = [SKEase ScaleToWithNode:self.nodeK
+                                     EaseFunction:CurveTypeBounce
+                                             Mode:ElasticEaseInOut(5)
+                                             Time:0.5
+                                          ToValue:0.0];
+        fade.timingMode = SKActionTimingEaseIn;
+        
+        [ingredientNode1 runAction:fade];
+        [ingredientNode1 runAction:fade2 completion:^{
+            
+            SKNode *lineNode = [self childNodeWithName:@"line6"];
+            [lineNode runAction:fade];
+        }];
+    }
+}
 
 
 -(void) animateTostadoIngredients {
@@ -654,24 +742,28 @@
         }];
     }
 }
-//
-//-(void) animateTostadoIngredientsBack {
-//    
-//    for (int i = 21; i< 24; i++) {
-//        
-//        SKNode *ingredientNode1 = [self childNodeWithName:[NSString stringWithFormat:@"ingredientLabel%d", i]];
-//        SKAction *fade = [SKAction fadeAlphaTo:0 duration:0.2];
-//        SKAction *fade2 = [SKEase ScaleToWithNode:self.nodeK
-//                                     EaseFunction:CurveTypeBounce
-//                                             Mode:ElasticEaseInOut(5)
-//                                             Time:0.5
-//                                          ToValue:0.0];
-//        fade.timingMode = SKActionTimingEaseIn;
-//        
-//        [ingredientNode1 runAction:fade];
-//        [ingredientNode1 runAction:fade2];
-//    }
-//}
+
+-(void) animateTostadoIngredientsBack {
+    
+    for (int i = 21; i< 24; i++) {
+        
+        SKNode *ingredientNode1 = [self childNodeWithName:[NSString stringWithFormat:@"ingredientLabel%d", i]];
+        SKAction *fade = [SKAction fadeAlphaTo:0 duration:0.2];
+        SKAction *fade2 = [SKEase ScaleToWithNode:self.nodeK
+                                     EaseFunction:CurveTypeBounce
+                                             Mode:ElasticEaseInOut(5)
+                                             Time:0.5
+                                          ToValue:0.0];
+        fade.timingMode = SKActionTimingEaseIn;
+        
+        [ingredientNode1 runAction:fade];
+        [ingredientNode1 runAction:fade2 completion:^{
+            
+            SKNode *lineNode = [self childNodeWithName:@"line7"];
+            [lineNode runAction:fade];
+        }];
+    }
+}
 
 
 #pragma  mark-Animaciones
