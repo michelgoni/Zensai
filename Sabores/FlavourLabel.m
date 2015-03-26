@@ -12,11 +12,6 @@
 
 
 
-@interface FlavourLabel  ()
-
-
-@end
-
 @implementation FlavourLabel
 
 -(instancetype) initWithColor:(int)color {
