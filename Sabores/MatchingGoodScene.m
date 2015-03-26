@@ -129,7 +129,7 @@
       
          SKAction *rotateDismissButton = [SKEase RotateFromWithNode:self.node EaseFunction:CurveTypeExpo Mode:CircularEaseIn(15) Time:0.5 FromValue:360];
         [self.dismiss runAction:rotateDismissButton completion:^{
-            SKTransition *reveal = [SKTransition doorsCloseVerticalWithDuration:0.2];
+            SKTransition *reveal = [SKTransition doorsCloseVerticalWithDuration:0.6];
             GameScene *myScene = [GameScene nodeWithFileNamed:@"GameScene"];
             myScene.scaleMode = SKSceneScaleModeAspectFill;
             self.matchingLabel.alpha = 0.0;
