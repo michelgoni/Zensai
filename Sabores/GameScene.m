@@ -53,16 +53,13 @@
 
 
 
-@implementation GameScene {
-    
-    int touchNumber;
-}
+@implementation GameScene 
 
 -(void)didMoveToView:(SKView *)view {
     
     [self loadSabores];
     [self testMatching];
-    //[self moveHexagon];
+    [self moveHexagon];
     [self createHexagons];
     [self createIngredientsLabel];
     [self createLines];
@@ -775,8 +772,9 @@
     for (int i = 0; i< 9; i++) {
         SKNode *hexagonParentNode = [self childNodeWithName:[NSString stringWithFormat:@"Node%d", i]];
         SKNode *flavourLabelNode = [self childNodeWithName:[NSString stringWithFormat:@"flavourLabel%d", i]];
-        SKNode *ingredientsLabelNode = [self childNodeWithName:[NSString stringWithFormat:@"ingredientLabel%d", i]];
+        SKNode *ingredientsLabelNode = [self childNodeWithName:[NSString stringWithFormat:@"ingredientLabel%d", i+15]];
         SKNode *iconsNode = [self childNodeWithName:[NSString stringWithFormat:@"icon%d", i]];
+        SKNode *linesNode = [self childNodeWithName:[NSString stringWithFormat:@"line%d", i]];
         SKAction *move = [SKAction moveBy:CGVectorMake(arc4random()%10, arc4random()%15) duration:3];
         SKAction *reseversedMove = [move reversedAction];
         SKAction *moveSeq = [SKAction sequence:@[ move, reseversedMove]];
@@ -788,6 +786,7 @@
         [flavourLabelNode runAction:repeatSize];
         [ingredientsLabelNode runAction:repeatSize];
         [iconsNode runAction:repeatSize];
+        [linesNode runAction:repeatSize];
 
     }
     
