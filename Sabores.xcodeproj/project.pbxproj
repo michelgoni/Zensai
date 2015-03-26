@@ -52,6 +52,7 @@
 		2DE77F2D1ABED96B0066B4A6 /* 1024x1024.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 2DE77F2C1ABED96B0066B4A6 /* 1024x1024.jpg */; };
 		2DE82EB01AC4996000F5FE01 /* launchscreenbackground.png in Resources */ = {isa = PBXBuildFile; fileRef = 2DE82EAF1AC4996000F5FE01 /* launchscreenbackground.png */; };
 		2DE82EB21AC49A5A00F5FE01 /* Icon-76@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = 2DE82EB11AC49A5A00F5FE01 /* Icon-76@3x.png */; };
+		2DE82EB41AC4BE7E00F5FE01 /* Untitled@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 2DE82EB31AC4BE7E00F5FE01 /* Untitled@2x.png */; };
 		A9436A661ABC7E640088F344 /* SaboresModel.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 2D98B6141AB82C9100FCDE1C /* SaboresModel.xcdatamodeld */; };
 /* End PBXBuildFile section */
 
@@ -139,6 +140,7 @@
 		2DE77F2C1ABED96B0066B4A6 /* 1024x1024.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = 1024x1024.jpg; sourceTree = "<group>"; };
 		2DE82EAF1AC4996000F5FE01 /* launchscreenbackground.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = launchscreenbackground.png; sourceTree = "<group>"; };
 		2DE82EB11AC49A5A00F5FE01 /* Icon-76@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Icon-76@3x.png"; sourceTree = "<group>"; };
+		2DE82EB31AC4BE7E00F5FE01 /* Untitled@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Untitled@2x.png"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -175,6 +177,7 @@
 		2D524A251AB6EE9100B9C507 /* Assets */ = {
 			isa = PBXGroup;
 			children = (
+				2DE82EB31AC4BE7E00F5FE01 /* Untitled@2x.png */,
 				2DE82EB11AC49A5A00F5FE01 /* Icon-76@3x.png */,
 				2DE82EAF1AC4996000F5FE01 /* launchscreenbackground.png */,
 				2D3C9C111AC4435E00A6A8E9 /* cocoa@2x.png */,
@@ -436,6 +439,7 @@
 				2D6A8E2E1AB6DFC1008955E8 /* matchings.json in Resources */,
 				2D6A8E161AB6DFA6008955E8 /* LaunchScreen.xib in Resources */,
 				2D1F01061AC2B86F00577DF9 /* grapes@2x.png in Resources */,
+				2DE82EB41AC4BE7E00F5FE01 /* Untitled@2x.png in Resources */,
 				2DC7FB261AC2203D00430F38 /* fruit34.png in Resources */,
 				2D6A8E131AB6DFA6008955E8 /* Images.xcassets in Resources */,
 				2D1F010E1AC2B89100577DF9 /* soil@2x.png in Resources */,

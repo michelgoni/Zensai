@@ -214,9 +214,7 @@
                         self.matchingIngredient2.text = self.selectedIngredient2.name;
                         self.matchingIngredient2.name = self.selectedIngredient2.identifier;
                         
-                        //Animación para los ingredientes cuando se seleccionan
-                        
-                        //Animación para los labels de los ingredientes que aparecen
+                        //Animation for the second label
                         SKAction *fade = [SKAction fadeAlphaTo:1 duration:0.2];
                         SKAction *fade2 = [SKEase ScaleToWithNode:self.nodeK
                                                      EaseFunction:CurveTypeBounce
@@ -248,7 +246,7 @@
                                         matchingGoodScreen.ingredient1Name = ingrediente1.name;
                                         matchingGoodScreen.ingredient2Name = ingrediente2.name;
                                         matchingGoodScreen.scaleMode =SKSceneScaleModeAspectFill;
-                                        [self.view presentScene:matchingGoodScreen transition:[SKTransition fadeWithDuration:1.2]];
+                                        [self.view presentScene:matchingGoodScreen transition:[SKTransition fadeWithDuration:2.2]];
                                         
                                         
                                     } else {
@@ -260,7 +258,7 @@
                                         matchingBadScreen.ingredient1Name = ingrediente1.name;
                                         matchingBadScreen.ingredient2Name = ingrediente2.name;
                                         matchingBadScreen.scaleMode =SKSceneScaleModeAspectFill;
-                                        [self.view presentScene:matchingBadScreen transition:[SKTransition fadeWithDuration:1.2]];
+                                        [self.view presentScene:matchingBadScreen transition:[SKTransition fadeWithDuration:2.2]];
                                     }
                                     
                                 } else {
@@ -273,12 +271,11 @@
                                     noMatchingScreen.ingredient2Name = ingrediente2.name;
                                     noMatchingScreen.scaleMode =SKSceneScaleModeAspectFill;
                                     
-                                    [self.view presentScene:noMatchingScreen transition:[SKTransition fadeWithDuration:1.2]];                                    
+                                    [self.view presentScene:noMatchingScreen transition:[SKTransition fadeWithDuration:2.2]];
                                 }
                             } else {
                                 // We hava a problem
-                                NSLog(@"Problem with ingredients with names %@ and %@", self.matchingIngredient1.name, self.matchingIngredient1.name);
-                                
+                                 NSLog(@"Problem with ingredients with names %@ and %@", self.matchingIngredient1.name, self.matchingIngredient1.name);
                             }
                         }
                         

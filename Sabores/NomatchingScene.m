@@ -86,14 +86,17 @@
 -(void) drawDismissButton {
     
     self.dismiss = [SKSpriteNode spriteNodeWithImageNamed:@"dismiss3"];
+    SKSpriteNode *mail = [SKSpriteNode spriteNodeWithImageNamed:@"Untitled"];
     
     self.dismiss.xScale = 0.1;
     self.dismiss.yScale = 0.1;
     self.dismiss.zPosition = 10;
     self.dismiss.name = @"back";
-    self.dismiss.position = CGPointMake(CGRectGetMidX(self.frame) -15 ,CGRectGetMidY(self.frame) -240);
+    self.dismiss.position = CGPointMake(CGRectGetMidX(self.frame) -15 ,CGRectGetMidY(self.frame) -285);
+    mail.position = CGPointMake(self.dismiss.position.x +70, self.dismiss.position.y +70);
     
     [self addChild: self.dismiss];
+    [self addChild:mail];
     
 }
 
@@ -103,7 +106,7 @@
     
     self.matchingLabel = [[UILabel alloc] initWithFrame:CGRectMake(55, 40, 660, 1024)];
     self.matchingLabel.textColor = [UIColor colorWithRed:230 /255.0 green:126/255.0 blue:34/255.0 alpha:1.0];
-    self.matchingLabel.text = @"Pero de verdad pensabas que estos dos elementos pegaban? ¿Estabas del todo seguro?";
+    self.matchingLabel.text = [NSString stringWithFormat:@"Pero de verdad pensabas que %@ y %@ pegaban? ¿Estabas del todo seguro? Bueno, si aún estás del todo seguro, puedes contactar cobn nosotros y contarnos cómo estos dos ingredientes se combinan.", self.ingredient1Name, self.ingredient2Name];
     self.matchingLabel.alpha = 0.0;
     self.matchingLabel.font = [UIFont fontWithName:@"Optima" size:20];
     self.matchingLabel.numberOfLines = 0;
