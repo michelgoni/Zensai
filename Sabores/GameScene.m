@@ -105,7 +105,7 @@
         _lines = [Lines node];
         _lines = [_lines initWithColor:i];
         self.nodeLine = (SKNode *)[self childNodeWithName:[NSString stringWithFormat:@"line%d", i]];
-        self.nodeLine.alpha = 0.0;
+        self.nodeLine.alpha = 1.0;
         [self.nodeLine addChild:_lines];
     }
 
@@ -128,7 +128,7 @@
             self.labelIngredients.ingredientLabelName.text = ingrediente.name;
             self.labelIngredients.ingredientLabelName.name = ingrediente.identifier;
             [self.ingredientLabelNode addChild:_labelIngredients];
-            self.ingredientLabelNode.alpha = 0.0;
+            self.ingredientLabelNode.alpha = 1.0;
             self.ingredientLabelNode.userData = [@{@"saborID":ingrediente.sabor.identifier, @"ingredienteID":ingrediente.identifier} mutableCopy];
 
            j++;
