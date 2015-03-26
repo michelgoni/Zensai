@@ -103,7 +103,7 @@
     
     self.matchingLabel = [[UILabel alloc] initWithFrame:CGRectMake(55, 40, 660, 1024)];
     self.matchingLabel.textColor = [UIColor colorWithRed:230 /255.0 green:126/255.0 blue:34/255.0 alpha:1.0];
-    self.matchingLabel.text = self.comment;
+    self.matchingLabel.text = @"Pero de verdad pensabas que estos dos elementos pegaban? ¿Estabas del todo seguro?";
     self.matchingLabel.alpha = 0.0;
     self.matchingLabel.font = [UIFont fontWithName:@"Optima" size:20];
     self.matchingLabel.numberOfLines = 0;
