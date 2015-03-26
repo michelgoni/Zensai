@@ -16,6 +16,7 @@
 #import <CoreData/CoreData.h>
 #import "SKEase.h"
 #import "Hexagon.h"
+#import "Lines.h"
 #import "FlavourLabel.h"
 #import "LabelIngredients.h"
 #import "MatchingGoodScene.h"
@@ -28,6 +29,7 @@
 @property (strong, nonatomic) NSManagedObjectContext *context;
 
 @property (strong, nonatomic) SKNode *node;
+@property (strong, nonatomic) SKNode *nodeLine;
 @property (strong, nonatomic) SKNode *nodeK;
 @property (strong, nonatomic) SKNode *flavourLabelNode;
 @property (strong, nonatomic) SKNode *ingredientLabelNode;
@@ -36,6 +38,7 @@
 @property (strong, nonatomic) SKLabelNode *matchingIngredient2;
 
 @property (strong, nonatomic) Hexagon *touches;
+@property (strong, nonatomic) Lines *lines;
 @property (strong, nonatomic) FlavourLabel *labelFlavour;
 @property (strong, nonatomic) LabelIngredients *labelIngredients;
 
@@ -67,6 +70,7 @@
     //[self moveHexagon];
     [self createHexagons];
     [self createIngredientsLabel];
+    [self createLines];
     
 }
 
@@ -85,6 +89,7 @@
         self.node = (SKNode *)[self childNodeWithName:[NSString stringWithFormat:@"Node%d", i]];
         [self.node addChild:_touches];
         self.node.userData = [@{@"saborID":sabor.name} mutableCopy];
+        
 
         //Sabores ////TBR////
         _labelFlavour = [FlavourLabel node];
@@ -100,6 +105,19 @@
         i++;
         
          }
+}
+
+-(void) createLines {
+    
+    for (int i = 0; i <8; i++) {
+        _lines = [Lines node];
+        _lines = [_lines initWithColor:i];
+        self.nodeLine = (SKNode *)[self childNodeWithName:[NSString stringWithFormat:@"line%d", i]];
+        [self.nodeLine addChild:_lines];
+        
+    }
+
+
 }
 
 

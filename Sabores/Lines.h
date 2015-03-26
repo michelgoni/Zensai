@@ -10,4 +10,12 @@
 
 @interface Lines : SKNode
 
+@property (strong, nonatomic) SKShapeNode *line1;
+@property (strong, nonatomic) SKShapeNode *line2;
+@property (strong, nonatomic) SKShapeNode *line3;
+
+
+-(instancetype)initWithColor: (int) color;
+
+
 @end
